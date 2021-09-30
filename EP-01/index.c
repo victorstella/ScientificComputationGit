@@ -23,5 +23,5 @@ void main(int argc, char **argv) {
   epsilon = strtod(argv[2], &endptr);
   max_iter = atoi(argv[3]);
 
-  evaluator_derivative_x()
+  evaluator_derivative_x();
 }
