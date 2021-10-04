@@ -4,6 +4,7 @@ MODULOS = index
 	
 OBJETOS = $(addsuffix .o,$(MODULOS))
 
+EXECUTAVEL = ep01
 
 .PHONY : all clean
 
@@ -11,9 +12,12 @@ OBJETOS = $(addsuffix .o,$(MODULOS))
 all : main clean
 
 main : $(OBJETOS)
-	gcc $(OBJETOS) -o resolve $(CFLAGS)
+	gcc $(OBJETOS) -o $(EXECUTAVEL) $(CFLAGS)
 
 index : index.c
 
 clean : 
 	$(RM) $(OBJETOS)
+
+purge : clean 
+	$(RM) $(EXECUTAVEL)
