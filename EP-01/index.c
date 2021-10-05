@@ -33,5 +33,7 @@ void main(int argc, char **argv) {
   evaluator_destroy (diffFx);
   free(fx);
 
+  printf("opa");
+
   exit(1);
 }
