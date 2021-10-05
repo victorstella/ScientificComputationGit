@@ -33,6 +33,5 @@ void main(int argc, char **argv) {
   evaluator_destroy (diffFx);
   free(fx);
 
-
   exit(1);
 }
