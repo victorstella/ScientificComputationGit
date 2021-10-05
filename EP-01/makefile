@@ -4,7 +4,7 @@ MODULOS = index
 	
 OBJETOS = $(addsuffix .o,$(MODULOS))
 
-EXECUTAVEL = ep01
+EXECUTAVEL = ep01.out
 
 .PHONY : all clean
 
