@@ -40,18 +40,20 @@ void main(int argc, char **argv) {
     exit(0);
   }else{
     printf("Deu boa\n");
-    exit(1);
+    //exit(1);
   }
 
+  diffFx = evaluator_derivative_x(f);
 
-  void *Fx = evaluator_create(fx);
-  diffFx = evaluator_derivative_x(Fx);
+  printf("f'(x) = %s\n", evaluator_get_string(diffFx));
 
-  printf("f(4) = %s\n", evaluator_get_string(diffFx));
-
-  evaluator_destroy (Fx);
+  evaluator_destroy (f);
   evaluator_destroy (diffFx);
+
+  free(f);
+  free(diffFx);
   free(fx);
+  free(endptr);
 
   exit(1);
 }
