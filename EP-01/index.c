@@ -33,7 +33,7 @@ void main(int argc, char **argv) {
   evaluator_destroy (diffFx);
   free(fx);
 
-  printf("opa");
+  printf("opa2");
 
   exit(1);
 }
