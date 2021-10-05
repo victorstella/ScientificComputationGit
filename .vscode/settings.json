@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.vhd": "vhdl",
+    "float.h": "c",
+    "assert.h": "c",
+    "matheval.h": "c"
+  }
+}
