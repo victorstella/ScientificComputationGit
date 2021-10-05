@@ -5,7 +5,7 @@
 #include <assert.h> // Para função assert (debugagem)
 
 void main(int argc, char **argv) {
-  void* f; // Função de entrada
+  void *f; // Função de entrada
   char *fx = NULL;
   double x0, epsilon;
   int max_iter;
