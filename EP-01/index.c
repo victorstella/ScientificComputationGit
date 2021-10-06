@@ -5,9 +5,71 @@
 #include <math.h>
 
 #include <matheval.h>
-#include <assert.h> // Para função assert (debugagem)
 
 #define ZERO 0
+
+/*
+Ler f(x)
+Ler h0 ...nwt_x0
+Ler epsilon
+Ler max_iter
+
+
+Calcula derivada de f(x)
+
+
+// As primeiras duas iterações têm de ser diferentes pois a secante necessita de dois primeiros resultados para gerar os outros
+Primeira iteração {
+  Calcula nwt_x = phi() = h0-(f(h0)/f'(h0))
+  Calcula sec_x = sec() = nwt_x-( (f(nwt_x)*(nwt_x*h0)) / (f(nwt_x)*f(h0)) )
+
+  Calcula nwt_crit = | ((nwt_x - h0)*100)/nwt_x |
+  Calcula sec_crit = | ((sec_x - nwt_x)*100)/sec_x |
+
+  Calcula EA = |sec_x-nwt_x|
+  Calcula ER = |EA/nwt_x|
+
+  Calcula ULPs = (?)
+}
+
+nwt_x_old = nwt_x
+
+sec_x_old = sec_x
+sec_x_old_old = nwt_x
+
+Segunda iteração {
+  Calcula nwt_x = phi() = nwt_x_old-(f(nwt_x_old)/f'(nwt_x_old))
+  Calcula sec_x = sec() = sec_x_old-( (f(sec_x_old)*(sec_x_old*sec_x_old_old)) / (f(nwt_x)*f(sec_x_old_old)) )
+
+  Calcula nwt_crit = | ((nwt_x - h0)*100)/nwt_x |
+  Calcula sec_crit = | ((sec_x - nwt_x)*100)/sec_x |
+
+  Calcula EA = |sec_x-nwt_x|
+  Calcula ER = |EA/nwt_x|
+
+  Calcula ULPs = (?)
+}
+
+nwt_x_old = nwt_x
+
+sec_x_old_old = sec_x_old
+sec_x_old = sec_x
+
+Outras iterações {
+  Calcula nwt_x = phi() = nwt_x_old-(f(nwt_x_old)/f'(nwt_x_old))
+  Calcula sec_x = sec() = sec_x_old-( (f(sec_x_old)*(sec_x_old*sec_x_old_old)) / (f(nwt_x)*f(sec_x_old_old)) )
+
+  Calcula nwt_crit = | ((nwt_x - h0)*100)/nwt_x |
+  Calcula sec_crit = | ((sec_x - nwt_x)*100)/sec_x |
+
+  Calcula EA = |sec_x-nwt_x|
+  Calcula ER = |EA/nwt_x|
+
+  Calcula ULPs = (?)
+}
+
+*/
+
 
 int main(int argc, char **argv) {
   void *f, *diffFx; // Função de entrada e derivada
@@ -15,9 +77,13 @@ int main(int argc, char **argv) {
   double x0, epsilon;
   int max_iter = 0;
   
+  int condicao1, condicao2;
+
   size_t len = 0;
 
   double fxTrueZero = 0;
+
+
 
   getline(&fx, &len, stdin);
   fx[strcspn (fx, "\n")] = '\0';
@@ -30,7 +96,6 @@ int main(int argc, char **argv) {
   printf("%le\n", epsilon);
   printf("%d\n", max_iter);
   f = evaluator_create(fx);
-  assert(f);
   
   if(f == NULL){
     perror("Erro na entrada de dados.");
