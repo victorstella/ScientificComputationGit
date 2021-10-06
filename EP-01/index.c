@@ -41,8 +41,8 @@ Segunda iteração {
   Calcula nwt_x = phi() = nwt_x_old-(f(nwt_x_old)/f'(nwt_x_old))
   Calcula sec_x = sec() = sec_x_old-( (f(sec_x_old)*(sec_x_old*sec_x_old_old)) / (f(nwt_x)*f(sec_x_old_old)) )
 
-  Calcula nwt_crit = | ((nwt_x - h0)*100)/nwt_x |
-  Calcula sec_crit = | ((sec_x - nwt_x)*100)/sec_x |
+  Calcula nwt_crit = | ((nwt_x - nwt_x_old)*100)/nwt_x |
+  Calcula sec_crit = | ((sec_x - sec_x_old)*100)/sec_x |
 
   Calcula EA = |sec_x-nwt_x|
   Calcula ER = |EA/nwt_x|
@@ -50,25 +50,37 @@ Segunda iteração {
   Calcula ULPs = (?)
 }
 
-nwt_x_old = nwt_x
-
-sec_x_old_old = sec_x_old
-sec_x_old = sec_x
 
 Outras iterações {
+
+  nwt_x_old = nwt_x
+
+  sec_x_old_old = sec_x_old
+  sec_x_old = sec_x
+
+
   Calcula nwt_x = phi() = nwt_x_old-(f(nwt_x_old)/f'(nwt_x_old))
   Calcula sec_x = sec() = sec_x_old-( (f(sec_x_old)*(sec_x_old*sec_x_old_old)) / (f(nwt_x)*f(sec_x_old_old)) )
 
-  Calcula nwt_crit = | ((nwt_x - h0)*100)/nwt_x |
-  Calcula sec_crit = | ((sec_x - nwt_x)*100)/sec_x |
+  Calcula nwt_crit = | ((nwt_x - nwt_x_old)*100)/nwt_x |
+  Calcula sec_crit = | ((sec_x - sec_x_old)*100)/sec_x |
 
   Calcula EA = |sec_x-nwt_x|
   Calcula ER = |EA/nwt_x|
 
   Calcula ULPs = (?)
-}
+} Até (crits < epsilon OU max_iter )
 
 */
+
+int nwt_crit(){
+
+}
+
+int calcula_tudao(){
+
+
+}
 
 
 int main(int argc, char **argv) {
