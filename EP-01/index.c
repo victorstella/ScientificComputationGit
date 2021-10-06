@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
   x0 = evaluator_evaluate_x(diffFx, ZERO);
   printf("%d, %1.16e, %1.16e\n", max_iter, x0, fabs(x0 - fxTrueZero));
 
-  for(max_iter = 1; fabs(x0 - fxTrueZero) <= __DBL_EPSILON__; max_iter++) {
+  for(max_iter = 1; fabs(x0 - fxTrueZero) >= __DBL_EPSILON__; max_iter++) {
     diffFx = evaluator_derivative_x(diffFx);
     x0 = evaluator_evaluate_x(diffFx, ZERO);
     printf("%d, %1.16e, %1.16e\n", max_iter, x0, fabs(x0 - fxTrueZero));
