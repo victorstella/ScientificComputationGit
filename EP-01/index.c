@@ -72,19 +72,26 @@ Outras iterações {
 
 */
 
-void *funcF, *funcPHI, *funcDPHI;
+void *funcF, *funcDF, *funcPHI, *funcDPHI; // Funções globais
 
+void verificaErro(void* funcao){
+    if(funcao == NULL){
+    perror("Erro na entrada de dados.");
+    exit(0);
+  }
+}
 
 void init(){
   void *f, *diffFx; // Função de entrada e derivada
-  char *sF;
-
-  size_t len = 0;
-  double fxTrueZero = 0;
-
+  char *sF, sPHI[128]; // String da função f e phi
   double x0, epsilon;
   int max_iter = 0;
-  
+
+
+  size_t len = 0;
+
+//  double fxTrueZero = 0;
+
 
   // Recebe f e remove \n
   getline(&sF, &len, stdin);
@@ -95,29 +102,41 @@ void init(){
   scanf("%lf", &epsilon);
   scanf("%d", &max_iter);
 
-  printf("%s\n", sF);
-  printf("%le\n", x0);
-  printf("%le\n", epsilon);
-  printf("%d\n", max_iter);
+  printf("sF  -> %s\n", sF);
+  printf("x0  -> %1.16e\n", x0);
+  printf("eps -> %le\n", epsilon);
+  printf("maxi-> %d\n", max_iter);
 
+
+// Cria função F 
   funcF = evaluator_create(sF);
-  
-  if(funcF == NULL){
-    perror("Erro na entrada de dados.");
-    exit(0);
-  }
+  verificaErro(funcF);
+  printf("\n>> f(x) = %s\n", evaluator_get_string(funcF));
 
 
-  // Calcula derivada de f 
-  funcDPHI = evaluator_derivative_x(funcF);
-  printf("\n>> f'(x) = %s\n\n", evaluator_get_string(funcDPHI));
+// Deriva função F
+  funcDF = evaluator_derivative_x(funcF);
+  verificaErro(funcDF);
 
-  printf("0, %1.16e, %1.16e\n", x0, x0);
+  printf(">> f'(x) = %s\n\n", evaluator_get_string(funcDF));
+
+
+// Cria função PHI
+  //sPHI = "x-("+ evaluator_get_string(funcF) +"/"+ evaluator_get_string(funcDF) +")";
+  sprintf(sPHI, "x-(%s/%s)", evaluator_get_string(funcF), evaluator_get_string(funcDF));
+  funcPHI = evaluator_create(sPHI);
+  verificaErro(funcPHI);
+
+  printf(">> phi(x) = %s\n", evaluator_get_string(funcPHI));
+
+// Deriva função PHI
+  funcDPHI = evaluator_derivative_x(funcPHI);
+  verificaErro(funcDPHI);
+  printf(">> phi'(x) = %s\n\n", evaluator_get_string(funcDPHI));
+
 
 
   free(sF);
-
-
 /* 
   // Só testando
   for(int i = 1; fabs(x0 - fxTrueZero) >= epsilon && i <= max_iter; i++) {
@@ -160,7 +179,6 @@ void destroi_funcoes(){
 }
 
 int main(int argc, char **argv) {
-
 
   init();
 
