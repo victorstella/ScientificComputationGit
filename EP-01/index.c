@@ -75,7 +75,7 @@ Outras iterações {
 void *funcF, *funcPHI, *funcDPHI;
 
 
-void init(){
+void init() {
   void *f, *diffFx; // Função de entrada e derivada
   char *sF;
 
@@ -88,7 +88,7 @@ void init(){
 
   // Recebe f e remove \n
   getline(&sF, &len, stdin);
-  sF[strcspn (sF, "\n")] = '\0';
+  sF[strcspn(sF, "\n")] = '\0';
 
   // Recebe outras variáveis 
   scanf("%lf", &x0);
@@ -102,7 +102,7 @@ void init(){
 
   funcF = evaluator_create(sF);
   
-  if(funcF == NULL){
+  if(funcF == NULL) {
     perror("Erro na entrada de dados.");
     exit(0);
   }
@@ -130,37 +130,36 @@ void init(){
 }
 
 // Funções matemáticas
-double f(double x){
+double f(double x) {
   return evaluator_evaluate_x(funcF, x);
 }
 
-double phi(double x){
+double phi(double x) {
   return evaluator_evaluate_x(funcPHI, x);
 }
 
-double dphi(double x){
+double dphi(double x) {
   return evaluator_evaluate_x(funcDPHI, x);
 }
 
-int nwt_crit(double nwt_old){
+int nwt_crit(double nwt_old) {
 
 
   return 1;
 }
 
-int calcula_tudao(){
+int calcula_tudao() {
 
   return 1;
 }
 
-void destroi_funcoes(){
+void destroi_funcoes() {
   evaluator_destroy(funcF);
   evaluator_destroy(funcPHI);
   evaluator_destroy(funcDPHI);
 }
 
 int main(int argc, char **argv) {
-
 
   init();
 
