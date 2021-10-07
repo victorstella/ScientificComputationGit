@@ -72,8 +72,9 @@ Outras iterações {
 
 */
 
-void *funcF, *funcDF, *funcPHI, *funcDPHI; // Funções globais
+void *funcF, *funcDF, *funcPHI, *funcSEC; // Funções globais
 
+// Verifica se evaluate foi criado corretamente
 void verificaErro(void* funcao){
     if(funcao == NULL){
     perror("Erro na entrada de dados.");
@@ -81,16 +82,15 @@ void verificaErro(void* funcao){
   }
 }
 
+// Recebe entrada e inicializa funções principais 
 void init(){
   void *f, *diffFx; // Função de entrada e derivada
-  char *sF, sPHI[128]; // String da função f e phi
+  char *sF, sPHI[128], sSEC[128]; // String da função f, phi, sec
   double x0, epsilon;
   int max_iter = 0;
 
 
   size_t len = 0;
-
-//  double fxTrueZero = 0;
 
 
   // Recebe f e remove \n
@@ -122,33 +122,36 @@ void init(){
 
 
 // Cria função PHI
-  //sPHI = "x-("+ evaluator_get_string(funcF) +"/"+ evaluator_get_string(funcDF) +")";
+  //sPHI(x) = "x-("+ evaluator_get_string(funcF) +"/"+ evaluator_get_string(funcDF) +")";
   sprintf(sPHI, "x-(%s/%s)", evaluator_get_string(funcF), evaluator_get_string(funcDF));
   funcPHI = evaluator_create(sPHI);
   verificaErro(funcPHI);
 
   printf(">> phi(x) = %s\n", evaluator_get_string(funcPHI));
 
+
+// Cria função SEC
+  // A função secante abaixo está errada, ela faz confusão com os x x0 e x1. Precisa encontrar uma maneira de escrever a função com as variáveis certas
+  sprintf(sSEC, "x1-((%s*(x1-x0))/(%s-%s))", evaluator_get_string(funcF), evaluator_get_string(funcDF),evaluator_get_string(funcDF) );
+  funcSEC = evaluator_create(sSEC);
+  verificaErro(funcSEC);
+
+  printf(">> sec(x) = %s\n", evaluator_get_string(funcSEC));
+
+
+/*
 // Deriva função PHI
   funcDPHI = evaluator_derivative_x(funcPHI);
   verificaErro(funcDPHI);
   printf(">> phi'(x) = %s\n\n", evaluator_get_string(funcDPHI));
-
+*/
 
 
   free(sF);
-/* 
-  // Só testando
-  for(int i = 1; fabs(x0 - fxTrueZero) >= epsilon && i <= max_iter; i++) {
-    diffFx = evaluator_derivative_x(diffFx);
-    x0 = evaluator_evaluate_x(diffFx, ZERO);
-    printf("%d, %1.16e, %1.16e\n", i, x0, fabs(x0 - fxTrueZero));
-  }
-*/
 
 }
 
-// Funções matemáticas
+// Funções matemáticas ---
 double f(double x){
   return evaluator_evaluate_x(funcF, x);
 }
@@ -157,8 +160,14 @@ double phi(double x){
   return evaluator_evaluate_x(funcPHI, x);
 }
 
+/*
 double dphi(double x){
   return evaluator_evaluate_x(funcDPHI, x);
+}
+*/
+
+double sec(double x){
+  return evaluator_evaluate_x(funcSEC, x);
 }
 
 int nwt_crit(double nwt_old){
@@ -174,13 +183,24 @@ int calcula_tudao(){
 
 void destroi_funcoes(){
   evaluator_destroy(funcF);
+  evaluator_destroy(funcDF);
   evaluator_destroy(funcPHI);
-  evaluator_destroy(funcDPHI);
+  evaluator_destroy(funcSEC);
+  //evaluator_destroy(funcDPHI);
 }
 
 int main(int argc, char **argv) {
 
   init();
+
+/* 
+  // Só testando
+  for(int i = 1; fabs(x0 - fxTrueZero) >= epsilon && i <= max_iter; i++) {
+    diffFx = evaluator_derivative_x(diffFx);
+    x0 = evaluator_evaluate_x(diffFx, ZERO);
+    printf("%d, %1.16e, %1.16e\n", i, x0, fabs(x0 - fxTrueZero));
+  }
+*/
 
   exit(1);
 }
