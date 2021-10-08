@@ -14,7 +14,6 @@ void criaF(char* sF) {
   // Cria função F 
   funcF = evaluator_create(sF);
   verificaErro(funcF);
-  printf("\n>> f(x) = %s\n", evaluator_get_string(funcF));
 }
 
 void derivaF() {
@@ -22,7 +21,6 @@ void derivaF() {
   funcDF = evaluator_derivative_x(funcF);
   verificaErro(funcDF);
 
-  printf(">> f'(x) = %s\n\n", evaluator_get_string(funcDF));
 }
 
 void criaPhi(char* sPHI) {
@@ -31,7 +29,6 @@ void criaPhi(char* sPHI) {
   funcPHI = evaluator_create(sPHI);
   verificaErro(funcPHI);
 
-  printf(">> phi(x) = %s\n", evaluator_get_string(funcPHI));
 }
 
 void criaSec(char* sSEC) {
@@ -46,7 +43,6 @@ void criaSec(char* sSEC) {
   funcSEC = evaluator_create(sSEC);
   verificaErro(funcSEC);
 
-  printf(">> sec(x) = %s\n", evaluator_get_string(funcSEC));
 
   free(funcF_new);
 }
@@ -116,11 +112,6 @@ void init() {
   scanf("%lf", &x0);
   scanf("%lf", &epsilon);
   scanf("%d", &max_iter);
-
-  printf("sF  -> %s\n", sF);
-  printf("x0  -> %1.16e\n", x0);
-  printf("eps -> %le\n", epsilon);
-  printf("maxi-> %d\n", max_iter);
 
   criaF(sF);
   derivaF();
