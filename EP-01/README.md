@@ -1,4 +1,5 @@
-# README ICC 
+# RESOLUÇÃO DE EQUAÇÕES NÃO LINEARES
+*MÉTODO DE NEWTON-RAPHSON E DA SECANTE*
 
 ## ALUNOS
 
@@ -23,5 +24,6 @@ A ULP é calculada com os valores da iteração atual obtidos nos métodos de Ne
 
 Devido ao fato de que o cálculo da secante exige ter dois valores anteriores previamente cálculados, nosso algoritmo entra no loop somente à partir da terceira iteração. Essa foi a abordagem mais conveniente para contornarmos essa limitação matemática.
 
-Para compilar, utilize; `make`
+Para compilar, utilize `make`;
+
 Para executar, utilize `./ep01.out` seguido de uma flag para entrada e outra para a saída, ambas com seus respectivos arquivos. Um exemplo seria: `./ep01.out < entrada.in > saida.csv`.
