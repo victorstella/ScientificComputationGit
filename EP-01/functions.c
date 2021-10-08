@@ -1,4 +1,3 @@
-
 #include "functions.h"
 
 void *funcF, *funcDF, *funcPHI, *funcSEC; // Funções globais
@@ -28,7 +27,6 @@ void derivaF() {
 
 void criaPhi(char* sPHI) {
   // Cria função PHI
-  //sPHI(x) = "x-("+ evaluator_get_string(funcF) +"/"+ evaluator_get_string(funcDF) +")";
   sprintf(sPHI, "x-(%s/%s)", evaluator_get_string(funcF), evaluator_get_string(funcDF));
   funcPHI = evaluator_create(sPHI);
   verificaErro(funcPHI);
@@ -38,7 +36,6 @@ void criaPhi(char* sPHI) {
 
 void criaSec(char* sSEC) {
   // Cria função SEC
-  // A função secante abaixo está errada, ela faz confusão com os x x0 e x1. Precisa encontrar uma maneira de escrever a função com as variáveis certas
   char* funcF_new = strdup(evaluator_get_string(funcF)); 
     
   for (int k = 0; funcF_new[k] != '\0'; k++) {
@@ -50,6 +47,8 @@ void criaSec(char* sSEC) {
   verificaErro(funcSEC);
 
   printf(">> sec(x) = %s\n", evaluator_get_string(funcSEC));
+
+  free(funcF_new);
 }
 
 double calcula_ea(double new, double old) {
@@ -105,7 +104,7 @@ void init() {
   
   long int ulp = 0;
 
-  int max_iter = 0;
+  int max_iter, iter = 0, criterio_1 = 1, criterio_2 = 1, criterio_3 = 1, criterio_4 = 1;
 
   size_t len = 0;
 
@@ -129,17 +128,19 @@ void init() {
   criaSec(sSEC);
 
   // Iteração zero
-  imprime_csv(0, x0, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
+  imprime_csv(iter, x0, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
 
   // Primeira iteração
+  iter ++;
   newton = phi(x0);
   newton_crit = calcula_er(newton, x0);
   new_secante = sec(newton, x0);
   secante_crit = calcula_er(new_secante, newton);
 
-  imprime_csv(1, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
+  imprime_csv(iter, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
   
   // Segunda iteração
+  iter++;
   oldton = newton;
   newton = phi(oldton);
   newton_crit = calcula_er(newton, oldton);
@@ -153,10 +154,11 @@ void init() {
 
   ulp = calcula_ulp(newton, new_secante);
 
-  imprime_csv(2, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
+  imprime_csv(iter, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
 
   // Terceira iteração ...
-  for(int i = 3; i < max_iter; i++) {
+  while (criterio_1 && criterio_2 && criterio_3 && criterio_4) {
+    iter++;
     oldton = newton;
     newton = phi(oldton);
     newton_crit = calcula_er(newton, oldton);
@@ -171,7 +173,12 @@ void init() {
     
     ulp = calcula_ulp(newton, new_secante);
 
-    imprime_csv(i, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
+    imprime_csv(iter, newton, newton_crit, new_secante, secante_crit, ea_nwt_sec, er_nwt_sec, ulp);
+
+    criterio_1 = (iter <= max_iter);
+    criterio_2 = (newton_crit >= epsilon);
+    criterio_3 = (secante_crit >= epsilon);
+    criterio_4 = (ulp > 1);
   }
 
   free(sF);
@@ -191,13 +198,6 @@ double sec(double x, double y) {
   return evaluator_evaluate_x_y(funcSEC, x, y);
 }
 
-int nwt_crit(double nwt_old) {
-  return 1;
-}
-
-int calcula_tudao() {
-  return 1;
-}
 
 void destroi_funcoes() {
   evaluator_destroy(funcF);
