@@ -1,6 +1,6 @@
 CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval
 
-MODULOS = index
+MODULOS = main functions
 	
 OBJETOS = $(addsuffix .o,$(MODULOS))
 
@@ -14,7 +14,9 @@ all : main clean
 main : $(OBJETOS)
 	gcc $(OBJETOS) -o $(EXECUTAVEL) $(CFLAGS)
 
-index : index.c
+main : main.c
+
+functions : functions.c functions.h
 
 clean : 
 	$(RM) $(OBJETOS)
