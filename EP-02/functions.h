@@ -11,6 +11,8 @@
     #include "utils.h"
 
 
+    void verificaErro(void* funcao);
+    
     void init();
 
     double gauss();
