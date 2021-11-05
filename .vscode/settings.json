@@ -3,6 +3,7 @@
     "*.vhd": "vhdl",
     "float.h": "c",
     "assert.h": "c",
-    "matheval.h": "c"
+    "matheval.h": "c",
+    "functions.h": "c"
   }
 }

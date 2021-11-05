@@ -2,29 +2,27 @@
 
 
 int main(int argc, char **argv) {
-/*
 
-  if(argc < 5) {
-    perror("Erro na entrada de dados.");
-    exit(0);
-  }
-
-  if(argc - 4 < argv[1]) { // Transformar em int
-    perror("Sistema impossível.");
-    exit(0);
-  }
-*/
     inputs();
+
     criaSL();
+
     criaArrayResultado();
 
+    // Calcula o tempo levado pelo algoritmo para executar os cálculos
     double tempo;
     tempo = timestamp();
 
     calculaGauss();
 
+    // Para a contagem de tempo de execução dos cálculos
     tempo = timestamp() - tempo;
-    printf("tempo: %f", tempo);
+    
+    // Printa os resultados e o tempo gasto
+    printa_resultados();
+    printf("tempo: %.8f\n", tempo);
+
+    destroi_funcoes();
 
     exit(1);
 }

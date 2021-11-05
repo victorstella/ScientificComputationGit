@@ -16,13 +16,13 @@
     void inputs();
 
     void criaSL();
-    
-    void init();
 
-    double gauss();
     double calculaGauss();
+
+    void printa_resultados();
+
     void criaArrayResultado();
 
-    int nwt_crit(double nwt_old);
+    void destroi_funcoes();
 
 #endif

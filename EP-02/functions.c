@@ -1,123 +1,78 @@
 #include "functions.h"
 
-int n, k, MAXIT;
-float epsilon;
-double* results;
-void** funcs; // Array de ponteiro para funções
-double** diagonal;
+int n, k, MAXIT; // Dimensão da matriz, número de diagonais e número máximo de iterações respectivamente
+float epsilon; // Epsilon fornecido na entrada
+double *results; // Array de resultados (X's)
+void **funcs; // Array de ponteiros para funções
+double **diagonal; // Array de ponteiros para os valores das diagonais
 
 int p, q;
 
-/*
-    CASO k IMPAR
-    k = 5; p=2; q=3
-        __p__
-        c b a                  f
-       |1 0 0 0  0 0| |x0|   |1|
-    q|d|0 4 0 1  0 0| |x1|   |2|
-     |e|1 2 7 0  2 0|*|x2| = |4|
-       |0 1 4 10 0 3| |x3|   |8|
-       |0 0 1 6 13 0| |x4|   |16|
-       |0 0 0 1 8 16| |x5|   |32|
-
-    CASO k PAR
-    k = 6; p=3; q=3
-        __p___
-        c b a                  g
-       |1 0 0 0  0 0| |x0|   |1|
-    q|d|0 4 0 1  0 0| |x1|   |2|
-     |e|1 2 7 0  2 0|*|x2| = |4|
-     |f|1 1 4 10 0 3| |x3|   |8|
-       |0 1 1 6 13 0| |x4|   |16|
-       |0 0 1 1 8 16| |x5|   |32|
-
-    k = p+q
-
-    p = piso(k/2)
-    q = teto(k/2)
-
-
-    A: a0 b1 c2 d3 
-    B: a0 b0 c0 d0  e0 
-    C: a1 b4 c7 d10 e13 f16 
-    D: b0 c2 d4 e6 f8 
-    E: c1 d1 e1 f1 
-*/
-
-
 // Verifica se evaluate foi criado corretamente
-void verificaErro(void* funcao) {
+void verificaErro(void *funcao) {
     if(funcao == NULL){
         perror("Erro na entrada de dados.");
         exit(0);
     }
 }
 
+// Lê e trata os inputs
 void inputs(){
-    char *sIn; // Função de Entrada
+    char *sIn = ""; // Função de Entrada
 
     size_t len = 0;
 
     scanf("%d", &n);
-    printf("Lido n(%d)\n", n);
     scanf("%d", &k);
-    printf("Lido k(%d)\n", k);
 
-
-    funcs = (void*) calloc(k, sizeof( void* ));
-
+    funcs = (void **) calloc(k + 1, sizeof(void *));
 
     getline(&sIn, &len, stdin);
     sIn[strcspn (sIn, "\n")] = '\0';
 
-        for (int i = 0; i < k+1; i++){ 
+        for (int i = 0; i < k + 1; i++){ 
             getline(&sIn, &len, stdin);
             sIn[strcspn (sIn, "\n")] = '\0';
 
             funcs[i] = evaluator_create(sIn);
             verificaErro(&funcs[i]);
-            printf("> %s\n", evaluator_get_string(funcs[i]));
         }
 
-
     scanf("%f", &epsilon);
-    printf("Lido epsilon(%f)\n", epsilon);
     scanf("%d", &MAXIT);
-    printf("Lido MAXIT(%d)\n", MAXIT);
 
+    free(sIn);
 }
 
+// Cria sistema linear utilizando estrutura de diagonais
 void criaSL() {
     p = ceil(k / 2.0), q = floor(k / 2.0);
 
-    diagonal = (double**) calloc((k+1), sizeof(double*));
+    diagonal = (double **) calloc((k + 1), sizeof(double *));
     
+    // Cria diagonais que começam na primeira linha pra matriz
     for(int i = 0; i < p; i++){
-        diagonal[i] = (double*) calloc((n - p + i + 1), sizeof(double));
+        diagonal[i] = (double *) calloc((n - p + i + 1), sizeof(double));
         for(int j = 0; j < (n - p + i + 1); j++){
             diagonal[i][j] = evaluator_evaluate_x(funcs[i], j);
             printf("%.0f ", diagonal[i][j]);
         }
         printf("\n");
     }
-    
-    printf("**\n");
-    
 
+    // Cria diagonais que começam na primeira coluna pra matriz
     for(int i = 1; i <= q; i++){
-        diagonal[p + i - 1] = (double*) calloc((n - i), sizeof(double));
+        diagonal[p + i - 1] = (double *) calloc((n - i), sizeof(double));
         for(int j = 0; j < n - i; j++){
             diagonal[p + i - 1][j] = evaluator_evaluate_x(funcs[p + i - 1], j);
             printf("%.0f ", diagonal[p + i - 1][j]);
         }
         printf("\n");
-    }
-    
-    printf("**\n");
-    
+    }    
 
-    diagonal[k] = (double*) calloc(n, sizeof(double));
-    for(int i = 0; i<n; i++){
+    // Cria diagonal[k], vetor de valores de termos idependentes da matriz
+    diagonal[k] = (double *) calloc(n, sizeof(double));
+    for(int i = 0; i < n; i++){
         diagonal[k][i] = evaluator_evaluate_x(funcs[k], i);
         printf("%.0f ", diagonal[k][i]);
     }
@@ -125,86 +80,90 @@ void criaSL() {
 
 }
 
+// Aloca array de resultados
 void criaArrayResultado() {
-    results = (double*) calloc(n, sizeof(double));
+    results = (double *) calloc(n, sizeof(double));
 }
 
+// Calcula recursivamente o somatório dos elementos à direita do elemento atual
 double somaDireita(int i, int di){
-    printf("Direita (%d, %d)\n", i, di);
-    if(di<0){
-        printf("Acabaram as diagonais\n\n");
-        return 0;
+    if(di < 0) return 0;
 
-    }
-    if(i>(n - p + di)){
-        printf("Tamanho da diagonal: Inexistente\n");
-        return 0;
-    }
+    if(i > (n - p + di)) return 0;
 
-    printf("Tamanho da diagonal = %d\n", (n - p + di));
-
-    printf("> diagonal[%d] [%d] = (%f) \n", di, i, diagonal[di][i]);
-    return diagonal[di][i] + somaDireita(i, di-1);
-    
-    
+    return diagonal[di][i]*results[i+p-1-di] + somaDireita(i, di-1);
 }
 
+// Calcula recursivamente o somatório dos elementos à esquerda do elemento atual
 double somaEsquerda(int i, int di) {
-    printf("Esquerda (%d, %d)\n", i, di);
+    if(di >= k) return 0;
 
-    if(di >= k)
-        return 0;
-
-    if(i < 0 ){
-        printf("Acabou os índices\n");
-        return 0;
-    }
+    if(i < 0 ) return 0;
     
-    printf("> diagonal[%d] [%d] = (%f) \n", di, i, diagonal[di][i]);
-
-    return diagonal[di][i] + somaEsquerda(i-1, di+1);
+    return diagonal[di][i] * results[i] + somaEsquerda(i - 1, di + 1);
 }
 
+// Calcula o somatório dos elementos na mesma linha do elemento atual
 double somatorio(int i){
-    double inter = somaDireita(i, p-2) + somaEsquerda(i-1, p);
-    printf("Soma deu %f\n", inter);
+    double inter = somaDireita(i, p-2) + somaEsquerda(i - 1, p);
     return inter;
 }
 
+// Calcula erro relativo entre o valor atual do X e seu valor anterior
+double calculaER(double new, double old){
+    return fabs( (new - old) / new );
+}
+
+// Retorna o maior entre 2 valores
+double maior(double a, double b){
+    if(a > b) return a;
+    else if(b > a) return b;
+    else return a;
+}
+
+// Aplica o método de Gauss-Seidel repetidamente até os critérios de parada serem satisfeitos
 double calculaGauss() {
     int iter = 0;
-    int criterio1 = 0, criterio2 = 0;
+    int criterio1 = 0;
+    double novoResult = 0, maiorER = 0, eAux = 0;
 
-    double* dMaior = diagonal[p-1], *dB = diagonal[k];
+    double *dMaior = diagonal[p - 1], *vetorSolucao = diagonal[k];
 
     do{
         for(int i = 0; i < n; i++){
-            printf("\n--- BUSCANDO [%d][%d] %f---\n", i, i, dMaior[i]);
-            results[i] = (dB[i] - somatorio(i)) / dMaior[i];
-            printf("> %f  ---------------\n", results[i]);
+            novoResult = (vetorSolucao[i] - somatorio(i)) / dMaior[i];
+
+            eAux = calculaER(results[i], novoResult);
+            maiorER = maior(eAux, maiorER);
+
+            results[i] = novoResult;
         }
+
+        criterio1 = maiorER > epsilon;
+        
         iter++;
-        criterio2 = iter >= MAXIT;
-    } while(criterio1 && criterio2);       
+
+    } while(criterio1 && iter < MAXIT);
+
+    free(vetorSolucao);   
 }
 
-/*
-    k = 6; p=3; q=3
-        __p___
-        c b a                  g
-       |1 0 0 0  0 0| |x0|   |1|
-    q|d|0 4 0 1  0 0| |x1|   |2|
-     |e|1 2 7 0  2 0|*|x2| = |4|
-     |f|1 1 4 10 0 3| |x3|   |8|
-       |0 1 1 6 13 0| |x4|   |16|
-       |0 0 1 1 8 16| |x5|   |32|
-       Testa commit
-*/
+void printa_resultados() {
+    printf("\n----\n\n");
 
-void init() {}
+    for(int i = 0; i < n; i++){
+        printf("%f ", results[i]);
+    }printf("\n");
+}
 
-void imprime_out() {}
-
-double gauss() {}
-
-void destroi_funcoes() {}
+// Desaloca ponteiros
+void destroi_funcoes() {
+    for(int i = 0; i < k; i++)
+        free(diagonal[i]);
+    free(diagonal);
+    free(results);
+    
+    for(int i = 0; i < k + 1; i++)
+        evaluator_destroy(funcs[i]);
+    free(funcs);
+}
