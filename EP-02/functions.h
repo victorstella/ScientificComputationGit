@@ -12,6 +12,10 @@
 
 
     void verificaErro(void* funcao);
+
+    void inputs();
+
+    void criaSL();
     
     void init();
 
