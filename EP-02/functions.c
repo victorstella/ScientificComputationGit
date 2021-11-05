@@ -163,6 +163,7 @@ double calculaGauss() {
      |f|1 1 4 10 0 3| |x3|   |8|
        |0 1 1 6 13 0| |x4|   |16|
        |0 0 1 1 8 16| |x5|   |32|
+       Testa commit
 */
 
 void init() {}
