@@ -6,6 +6,8 @@ double* results;
 void** funcs; // Array de ponteiro para funções
 double** diagonal;
 
+int p, q;
+
 /*
     CASO k IMPAR
     k = 5; p=2; q=3
@@ -86,7 +88,8 @@ void inputs(){
 }
 
 void criaSL() {
-    int p = ceil(k / 2.0), q = floor(k / 2.0);
+    p = ceil(k / 2.0), q = floor(k / 2.0);
+
     diagonal = (double**) calloc((k+1), sizeof(double*));
     
     for(int i = 0; i < p; i++){
@@ -127,29 +130,60 @@ void criaArrayResultado() {
 }
 
 double somaDireita(int i, int di){
-    if(di<=0 && i<(sizeof(diagonal[di])/sizeof(diagonal[di][0])))
-        return diagonal[di][i] + somaDireita(i, di-1);
+    printf("Direita (%d, %d)\n", i, di);
+    if(di<0){
+        printf("Acabaram as diagonais\n\n");
+        return 0;
+
+    }
+    if(i>(n - p + di)){
+        printf("Tamanho da diagonal: Inexistente\n");
+        return 0;
+    }
+
+    printf("Tamanho da diagonal = %d\n", (n - p + di));
+
+    printf("> diagonal[%d] [%d] = (%f) \n", di, i, diagonal[di][i]);
+    return diagonal[di][i] + somaDireita(i, di-1);
+    
     
 }
 
 double somaEsquerda(int i, int di) {
-    if(di<=k && i>=0)
-        return diagonal[di][i] + somaEsquerda(i-1, di+1);
+    printf("Esquerda (%d, %d)\n", i, di);
+
+    if(di >= k)
+        return 0;
+
+    if(i < 0 ){
+        printf("Acabou os índices\n");
+        return 0;
+    }
+    
+    printf("> diagonal[%d] [%d] = (%f) \n", di, i, diagonal[di][i]);
+
+    return diagonal[di][i] + somaEsquerda(i-1, di+1);
 }
 
 double somatorio(int i){
-    return somaDireita(i, p) + somaEsquerda(i);
+    double inter = somaDireita(i, p-2) + somaEsquerda(i-1, p);
+    printf("Soma deu %f\n", inter);
+    return inter;
 }
 
 double calculaGauss() {
-    int criterio1 = 1;
+    int criterio1 = 0;
 
-    double* dMaior = diagonal[p], dB = diagonal[k];
+    double* dMaior = diagonal[p-1], *dB = diagonal[k];
 
     do{
         for(int i = 0; i < n; i++){
+            printf("\n--- BUSCANDO [%d][%d] %f---\n", i, i, dMaior[i]);
             results[i] = (dB[i] - somatorio(i)) / dMaior[i];
+            printf("> %f  ---------------\n", results[i]);
         }
+
+
     } while(criterio1);       
 }
 

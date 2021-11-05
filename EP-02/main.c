@@ -16,11 +16,12 @@ int main(int argc, char **argv) {
 */
     inputs();
     criaSL();
+    criaArrayResultado();
 
     double tempo;
     tempo = timestamp();
 
-    init();
+    calculaGauss();
 
     tempo = timestamp() - tempo;
     printf("tempo: %f", tempo);

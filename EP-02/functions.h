@@ -20,6 +20,8 @@
     void init();
 
     double gauss();
+    double calculaGauss();
+    void criaArrayResultado();
 
     int nwt_crit(double nwt_old);
 
