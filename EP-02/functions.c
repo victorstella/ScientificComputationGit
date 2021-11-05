@@ -172,7 +172,8 @@ double somatorio(int i){
 }
 
 double calculaGauss() {
-    int criterio1 = 0;
+    int iter = 0;
+    int criterio1 = 0, criterio2 = 0;
 
     double* dMaior = diagonal[p-1], *dB = diagonal[k];
 
@@ -182,9 +183,9 @@ double calculaGauss() {
             results[i] = (dB[i] - somatorio(i)) / dMaior[i];
             printf("> %f  ---------------\n", results[i]);
         }
-
-
-    } while(criterio1);       
+        iter++;
+        criterio2 = iter >= MAXIT;
+    } while(criterio1 && criterio2);       
 }
 
 /*
