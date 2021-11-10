@@ -6,6 +6,7 @@
     #include <string.h>
     #include <float.h>
     #include <math.h>
+    #include <ctype.h>
 
     #include <matheval.h>
     #include "utils.h"
@@ -15,7 +16,7 @@
 
     void inputs();
 
-    void criaSNL();
+    void criaJacobs();
 
     double calculaGauss();
 

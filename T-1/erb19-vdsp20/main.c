@@ -4,7 +4,7 @@ int main(int argc, char **argv) {
 
     inputs();
 
-    criaSNL();
+    criaJacobs();
 
     /* criaArrayResultado();
 
