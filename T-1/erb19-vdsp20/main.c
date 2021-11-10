@@ -4,9 +4,9 @@ int main(int argc, char **argv) {
 
     inputs();
 
-    criaSL();
+    criaSNL();
 
-    criaArrayResultado();
+    /* criaArrayResultado();
 
     // Calcula o tempo levado pelo algoritmo para executar os cálculos
     double tempo;
@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     printa_resultados();
     printf("tempo: %.8f\n", tempo);
 
-    destroi_funcoes();
+    destroi_funcoes(); */
 
     exit(1);
 }

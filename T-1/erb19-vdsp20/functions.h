@@ -15,7 +15,7 @@
 
     void inputs();
 
-    void criaSL();
+    void criaSNL();
 
     double calculaGauss();
 
