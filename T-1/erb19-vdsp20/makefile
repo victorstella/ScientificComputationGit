@@ -1,6 +1,6 @@
-CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval -Wall
+CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval
 
-MODULOS = main functions utils
+MODULOS = main functions gauss utils
 	
 OBJETOS = $(addsuffix .o,$(MODULOS))
 
@@ -17,6 +17,8 @@ main : $(OBJETOS)
 main : main.c
 
 functions : functions.c functions.h
+
+gauss : gauss.c gauss.h
 
 utils : utils.c utils.h
 

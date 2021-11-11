@@ -10,7 +10,9 @@
 
     #include <matheval.h>
     #include "utils.h"
+    #include "gauss.h"
 
+    int n; // Número de funções
 
     void verificaErro(void* funcao);
 

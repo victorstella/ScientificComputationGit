@@ -1,8 +1,9 @@
 #include "functions.h"
 
-int n, MAXIT; // Número de funções e número máximo de iterações respectivamente
+int MAXIT; // Número máximo de iterações respectivamente
 float epsilon; // Epsilon fornecido na entrada
 double *results; // Array de aproximações (X's)
+double *resultsFuncs; // Array de resultados das Funcoes com os X's atuais
 char **sFuncs; // Array de funções em forma de strings
 void **funcs, ***jacobs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
 
@@ -40,13 +41,10 @@ void inputs(){
     // Aloca e lê n aproximações iniciais de cada X
     results = (double *) calloc(n, sizeof(double));
     
-    for (int j = 0; j < n - 1; j++) {
-        scanf("%lf ", &results[j]);
+    for (int j = 0; j < n; j++) {
+        scanf("%lf", &results[j]);
         printf("valor inicial: %lf\n", results[j]);
     }
-
-    scanf("%lf", &results[n]);
-    printf("valor inicial: %lf\n", results[n]);
 
     // Aloca a memória necessária para cada string do array
     for (int k = 0; k < n; k++) {
@@ -115,6 +113,7 @@ void criaJacobs() {
     
     }
 
+    printf("\nMatriz Jacobiana vv:\n");
     for(int m = 0 ; m < n; m++) {
         for(int h = 0; h < n; h++) {
             printf("%s | ", evaluator_get_string(jacobs[m][h]));
@@ -137,25 +136,21 @@ double calculaER(double new, double old){
     return fabs( (new - old) / new );
 }
 
-// Retorna o maior entre 2 valores
-double maior(double a, double b){
-    if(a > b) return a;
-    else if(b > a) return b;
-    else return a;
-}
 
-double calculaFunc(int funcPos) {
+
+// Calcula uma nova aproximação
+double calculaFunc(char *func) {
 
     int xyz[3] = {-1, -1, -1}, xyzPos = -1;
 
-    char *currFunc = strdup(sFuncs[funcPos]);
+    char *currFunc = strdup(func);
     char aux[6];
+
+    printf("\n-> currFunc() = %s", currFunc);
     
-    printf("Trocando para -> %s\n", currFunc);
-
-
-    for(int i = 0; i < n || xyzPos <= 2; i++) {
+    for(int i = 1; i <= n && xyzPos <= 2; i++) {
         aux[0] = 'x';
+        aux[1] = '\0';
         // Percorre a função atual, procurando uma ocorrência do caractere 'x' 
         for(int k = 0; k < strlen(currFunc); k++) {
             if(currFunc[k] == aux[0]) {
@@ -165,14 +160,15 @@ double calculaFunc(int funcPos) {
                     while(isdigit(currFunc[k + numSize + 1])) {
                         aux[numSize] = currFunc[k + numSize + 1];
                         numSize++;
+                        aux[numSize] = '\0';
                     }
-                    aux[numSize] = '\0';
 
                     if (numSize > 0){
                         xyzPos++;
-                        xyz[xyzPos] = atoi(aux);
+                        xyz[xyzPos] = atoi(aux) - 1;
                     }
-                }else if (strncmp(&currFunc[k], aux, strlen(aux))) {
+                }
+                if (strncmp(&currFunc[k], aux, strlen(aux))) {
                     switch(xyzPos){
                         case 0:
                             currFunc[k] = 'x';
@@ -184,7 +180,7 @@ double calculaFunc(int funcPos) {
                             currFunc[k] = 'z';
                             break;
                         default:
-                            perror("Help!");
+                            printf("Help!%i\n", xyzPos);
                             exit(1);
                             break;
                     }
@@ -197,42 +193,90 @@ double calculaFunc(int funcPos) {
             }
             
         }
-        printf("\ntrocaVars -> %s\n", currFunc);
     }
+    printf("\nSaiu com f() = %s; xyzPos=%d, results{%d, %d, %d} = {%lf, %lf, %lf}\n", currFunc, xyzPos, xyz[0], xyz[1], xyz[2], results[0], results[1], results[2]);
+    
+    void* currF = evaluator_create(currFunc);
+
+    double temp;
     switch(xyzPos){
-        case 0:            
-            return evaluator_evaluate_x(currFunc, results[xyz[0]]);
+        case -1:
+            temp = atoi(evaluator_get_string(currF));
+            break;
+        case 0:
+            temp = evaluator_evaluate_x(currF, results[xyz[0]]);
             break;
         case 1:
-            return evaluator_evaluate_x_y(currFunc, results[xyz[0]], results[xyz[1]]);
+            temp = evaluator_evaluate_x_y(currF, results[xyz[0]], results[xyz[1]]);
             break;
         case 2:
-            return evaluator_evaluate_x_y_z(currFunc, results[xyz[0]], results[xyz[1]], results[xyz[2]]);
+            temp = evaluator_evaluate_x_y_z(currF, results[xyz[0]], results[xyz[1]], results[xyz[2]]);
             break;
         default:
-            perror("Socorro!");
+            perror("Socorro! Ajudem-me");
             exit(1);
             break;
     }
+    //printf("temp = %lf\n", temp);
+    return temp;
 }
 
+double** criaSL() {
+    double **sl = (double **) calloc(n, sizeof(double *));
+    for (int a = 0; a < n; a++) {
+        sl[a] = (double *) calloc(n, sizeof(double));
+    }
+
+    printf("\nSL!! vv\n");
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            sl[i][j] = evaluator_evaluate_x(jacobs[i][j], results[j]);
+            printf("-> sl[%d][%d] %lf |", i, j, sl[i][j]);
+        }
+        printf("\n");
+    }
+
+    return sl;
+}
+
+// Retorna o maior entre 2 valores
+double maior(double a, double b){
+    if(a > b) return a;
+    else if(b > a) return b;
+    else return a;
+}
+
+// Calcula as funções e retorna o maior valor dentre elas
 double maiorFunc(){
     double max = 0; 
     for(int i = 0; i < n; i++){
-        max = maior(max, calculaFunc(i));
+        resultsFuncs[i] = calculaFunc(sFuncs[i]);
+        printf("> ResultFunc[%d] = %lf\n", i, resultsFuncs[i]);
+        max = maior(fabs(max), fabs(resultsFuncs[i]));
     }
     return max;
 }
 
 int newton(){
+    resultsFuncs = (double *) calloc(n, sizeof(double));
+
     int iter, criterio1;
 
     iter = 0;
 
+    double maior = 0;
+
     criaJacobs();
 
-    maiorFunc();
-    
+    maior = maiorFunc();
+
+    double **sl = criaSL();
+
+    calculaGauss(sl, resultsFuncs, results);
+
+    if(maior < epsilon)
+        return 1;
+
     while(criterio1){
 
         iter++;
@@ -241,32 +285,6 @@ int newton(){
     return 1;
 }
 
-// Aplica o método de Gauss repetidamente até os critérios de parada serem satisfeitos
-double calculaGauss() {
-    //int iter = 0;
-    //int criterio1 = 0;
-    //double novoResult = 0, maiorER = 0, eAux = 0;
-
-/*
-    do{
-        for(int i = 0; i < n; i++){
-            novoResult = (vetorSolucao[i] - somatorio(i)) / dMaior[i];
-
-            eAux = calculaER(results[i], novoResult);
-            maiorER = maior(eAux, maiorER);
-
-            results[i] = novoResult;
-        }
-
-        criterio1 = maiorER > epsilon;
-        
-        iter++;
-
-    } while(criterio1 && iter < MAXIT);
-
-    free(vetorSolucao);   */
-    return 1;
-}
 
 void printa_resultados() {
     printf("\n----\n\n");
