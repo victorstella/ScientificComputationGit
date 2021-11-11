@@ -1,118 +1,122 @@
 #include "functions.h"
 
-int n, MAXIT; // Dimensão da matriz, número de diagonais e número máximo de iterações respectivamente
+int n, MAXIT; // Número de funções e número máximo de iterações respectivamente
 float epsilon; // Epsilon fornecido na entrada
-double *results; // Array de resultados (X's)
-char **sFuncs; // Array de strings
-void **funcs, ***jacobs; // Array de ponteiros para funções
+double *results; // Array de aproximações (X's)
+char **sFuncs; // Array de funções em forma de strings
+void **funcs, ***jacobs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
 
 // Verifica se evaluate foi criado corretamente
 void verificaErro(void *funcao) {
     if(funcao == NULL){
         perror("Erro na entrada de dados.");
-        exit(0);
+        exit(1);
     }
 }
 
-/* Alocar aux de maneira inteligente ? */
-// Lê e trata os inputs
+// Lê e trata as entradas
 void inputs(){
-    char *sIn = ""; // Função de Entrada
-    char aux[124]; //, quo[124]; // Auxiliar
-
-    double *quotients; // Vetor de quocientes
+    char *sIn = ""; // String para receber dinamicamente as funções de entrada
+    char aux[124]; // String auxiliar
 
     size_t len = 0;
 
 
-    scanf("%d\n", &n); // Lê tamanho da matrix
+    scanf("%d\n", &n); // Lê número de funções
 
+    // Aloca espaço para elas de acordo com a quantidade
     funcs = (void **) calloc(n, sizeof(void *));
     sFuncs = (char **) calloc(n, sizeof(char *));
 
-    // Lê n funções de entrada
+    // Lê n funções de entrada e verifica se foram criadas
     for (int i = 0; i < n; i++) { 
         getline(&sIn, &len, stdin);
         sIn[strcspn (sIn, "\n")] = '\0';
         printf("Entrada: %s\n", sIn);
         funcs[i] = evaluator_create(sIn);
+        verificaErro(funcs[i]);
     }
 
-    // Aloca e lê n quocientes
-    quotients = (double *) calloc(n, sizeof(double));
+    // Aloca e lê n aproximações iniciais de cada X
+    results = (double *) calloc(n, sizeof(double));
     
     for (int j = 0; j < n - 1; j++) {
-        scanf("%lf ", &quotients[j]);
-        printf("quociente: %lf\n", quotients[j]);
+        scanf("%lf ", &results[j]);
+        printf("valor inicial: %lf\n", results[j]);
     }
 
-    scanf("%lf", &quotients[n]);
-    printf("quociente: %lf\n", quotients[n]);
-    
-    //sprintf(quo, "%d", quotients[n]);
-    //printf("(%lf) tamanho %ld\n", quotients[n], strlen(quo));
+    scanf("%lf", &results[n]);
+    printf("valor inicial: %lf\n", results[n]);
 
-    // "Passa os quocientes para a esquerda"
+    // Aloca a memória necessária para cada string do array
     for (int k = 0; k < n; k++) {
-        
-        sprintf(aux, "%s-(%lf)", evaluator_get_string(funcs[k]), quotients[k]);
-
+        sprintf(aux, "%s", evaluator_get_string(funcs[k]));
         sFuncs[k] = (char *) calloc(strlen(aux) , sizeof(char));
         strcpy(sFuncs[k], aux);
-
-        //funcs[k] = evaluator_create(aux);
-        //verificaErro(&funcs[k]);
-
-        printf("f%d = %s\n", k, sFuncs[k]);
     }
+
     // Lê critérios de parada
     scanf("%f\n", &epsilon);
     scanf("%d\n", &MAXIT);
 
+    // Desaloca espaço que não é mais utilizado
     free(sIn);
-    free(quotients);
 }
 
 // Cria matriz jacobiana
 void criaJacobs() {
 
-   char *currFunc, currX[3];
+   char *currFunc, currX[3];  // Declara as strings que receberão dinamicamente a função e o X sendo tratados
 
-    jacobs = (void ***) calloc(n, sizeof(void **));
+    jacobs = (void ***) calloc(n, sizeof(void **)); // Aloca um array de arrays de ponteiros para void (matriz jacobiana)
 
+    // Percorre cada função da entrada, alocando o espaço necessário na matriz
     for (int i = 0; i < n; i++) {
         jacobs[i] = (void **) calloc(n, sizeof(void *));
+        
+        // Trata a função n vezes, uma para cada possível X na função, após cada tratamento, calcula a derivada da função
         for (int j = 0; j < n; j++) {    
             currFunc = strdup(sFuncs[i]);
             printf("\nsFuncs(%d) -> %s\n", i, currFunc);
-            sprintf(currX, "x%d", j+1);
+            sprintf(currX, "x%d", j + 1);
+            
+            // Percorre a função atual, procurando uma ocorrência do caractere 'x' 
             for(int k = 0; k < strlen(currFunc); k++) {
                 if(currFunc[k] == 'x') {
                     int numSize = 0;
+
+                    // Encontrado um X, verifica se o valor a seguir é um número e descobre quantas casas decimais possui
                     while(isdigit(currFunc[k + numSize + 1]))
                         numSize++;
+                    
+                    // Verifica se o X encontrado de fato corresponde ao X de interesse (ex.: x1, x2, etc)
                     if (strncmp(&currFunc[k], currX, numSize + 1) == 0) {
+                        
+                        // Caso seja, substitui cada valor numérico imediatamente após este X por espaços em branco (ex.: 'x2' se torna 'x ')
                         for (int l = 0; l < numSize; l++) {
                             currFunc[k + l + 1] = ' ';
                         }
+                        
                     }
 
                 }
+
             }
+
             printf(">f(%d) %s \n", i, currFunc);
 
-            void *currFuncVoid = evaluator_create(currFunc);
-            void *currFuncDx = evaluator_derivative_x(currFuncVoid);
+            void *currFuncDx = evaluator_derivative_x(evaluator_create(currFunc));
             printf(">df(%d)/dx = %s = %f \n", i, evaluator_get_string(currFuncDx) ,evaluator_evaluate_x(currFuncDx, 4));
 
-            // insere na matriz
+            // Insere a derivada obtida na matriz jacobiana
             jacobs[i][j] = currFuncDx;
             
         }
     
     }
-    for(int m =0 ; m<n; m++){
-        for(int h = 0; h<n; h++){
+
+    for(int m = 0 ; m < n; m++) {
+        for(int h = 0; h < n; h++) {
             printf("%s | ", evaluator_get_string(jacobs[m][h]));
         }
         printf("\n");
@@ -140,7 +144,102 @@ double maior(double a, double b){
     else return a;
 }
 
-// Aplica o método de Gauss-Seidel repetidamente até os critérios de parada serem satisfeitos
+double calculaFunc(int funcPos) {
+
+    int xyz[3] = {-1, -1, -1}, xyzPos = -1;
+
+    char *currFunc = strdup(sFuncs[funcPos]);
+    char aux[6];
+    
+    printf("Trocando para -> %s\n", currFunc);
+
+
+    for(int i = 0; i < n || xyzPos <= 2; i++) {
+        aux[0] = 'x';
+        // Percorre a função atual, procurando uma ocorrência do caractere 'x' 
+        for(int k = 0; k < strlen(currFunc); k++) {
+            if(currFunc[k] == aux[0]) {
+                int numSize = 0;
+                if(strcmp(aux, "x") == 0){
+                    // Encontrado um X, verifica se o valor a seguir é um número e descobre quantas casas decimais possui
+                    while(isdigit(currFunc[k + numSize + 1])) {
+                        aux[numSize] = currFunc[k + numSize + 1];
+                        numSize++;
+                    }
+                    aux[numSize] = '\0';
+
+                    if (numSize > 0){
+                        xyzPos++;
+                        xyz[xyzPos] = atoi(aux);
+                    }
+                }else if (strncmp(&currFunc[k], aux, strlen(aux))) {
+                    switch(xyzPos){
+                        case 0:
+                            currFunc[k] = 'x';
+                            break;
+                        case 1:
+                            currFunc[k] = 'y';
+                            break;
+                        case 2:
+                            currFunc[k] = 'z';
+                            break;
+                        default:
+                            perror("Help!");
+                            exit(1);
+                            break;
+                    }
+
+                    for (int l = 0; l < numSize; l++) {
+                        currFunc[k + l + 1] = ' ';
+                    }
+                }
+
+            }
+            
+        }
+        printf("\ntrocaVars -> %s\n", currFunc);
+    }
+    switch(xyzPos){
+        case 0:            
+            return evaluator_evaluate_x(currFunc, results[xyz[0]]);
+            break;
+        case 1:
+            return evaluator_evaluate_x_y(currFunc, results[xyz[0]], results[xyz[1]]);
+            break;
+        case 2:
+            return evaluator_evaluate_x_y_z(currFunc, results[xyz[0]], results[xyz[1]], results[xyz[2]]);
+            break;
+        default:
+            perror("Socorro!");
+            exit(1);
+            break;
+    }
+}
+
+int maiorFunc(){
+    double max = 0; 
+    for(int i = 0; i < n; i++){
+        max = maior(max, calculaFunc(i));
+    }
+}
+
+int newton(){
+    int iter, criterio1;
+
+    iter = 0;
+
+    criaJacobs();
+
+    maiorFunc();
+    
+    while(criterio1){
+
+        iter++;
+        criterio1 = (iter < MAXIT);
+    }
+}
+
+// Aplica o método de Gauss repetidamente até os critérios de parada serem satisfeitos
 double calculaGauss() {
     int iter = 0;
     int criterio1 = 0;

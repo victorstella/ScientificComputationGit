@@ -1,4 +1,4 @@
-CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval
+CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval -Wall
 
 MODULOS = main functions utils
 	

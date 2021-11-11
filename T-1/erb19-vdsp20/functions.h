@@ -18,7 +18,7 @@
 
     void criaJacobs();
 
-    double calculaGauss();
+    int newton();
 
     void printa_resultados();
 
