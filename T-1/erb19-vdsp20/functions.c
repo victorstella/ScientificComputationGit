@@ -216,11 +216,12 @@ double calculaFunc(int funcPos) {
     }
 }
 
-int maiorFunc(){
+double maiorFunc(){
     double max = 0; 
     for(int i = 0; i < n; i++){
         max = maior(max, calculaFunc(i));
     }
+    return max;
 }
 
 int newton(){
@@ -237,13 +238,14 @@ int newton(){
         iter++;
         criterio1 = (iter < MAXIT);
     }
+    return 1;
 }
 
 // Aplica o método de Gauss repetidamente até os critérios de parada serem satisfeitos
 double calculaGauss() {
-    int iter = 0;
-    int criterio1 = 0;
-    double novoResult = 0, maiorER = 0, eAux = 0;
+    //int iter = 0;
+    //int criterio1 = 0;
+    //double novoResult = 0, maiorER = 0, eAux = 0;
 
 /*
     do{
@@ -263,6 +265,7 @@ double calculaGauss() {
     } while(criterio1 && iter < MAXIT);
 
     free(vetorSolucao);   */
+    return 1;
 }
 
 void printa_resultados() {
