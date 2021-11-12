@@ -6,6 +6,7 @@ double *results; // Array de aproximações (X's)
 double *resultsFuncs; // Array de resultados das Funcoes com os X's atuais
 char **sFuncs; // Array de funções em forma de strings
 void **funcs, ***jacobs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
+double *delta;
 
 // Verifica se evaluate foi criado corretamente
 void verificaErro(void *funcao) {
@@ -259,6 +260,7 @@ double maiorFunc(){
 
 int newton(){
     resultsFuncs = (double *) calloc(n, sizeof(double));
+    delta = (double *) calloc(n, sizeof(double));
 
     int iter, criterio1;
 
@@ -272,7 +274,7 @@ int newton(){
 
     double **sl = criaSL();
 
-    calculaGauss(sl, resultsFuncs, results);
+    calculaGauss(sl, resultsFuncs, delta, results);
 
     if(maior < epsilon)
         return 1;
