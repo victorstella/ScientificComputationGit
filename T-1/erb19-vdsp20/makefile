@@ -1,6 +1,6 @@
 CFLAGS = -lm -I/usr/include -L/usr/lib -lmatheval
 
-MODULOS = main functions gauss utils
+MODULOS = main functions newtonSNL gauss utils
 	
 OBJETOS = $(addsuffix .o,$(MODULOS))
 
@@ -17,6 +17,8 @@ main : $(OBJETOS)
 main : main.c
 
 functions : functions.c functions.h
+
+newtonSNL : newtonSNL.c newtonSNL.h
 
 gauss : gauss.c gauss.h
 

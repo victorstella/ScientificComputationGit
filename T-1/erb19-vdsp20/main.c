@@ -1,27 +1,28 @@
 #include "functions.h"
+#include "newtonSNL.h"
 
 int main(int argc, char **argv) {
 
-    inputs();
+    int vai = 1;
 
-    newton();
+    do{
+        
+        vai = inputs();
 
-    /* criaArrayResultado();
+        if(vai == 0) exit(1);
 
-    // Calcula o tempo levado pelo algoritmo para executar os cálculos
-    double tempo;
-    tempo = timestamp();
+        newton();
 
-    calculaGauss();
+        printf("###########\n");
+        printf("# Tempo Total: %f\n", tempoTotal);
+        printf("# Tempo Derivadas: %f\n", tempoCriaJacobs);
+        printf("# Tempo Jacobiana: %f\n", tempoCalcJacobs);
+        printf("# Tempo SL: %f\n", tempoSL);
+        printf("###########\n\n");
 
-    // Para a contagem de tempo de execução dos cálculos
-    tempo = timestamp() - tempo;
-    
-    // Printa os resultados e o tempo gasto
-    printa_resultados();
-    printf("tempo: %.8f\n", tempo);
 
-    destroi_funcoes(); */
+        destroi_funcoes();
+    }while(vai);
 
     exit(1);
 }
