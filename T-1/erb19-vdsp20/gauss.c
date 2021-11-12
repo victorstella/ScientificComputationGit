@@ -3,7 +3,7 @@
 
 // Encontra maior valor no sistema sl na coluna k
 int encontraMax(double** sl, int k) {
-    int posMaior = 0;
+    int posMaior = k;
     for (int l = k; l < n; l++) {
         if(fabs(sl[l][k]) > fabs(sl[posMaior][k])){
             posMaior = l;
@@ -84,14 +84,13 @@ void triangulariza(double **sl, double *resultsFuncs){
 
 
 void calculaGauss(double **sl, double *resultsFuncs, double* delta){
-
     for(int i = 0; i < n; i++){
         resultsFuncs[i] = -resultsFuncs[i];
     }
 
     triangulariza(sl, resultsFuncs);
 
-    
+
 
     retroSubst(sl, resultsFuncs, delta);
 
