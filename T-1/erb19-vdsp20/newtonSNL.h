@@ -3,7 +3,7 @@
 
     #include "functions.h"
 
-    double tempoTotal, tempoCriaJacobs, tempoCalcJacobs, tempoSL;
+    double tempoCriaJacobs, tempoCalcJacobs, tempoSL;
 
     int newton();
 

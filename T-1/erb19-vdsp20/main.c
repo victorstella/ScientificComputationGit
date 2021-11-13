@@ -11,7 +11,10 @@ int main(int argc, char **argv) {
 
         if(vai == 0) exit(1);
 
+        // Calcula o tempo levado pelo algoritmo para executar os cálculos
+
         newton();
+        
 
         printf("###########\n");
         printf("# Tempo Total: %f\n", tempoTotal);

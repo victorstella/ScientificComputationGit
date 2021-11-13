@@ -16,7 +16,7 @@
     int MAXIT; // Número máximo de iterações respectivamente
     float epsilon; // Epsilon fornecido na entrada
     
-    double *results; // Array de aproximações (X's)
+    double *results, tempoTotal; // Array de aproximações (X's)
     double *resultsFuncs; // Array de resultados das Funcoes com os X's atuais
     char **sFuncs; // Array de funções em forma de strings
     void ***jacobs;
