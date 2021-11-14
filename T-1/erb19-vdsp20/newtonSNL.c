@@ -232,11 +232,14 @@ double maiorFunc(){
     return max;
 }
 
-void calculaNovoX(double *old, double *new, double *d) {
+int calculaNovoX(double *old, double *new, double *d) {
+    int diff = 1;
     for(int i = 0; i < n; i++) {
         old[i] = new[i];
         new[i] = old[i] + d[i];
+        if(fabs(d[i]) < fabs(epsilon)) diff = 0;
     }
+    return diff;
 }
 
 void calculaSL(double **sl) {
@@ -250,7 +253,7 @@ int newton() {
     delta = (double *) calloc(n, sizeof(double));
     double *oldX = (double *) calloc(n, sizeof(double));
 
-    int iter, criterio1, criterio2;
+    int iter, criterio1, criterio2, criterio3;
 
     iter = 0;
 
@@ -263,9 +266,10 @@ int newton() {
     
     criterio1 = 1;
     criterio2 = 1;
+    criterio3 = 1;
 
-    tempoTotal = timestamp();
-    while(criterio1 && criterio2) {
+
+    do {
 
         printf("#\n");
         for(int i = 0; i < n; i++){
@@ -273,6 +277,9 @@ int newton() {
         }
 
         double maior = 0;
+
+        // Calcula o tempo levado pelo algoritmo para executar os cálculos
+        tempoTotal = timestamp();
 
         maior = maiorFunc();
 
@@ -285,18 +292,22 @@ int newton() {
         tempoCriaJacobs = timestamp() - tempoCriaJacobs;
 
         tempoCalcJacobs = timestamp();
+        
+        tempoSL = timestamp();
         calculaSL(sl);
         tempoCalcJacobs = timestamp() - tempoCalcJacobs;
 
-        tempoSL = timestamp();
         calculaGauss(sl, resultsFuncs, delta);
-        calculaNovoX(oldX, results, delta);
+        criterio3 = calculaNovoX(oldX, results, delta);
+        
         tempoSL = timestamp() - tempoSL;
 
         iter++;
-        criterio1 = (iter < MAXIT);
-    }
-    tempoTotal = timestamp() - tempoTotal;
+        if(iter > MAXIT)
+            criterio1 = 0;
+        
+        tempoTotal = timestamp() - tempoTotal;
+    } while(criterio1 && criterio2 && criterio3);
 
     return 1;
 }
