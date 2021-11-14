@@ -21,20 +21,11 @@
     char **sFuncs; // Array de funções em forma de strings
     void ***jacobs;
 
-
-    void verificaErro(void* funcao);
-
     int inputs();
 
     void criaJacobs();
 
-    int newton();
-
     double maior(double a, double b);
-
-    void printa_resultados();
-
-    void criaArrayResultado();
 
     void destroi_funcoes();
 

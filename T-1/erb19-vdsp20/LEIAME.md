@@ -23,13 +23,15 @@ O algoritmo espera receber uma entrada com as seguintes informações nesta orde
 
 Os critérios de parada utilizados para esta implementação foram:
 
-* **Critério 1:** `maiorER < epsilon` 
-O erro relativo é calculado à partir do valor atual de algum dos X's do sistema e seu valor na iteração anterior. Esse calculo é repetido para todos os X's do sistema, guardando sempre o maior deles até o momento. Assim, foi estabelecido que o maior desses erros não pode ser maior e nem igual ao epsilon informado pelo usuário;
-* **Critério 2:** `MAXIT` 
+* **Critério 1:** `MAXIT` 
 Esta constante é obtida através da entrada feita pelo usuário e simboliza o número máximo de iterações que o algoritmo pode realizar antes de ser parado.
+* **Critério 2:** `maior < epsilon` 
+O maior valor de X do vetor de resultados do SL é calculado e comparado com o valor do epsilon. Assim, foi estabelecido que este maior X não pode ser maior e nem igual ao epsilon informado pelo usuário;
+* **Critério 3:** `delta < epsilon`
+A cada iteração, o delta representa a diferença entre o valor da aproximação atual de um determinado X e seu valor na iteração anterior. Assim, essa diferença de qualquer um dos Xs não pode ser menor que o epsilon.
 
-O algoritmo irá parar apenas quando os dois critérios acima forem satisfeitos, portanto, é muito provável que o número máximo de iterações estabelecido seja ultrapassado antes do programa parar.
+O algoritmo irá parar apenas quando os três critérios acima forem satisfeitos.
 
 Para compilar, utilize `make`;
 
-Para executar, utilize `./newtonSNL -o <arquivo_saida>` que pode receber ou não o argumento para indicar um arquivo de saída. Um exemplo seria: `./newtonSNL -o saida.out` ou apenas `./newtonSNL`, que irá imprimir o resultado na saída padrão.
+Para executar, utilize `./newtonSNL < arquivo_entrada > arquivo_saida` que pode receber ou não os argumentos para indicar os arquivos de entrada e saída. Um exemplo seria: `./newtonSNL < entrada.in > saida.out` ou apenas `./newtonSNL`, que irá receber da entrada padrão e imprimir o resultado na saída padrão.

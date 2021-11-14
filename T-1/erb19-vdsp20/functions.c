@@ -2,14 +2,6 @@
 
 void **funcs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
 
-// Verifica se evaluate foi criado corretamente
-void verificaErro(void *funcao) {
-    if(funcao == NULL){
-        perror("Erro na entrada de dados.");
-        exit(1);
-    }
-}
-
 // Lê e trata as entradas
 int inputs(){
     char *sIn = ""; // String para receber dinamicamente as funções de entrada
@@ -17,31 +9,34 @@ int inputs(){
 
     size_t len = 0;
 
-
-    if(scanf("%d\n", &n) == EOF) { // Lê número de funções
+    if(scanf("%d\n", &n) == EOF) // Lê número de funções
         return 0;
-    } 
 
-    
-
-    // Aloca espaço para elas de acordo com a quantidade
+    // Aloca espaço para variáveis necessárias
     funcs = (void **) calloc(n, sizeof(void *));
     sFuncs = (char **) calloc(n, sizeof(char *));
+    results = (double *) calloc(n, sizeof(double));
+
+    if(!funcs || !results || !sFuncs) {
+        perror("Erro de alocação de memória.");
+        exit(1);
+    }
 
     // Lê n funções de entrada e verifica se foram criadas
     for (int i = 0; i < n; i++) { 
         getline(&sIn, &len, stdin);
         sIn[strcspn (sIn, "\n")] = '\0';
         funcs[i] = evaluator_create(sIn);
-        verificaErro(funcs[i]);
+        
+        if(funcs[i] == NULL) {
+            perror("Erro na entrada de dados.");
+            exit(1);
+        }
     }
 
-    // Aloca e lê n aproximações iniciais de cada X
-    results = (double *) calloc(n, sizeof(double));
-    
-    for (int j = 0; j < n; j++) {
+    // Lê n aproximações iniciais de cada X
+    for (int j = 0; j < n; j++)
         scanf("%lf", &results[j]);
-    }
 
     // Aloca a memória necessária para cada string do array
     for (int k = 0; k < n; k++) {
@@ -67,6 +62,11 @@ void criaJacobs() {
 
     jacobs = (void ***) calloc(n, sizeof(void **)); // Aloca um array de arrays de ponteiros para void (matriz jacobiana)
 
+    if(!jacobs) {
+        perror("Erro de alocação de memória.");
+        exit(1);
+    }
+
     // Percorre cada função da entrada, alocando o espaço necessário na matriz
     for (int i = 0; i < n; i++) {
         jacobs[i] = (void **) calloc(n, sizeof(void *));
@@ -89,41 +89,24 @@ void criaJacobs() {
                     if (strncmp(&currFunc[k], currX, numSize + 1) == 0) {
                         
                         // Caso seja, substitui cada valor numérico imediatamente após este X por espaços em branco (ex.: 'x2' se torna 'x ')
-                        for (int l = 0; l < numSize; l++) {
+                        for (int l = 0; l < numSize; l++)
                             currFunc[k + l + 1] = ' ';
-                        }
-                        
                     }
 
                 }
 
             }
 
-
+            // Calcula a derivada parcial e insere a função obtida na matriz jacobiana
             void *currFuncDx = evaluator_derivative_x(evaluator_create(currFunc));
-
-            // Insere a derivada obtida na matriz jacobiana
             jacobs[i][j] = currFuncDx;
-            
         }
     
     }
 }
 
-// Aloca array de resultados
-void criaArrayResultado() {
-    results = (double *) calloc(n, sizeof(double));
-}
-
-
-// Calcula erro relativo entre o valor atual do X e seu valor anterior
-double calculaER(double new, double old){
-    return fabs( (new - old) / new );
-}
-
-
 // Retorna o maior entre 2 valores
-double maior(double x, double y){
+double maior(double x, double y) {
     double a, b;
     a = fabs(x);
     b = fabs(y);
@@ -133,15 +116,6 @@ double maior(double x, double y){
     else return a;
 }
 
-
-void printa_resultados() {
-    printf("\n----\n\n");
-
-    for(int i = 0; i < n; i++){
-        printf("%f ", results[i]);
-    }printf("\n");
-}
-
 // Desaloca ponteiros
 void destroi_funcoes() {
     free(results);
@@ -149,16 +123,11 @@ void destroi_funcoes() {
     for(int i = 0; i < n; i++){
         evaluator_destroy(funcs[i]);
         
-//        free(sFuncs[i]);
-        
         for(int j = 0; j < n; j++){
             evaluator_destroy(jacobs[i][j]);
-            //free(jacobs[i][j]);
         }
     }
     free(funcs);
     free(sFuncs);
     free(jacobs);
-
-
 }

@@ -3,13 +3,13 @@
 
 int main(int argc, char **argv) {
 
-    int vai = 1;
+    int validaInput = 1;
 
+    // Laço principal do programa, onde em cada loop ocorre a solução de um dos SL
     do{
-        
-        vai = inputs();
+        validaInput = inputs();
 
-        if(vai == 0) exit(1);
+        if(validaInput == 0) exit(1);
 
         newton();
 
@@ -20,9 +20,9 @@ int main(int argc, char **argv) {
         printf("# Tempo SL: %f\n", tempoSL);
         printf("###########\n\n");
 
-
         destroi_funcoes();
-    }while(vai);
+
+    } while(validaInput);
 
     exit(1);
 }
