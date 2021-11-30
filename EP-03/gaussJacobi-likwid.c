@@ -9,6 +9,11 @@
 
 int main(int argc, char ** argv) {
 
+  LIKWID_MARKER_INIT;
+
+  //LIKWID_MARKER_START("t1");
+
+
   if (argc < 2) {
     printf("uso: %s file_in\n\n", argv[0]);
     return 1;
@@ -30,6 +35,10 @@ int main(int argc, char ** argv) {
   gaussJacobiOpt(f_in, f_out);
   fclose(f_out);
   fclose(f_in);
+
+  //LIKWID_MARKER_STOP("t1");
+
+  LIKWID_MARKER_CLOSE;
 
   return 0;
 }

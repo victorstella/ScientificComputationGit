@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <likwid.h>
 
 #include "utils.h"
 #include "libGaussJacobi.h"
@@ -29,6 +30,8 @@ void gaussJacobi(FILE *f_in, FILE *f_out) {
 
   // --------------------------------------------------  Método:
   double *x1 = (double *) malloc(sizeof(double) * n);
+  
+  LIKWID_MARKER_START("GaussJacobiRegular");
 
   for (int k = 0; k < MAXIT; ++k) {
     for (int i = 0; i < n; ++i) {
@@ -41,6 +44,8 @@ void gaussJacobi(FILE *f_in, FILE *f_out) {
     for (int i = 0; i < n; ++i)
       x[i] = x1[i];
   }
+
+  LIKWID_MARKER_STOP("GaussJacobiRegular");
 
   // --------------------------------------------------  Resultados e liberação:
   fprintf(f_out, "----------\nGauss-Jacobi\n");

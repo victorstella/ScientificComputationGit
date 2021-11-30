@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <likwid.h>
 
 #include "utils.h"
 #include "libGaussJacobi.h"
@@ -9,7 +10,7 @@
 #define PAD(n) (isPot2(n)?(n+1):(n))
 
 void gaussJacobiOpt(FILE *f_in, FILE *f_out) {
-
+  
   int n;
   fscanf(f_in, "%d", &n);
 
@@ -31,9 +32,13 @@ void gaussJacobiOpt(FILE *f_in, FILE *f_out) {
     fscanf(f_in, "%lf", &(x[i]));
 
   // --------------------------------------------------  Método:
+
+
   double *x1 = (double *) malloc(sizeof(double) * PAD(n));
   double *x_atual = x;
   double *x_prox  = x1;
+
+  LIKWID_MARKER_START("GaussJacobiOpt");
 
   for (int k = 0; k < MAXIT; ++k) {
     for (int i = 0; i < n-n%4; i+=4) {
@@ -62,6 +67,9 @@ void gaussJacobiOpt(FILE *f_in, FILE *f_out) {
   }
   if (x_atual != x)
     memcpy(x, x_atual, sizeof(double) * PAD(n));
+
+
+  LIKWID_MARKER_STOP("GaussJacobiOpt");
 
   // --------------------------------------------------  Resultados e liberação:
   fprintf(f_out, "----------\nGauss-Jacobi Otimizado\n");
