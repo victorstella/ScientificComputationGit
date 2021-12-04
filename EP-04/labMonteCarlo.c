@@ -14,7 +14,7 @@
 // Integral Monte Carlo da função Styblinski-Tang de 2 variáveis
 double styblinskiTang(double a, double b, int namostras) {
   double resultado = 1;
-  double soma_i = 0.0, soma_j = 0.0;
+  double soma = 0.0;
   
   printf("Metodo de Monte Carlo (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), variaveis = 2\n", a, b, namostras);
@@ -22,19 +22,21 @@ double styblinskiTang(double a, double b, int namostras) {
   double t_inicial = timestamp();
 
   double interval = b - a, randX = 0;
-  double cte = 1 / namostras;
 
   for (int i = 0; i < namostras; i++) {
-    randX = a + NRAND * interval;
-    soma_i += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
+    for (int j = 0; j < 2; j++) {
+      randX = a + NRAND * interval;
+      soma += pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX);
+    }
+    soma /= 2;
   }
 
-  for (int j = 0; j < namostras; j++) {
+  /* for (int j = 0; j < namostras; j++) {
     randX = a + NRAND * interval;
     soma_j += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
-  }
+  } */
 
-  resultado = (interval * cte * soma_i) * (interval * cte * soma_j);
+  resultado = interval * (fabs(soma) / namostras);
 
   double t_final = timestamp();
   printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
@@ -61,7 +63,7 @@ double retangulos_xy(double a, double b, int npontos) {
   printf("começou1");
   for (int i = 0; i < npontos; i++) {
     for (int c = 0; c < 2; c++) {
-      soma_i += (pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i));
+      soma_i += pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i);
     }
     soma_i /= 2;
     dx_i += h;
@@ -69,8 +71,8 @@ double retangulos_xy(double a, double b, int npontos) {
 
   printf("começou2");
   for (int j = 0; j < npontos; j++) {
-    for (int d = 0; d < 2; d++) {
-      soma_j += (pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j));
+    for (int c = 0; c < 2; c++) {
+      soma_j += pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j);
     }
     soma_j /= 2;
     dx_j += h;
@@ -79,7 +81,7 @@ double retangulos_xy(double a, double b, int npontos) {
   // xi ok
   // h ok
   
-  resultado = soma_i * soma_j * pow(h, 2);
+  resultado = fabs(soma_i) * fabs(soma_j) * pow(h, 2);
 
   printf("\n\n***soma_i: %1.16f, soma_j: %1.16f resultado: %1.16f, dx_i: %1.16f, dx_j: %1.16f\n\n", soma_i, soma_j, resultado, dx_i, dx_j);
   
@@ -106,8 +108,8 @@ int main(int argc, char **argv) {
   double monteCarlo = styblinskiTang(a, b, nAmostras);
   double retangulos = retangulos_xy(a, b, nAmostras);
 
-  printf("Resultado pelo método de Monte Carlo: %f\n", monteCarlo);
-  printf("Resultado pelo método dos Retângulos: %f\n", retangulos);
+  printf("Resultado pelo método de Monte Carlo: %1.16f\n", monteCarlo);
+  printf("Resultado pelo método dos Retângulos: %1.16f\n", retangulos);
 
   return 0;
 }
