@@ -12,27 +12,29 @@
 #define SRAND(a) srand(a) // srand48(a)
 
 // Integral Monte Carlo da função Styblinski-Tang de 2 variáveis
-double styblinskiTang(double a, double b, int namostras)
-{
+double styblinskiTang(double a, double b, int namostras) {
   double resultado = 1;
-  double soma = 0.0;
+  double soma_i = 0.0, soma_j = 0.0;
   
   printf("Metodo de Monte Carlo (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), variaveis = 2\n", a, b, namostras);
 
   double t_inicial = timestamp();
 
-  int interval = b - a, randX = 0;
-  double cte = 1 / (namostras * 2);
-  
-  for (int g = 0; g < 2; g++) {
-    for (int i = 0; i < namostras; i++) {
-      randX = (int) a + (int) NRAND * interval;
-      soma += (randX ^ 4) - 16 * (randX ^ 2) + 5 * randX;
-    }
+  double interval = b - a, randX = 0;
+  double cte = 1 / namostras;
 
-    resultado += (double) interval * cte * soma;
+  for (int i = 0; i < namostras; i++) {
+    randX = a + NRAND * interval;
+    soma_i += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
   }
+
+  for (int j = 0; j < namostras; j++) {
+    randX = a + NRAND * interval;
+    soma_j += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
+  }
+
+  resultado = (interval * cte * soma_i) * (interval * cte * soma_j);
 
   double t_final = timestamp();
   printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
@@ -45,33 +47,42 @@ double retangulos_xy(double a, double b, int npontos) {
 
   double h;
   double resultado;
-  double soma = 0;
+  double soma_i = 0, soma_j = 0;
   
   printf("Metodo dos Retangulos (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), h = (%f)\n", a, b, npontos, h);
   
+  double dx_i = a, dx_j = a;
+
   double t_inicial = timestamp();
   
   h = (b - a) / npontos;
-  double xi = 0;
 
-  for (int l = 0; l < 2; l++) {
-    xi = a;
-    soma = 0;
-    for (int k = 0; k < npontos; k++) {
-      soma += (((int) xi ^ 4) - 16 * ((int) xi ^ 2) + 5 * xi);
-      xi += h;
+  printf("começou1");
+  for (int i = 0; i < npontos; i++) {
+    for (int c = 0; c < 2; c++) {
+      soma_i += (pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i));
     }
-    resultado += soma / 2;
-    printf("soma: %f, resultado: %f, xi: %f\n", soma, resultado, xi);
+    soma_i /= 2;
+    dx_i += h;
   }
-  
+
+  printf("começou2");
+  for (int j = 0; j < npontos; j++) {
+    for (int d = 0; d < 2; d++) {
+      soma_j += (pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j));
+    }
+    soma_j /= 2;
+    dx_j += h;
+  }
+
   // xi ok
   // h ok
+  
+  resultado = soma_i * soma_j * pow(h, 2);
 
-  printf("***h*h: %1.16d\n", (int) h ^ 2);
-
-  resultado *= (int) h ^ 2;
+  printf("\n\n***soma_i: %1.16f, soma_j: %1.16f resultado: %1.16f, dx_i: %1.16f, dx_j: %1.16f\n\n", soma_i, soma_j, resultado, dx_i, dx_j);
+  
   
   double t_final = timestamp();
   printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
