@@ -19,14 +19,14 @@ double styblinskiTang(double a, double b, int namostras) {
   printf("Metodo de Monte Carlo (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), variaveis = 2\n", a, b, namostras);
 
-  double t_inicial = timestamp();
-
   double interval = b - a, randX = 0;
+
+  double t_inicial = timestamp();
 
   for (int i = 0; i < namostras; i++) {
     for (int j = 0; j < 2; j++) {
       randX = a + NRAND * interval;
-      soma += pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX);
+      soma += fabs(pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX));
     }
     soma /= 2;
   }
@@ -36,7 +36,9 @@ double styblinskiTang(double a, double b, int namostras) {
     soma_j += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
   } */
 
-  resultado = interval * (fabs(soma) / namostras);
+  resultado = interval * (soma / namostras);
+  
+  printf("\n\n***soma: %1.16f, resultado: %1.16f, dx: %1.16f\n\n", soma, resultado, randX);
 
   double t_final = timestamp();
   printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
@@ -54,7 +56,7 @@ double retangulos_xy(double a, double b, int npontos) {
   printf("Metodo dos Retangulos (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), h = (%f)\n", a, b, npontos, h);
   
-  double dx_i = a, dx_j = a;
+  double dx_i = a, dx_j = a, soma_abs = 0;
 
   double t_inicial = timestamp();
   
