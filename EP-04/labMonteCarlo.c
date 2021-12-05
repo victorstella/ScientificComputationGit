@@ -19,16 +19,18 @@ double styblinskiTang(double a, double b, int namostras) {
   printf("Metodo de Monte Carlo (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), variaveis = 2\n", a, b, namostras);
 
-  double interval = b - a, randX = 0;
+  double interval = b - a, randX = 0, soma_aux_1 = 0, soma_aux_2 = 0, soma_total = 0;
 
   double t_inicial = timestamp();
 
   for (int i = 0; i < namostras; i++) {
-    for (int j = 0; j < 2; j++) {
-      randX = a + NRAND * interval;
-      soma += fabs(pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX));
-    }
-    soma /= 2;
+    randX = a + NRAND * interval;
+    soma_aux_1 = fabs(pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX));
+    randX = a + NRAND * interval;
+    soma_aux_2 = fabs(pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX));
+
+    soma_total = soma + ((soma_aux_1 + soma_aux_2) / 2);    
+    soma = (soma_aux_1 + soma_aux_2) / 2;
   }
 
   /* for (int j = 0; j < namostras; j++) {
@@ -36,7 +38,7 @@ double styblinskiTang(double a, double b, int namostras) {
     soma_j += (pow(randX, 4) - (16 * pow(randX, 2)) + (5 * randX)) / 2;
   } */
 
-  resultado = interval * (soma / namostras);
+  resultado = interval * (soma_total / namostras);
   
   printf("\n\n***soma: %1.16f, resultado: %1.16f, dx: %1.16f\n\n", soma, resultado, randX);
 
@@ -56,31 +58,33 @@ double retangulos_xy(double a, double b, int npontos) {
   printf("Metodo dos Retangulos (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), h = (%f)\n", a, b, npontos, h);
   
-  double dx_i = a, dx_j = a, soma_abs = 0;
+  double dx_i = a, dx_j = a;
+  double soma_aux_1 = 0, soma_aux_2 = 0, soma_total_1 = 0, soma_total_2 = 0, dxAux = 0;
 
   double t_inicial = timestamp();
   
   h = (b - a) / npontos;
 
-  double somaAux = 0;
-  double dxAux = 0;
   printf("começou1");
   for (int i = 0; i < npontos; i++) {
-    for (int c = 0; c < 2; c++) {
-      somaAux += pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i);
-    }
-    soma_i = somaAux / 2;
+    soma_aux_1 = fabs(pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i));
+    soma_aux_2 = fabs(pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i));
+    soma_total_1 = soma_i + ((soma_aux_1 + soma_aux_2) / 2);
+    soma_i = (soma_aux_1 + soma_aux_2) / 2;
+
     dxAux = dx_i;
     dx_i = dxAux + h;
   }
 
-  somaAux = 0;
+  soma_aux_1 = 0;
+  soma_aux_2 = 0;
   printf("começou2");
   for (int j = 0; j < npontos; j++) {
-    for (int c = 0; c < 2; c++) {
-      somaAux += pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j);
-    }
-    soma_j = somaAux / 2;
+    soma_aux_1 = fabs(pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j));
+    soma_aux_2 = fabs(pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j));
+    soma_total_2 = soma_j + ((soma_aux_1 + soma_aux_2) / 2);
+    soma_j = (soma_aux_1 + soma_aux_2) / 2;
+
     dxAux = dx_j;
     dx_j = dxAux + h;
   }
@@ -88,7 +92,7 @@ double retangulos_xy(double a, double b, int npontos) {
   // xi ok
   // h ok
   
-  resultado = soma_i * soma_j * pow(h, 2);
+  resultado = soma_total_1 * soma_total_2 * pow(h, 2);
 
   printf("\n\n***soma_i: %1.16f, soma_j: %1.16f resultado: %1.16f, dx_i: %1.16f, dx_j: %1.16f\n\n", soma_i, soma_j, resultado, dx_i, dx_j);
   
