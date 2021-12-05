@@ -46,32 +46,34 @@ do
     $exeGeraSL $n > $slFile
 
     # --- RODA PROGRAMA ANOTANDO L3 ---
-    likwid-perfctr -C 1 -g L3 -O -m $exeGaussJacobi $slFile > L3_$n$tmpFile
+    likwid-perfctr -C 1 -g L3 -O -m $exeGaussJacobi $slFile > $tmpFile
 
     # Anota tempo de execução ---
-    cat  L3_$n$tmpFile | grep '^Runtime (RD*' | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
+    cat  $tmpFile | grep '^Runtime (RD*' | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
 
     # Anota L3 Bandwith
-    cat  L3_$n$tmpFile | grep "L3 bandwidth" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
+    cat  $tmpFile | grep "L3 bandwidth" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
 
 
     # --- RODA PROGRAMA ANOTANDO L2 ---
-    likwid-perfctr -C 1 -g L2CACHE -O -m $exeGaussJacobi $slFile > L2_$n$tmpFile
+    likwid-perfctr -C 1 -g L2CACHE -O -m $exeGaussJacobi $slFile > $tmpFile
 
     # Anota miss ratio de L2
-    cat  L2_$n$tmpFile | grep "L2 miss ratio" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
+    cat  $tmpFile | grep "L2 miss ratio" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
 
 
     # --- RODA PROGRAMA ANOTANDO FLOPS ---
-    likwid-perfctr -C 1 -g FLOPS_DP -O -m $exeGaussJacobi $slFile > FLOPS_$n$tmpFile
+    likwid-perfctr -C 1 -g FLOPS_DP -O -m $exeGaussJacobi $slFile > $tmpFile
 
     # Anota FLOPS_DP
-    cat  FLOPS_$n$tmpFile | grep '^DP [MFLOP/s]*' | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
+    cat  $tmpFile | grep '^DP [MFLOP/s]*' | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
 
     # Anota FLOPS_DP AVX
-    cat  FLOPS_$n$tmpFile | grep "AVX DP" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
+    cat  $tmpFile | grep "AVX DP" | cut -d',' -f2 | tr '\n' ',' >> $resultadosFile
 
     echo "" >> $resultadosFile
 
     echo " Pronto!"
 done
+
+./plot.gp
