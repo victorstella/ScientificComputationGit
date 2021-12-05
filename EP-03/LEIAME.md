@@ -26,8 +26,13 @@ Victor Daniel Stella Paiva - GRR20200234 - VDSP20
 Os valores apresentados nos gráficos remetem exclusivamente aos trechos de código referentes ao método Gauss-Jacobi, ou seja, leituras, alocações, liberação de memória, criação de sistemas lineares, etc, não estão inclusos.
 
 * **Arquitetura do Processador de testes**
+
 CPU name: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+
 CPU type: Intel Skylake processor
+
 Sockets: 1
+
 Cores per socket: 2
+
 Threads per core: 2
