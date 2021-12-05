@@ -62,28 +62,33 @@ double retangulos_xy(double a, double b, int npontos) {
   
   h = (b - a) / npontos;
 
+  double somaAux = 0;
+  double dxAux = 0;
   printf("começou1");
   for (int i = 0; i < npontos; i++) {
     for (int c = 0; c < 2; c++) {
-      soma_i += pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i);
+      somaAux += pow(dx_i, 4) - (16 * pow(dx_i, 2)) + (5 * dx_i);
     }
-    soma_i /= 2;
-    dx_i += h;
+    soma_i = somaAux / 2;
+    dxAux = dx_i;
+    dx_i = dxAux + h;
   }
 
+  somaAux = 0;
   printf("começou2");
   for (int j = 0; j < npontos; j++) {
     for (int c = 0; c < 2; c++) {
-      soma_j += pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j);
+      somaAux += pow(dx_j, 4) - (16 * pow(dx_j, 2)) + (5 * dx_j);
     }
-    soma_j /= 2;
-    dx_j += h;
+    soma_j = somaAux / 2;
+    dxAux = dx_j;
+    dx_j = dxAux + h;
   }
 
   // xi ok
   // h ok
   
-  resultado = fabs(soma_i) * fabs(soma_j) * pow(h, 2);
+  resultado = soma_i * soma_j * pow(h, 2);
 
   printf("\n\n***soma_i: %1.16f, soma_j: %1.16f resultado: %1.16f, dx_i: %1.16f, dx_j: %1.16f\n\n", soma_i, soma_j, resultado, dx_i, dx_j);
   
