@@ -11,33 +11,39 @@
 #define SRAND(a) srand(a) // srand48(a)
 
 // Integral Monte Carlo da função Styblinski-Tang de 2 variáveis
-double styblinskiTang(double a, double b, int namostras) {
-  double resultado = 1;
-  double soma = 0.0;
+double *styblinskiTang(double a, double b, int namostras) {
+  double *resultado = (double *) calloc(3, sizeof(double));
   
-  printf("Metodo de Monte Carlo (x, y).\n");
-  printf("a = (%f), b = (%f), n = (%d), variaveis = 2\n", a, b, namostras);
+  for (int e = 0; e < 3; e ++) {
+    resultado[e] = 1;
+    double soma = 0.0;
+    int dimensoes = (int) pow(2, e + 1);
+  
+    if (e == 0) printf("\nMetodo de Monte Carlo (x, y).\n");
+    else if (e == 1) printf("\nMetodo de Monte Carlo (w, x, y, z).\n");
+    else printf("\nMetodo de Monte Carlo (s, t, u, v, w, x, y, z).\n");
 
-  double interval = b - a, randX = 0, soma_aux = 0, soma_total = 0, x_square = 0;
+    printf("a = (%f), b = (%f), n = (%d), variaveis = %d\n", a, b, namostras, dimensoes);
 
-  double t_inicial = timestamp();
+    double interval = b - a, randX = 0, soma_aux = 0, soma_total = 0, x_square = 0;
 
-  for (int i = 0; i < namostras; i++) {
-    randX = NRAND * interval + a;
-    
-    x_square = randX * randX;
-    soma_aux = (x_square * x_square) - (16 * x_square) + (5 * randX);
-    
-    soma_total = soma + soma_aux;
-    soma = soma_total;
+    double t_inicial = timestamp();
+
+    for (int i = 0; i < namostras; i++) {
+      randX = NRAND * interval + a;
+      
+      x_square = randX * randX;
+      soma_aux = (x_square * x_square) - (16 * x_square) + (5 * randX);
+      
+      soma_total = soma + soma_aux;
+      soma = soma_total;
+    }
+
+    resultado[e] = (interval * interval) * ((dimensoes / 2) * soma_total / namostras);
+  
+    double t_final = timestamp();
+    printf("Tempo decorrido: %f seg.\n\n", t_final - t_inicial);
   }
-
-  resultado = interval * (soma_total / (2 * namostras)) * 2;
-  
-  printf("\n\n***soma: %1.16f, resultado: %1.16f, dx: %1.16f\n\n", soma, resultado, randX);
-
-  double t_final = timestamp();
-  printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
   
   return resultado;
 }
@@ -47,50 +53,31 @@ double retangulos_xy(double a, double b, int npontos) {
 
   double h = (b - a) / npontos;
   double resultado;
-  double soma_i = 0, soma_j = 0;
+  double soma = 0;
   
-  printf("Metodo dos Retangulos (x, y).\n");
+  printf("\nMetodo dos Retangulos (x, y).\n");
   printf("a = (%f), b = (%f), n = (%d), h = (%1.8f)\n", a, b, npontos, h);
   
-  double dx_i = a, dx_j = a;
-  double soma_aux = 0, soma_total_i = 0, soma_total_j = 0, dxAux = 0, dx_square = 0;
+  double soma_aux = 0, soma_total = 0, dx = a, dxAux = 0, dx_square = 0;
 
   double t_inicial = timestamp();
   
-  for (int i = 0; i < npontos; i++) {
-    dx_square = dx_i * dx_i;
-    
-    soma_aux = (dx_square * dx_square) - (16 * dx_square) + (5 * dx_i);
-    
-    soma_total_i = soma_i + soma_aux;
-    soma_i = soma_total_i;
-
-    dxAux = dx_i;
-    dx_i = dxAux + h;
-  }
-
   for (int j = 0; j < npontos; j++) {
-    dx_square = dx_j * dx_j;
+    dx_square = dx * dx;
 
-    soma_aux = (dx_square * dx_square) - (16 * dx_square) + (5 * dx_j);
+    soma_aux = (dx_square * dx_square) - (16 * dx_square) + (5 * dx);
 
-    soma_total_j = soma_j + soma_aux;
-    soma_j = soma_total_j;
+    soma_total = soma + soma_aux;
+    soma = soma_total;
 
-    dxAux = dx_j;
-    dx_j = dxAux + h;
+    dxAux = dx;
+    dx = dxAux + h;
   }
 
-  // xi ok
-  // h ok
-  
-  resultado = (h * h) * (soma_i * soma_i) / 4;
-
-  printf("\n\n***soma_i: %1.16f, soma_j: %1.16f resultado: %1.16f, dx_i: %1.16f, dx_j: %1.16f\n\n", soma_i, soma_j, resultado, dx_i, dx_j);
-  
+  resultado = (h * h) * npontos * soma;  
   
   double t_final = timestamp();
-  printf("Tempo decorrido: %f seg.\n", t_final - t_inicial);
+  printf("Tempo decorrido: %f seg.\n\n", t_final - t_inicial);
   
   return resultado;
 }
@@ -98,26 +85,25 @@ double retangulos_xy(double a, double b, int npontos) {
 
 int main(int argc, char **argv) {
 
-  if (argc < 3) {
-    printf("Utilização: %s inicial final n_amostras n_variaveis\n", argv[0]);
+  if (argc < 3 || argc > 3) {
+    printf("\nUtilização: %s inicial final\n", argv[0]);
     return 1;
   }
 
   double a = atof(argv[1]), b = atof(argv[2]);
-  
-  if (atoi(argv[3]) < 2 || atoi(argv[3]) == 3 || (atoi(argv[3]) > 4 && atoi(argv[3]) < 8) || atoi(argv[3]) > 8) {
-    perror("Número de dimensões inválido.\n");
-    exit(1);
-  }
 
   SRAND(20211);
 
-  double monteCarlo = styblinskiTang(a, b, POINTS_NUMBER);
-  double retangulos = retangulos_xy(a, b, POINTS_NUMBER);
+  double *monteCarlo = styblinskiTang(a, b, POINTS_NUMBER);
+  double retangulos = retangulos_xy(a, b, POINTS_NUMBER); // 24994
 
-  printf("Resultado pelo método de Monte Carlo: %1.16f\n", monteCarlo);
-  printf("Resultado pelo método dos Retângulos: %1.16f\n", retangulos);
+  printf("Resultado pelo método de Monte Carlo (2 variáveis): %1.16f\n", monteCarlo[0]);
+  printf("Resultado pelo método de Monte Carlo (4 variáveis): %1.16f\n", monteCarlo[1]);
+  printf("Resultado pelo método de Monte Carlo (8 variáveis): %1.16f\n\n", monteCarlo[2]);
 
+  printf("Resultado pelo método dos Retângulos: %1.16f\n\n", retangulos);
+
+  free(monteCarlo);
   return 0;
 }
 
