@@ -10,20 +10,20 @@
 #define NRAND    ((double) rand() / RAND_MAX)  // drand48() 
 #define SRAND(a) srand(a) // srand48(a)
 
-// Integral Monte Carlo da função Styblinski-Tang de 2 variáveis
+// Integral Monte Carlo da função Styblinski-Tang de 2, 4 e 8 variáveis
 double *styblinskiTang(double a, double b, int namostras) {
   double *resultado = (double *) calloc(3, sizeof(double));
   
-  for (int e = 0; e < 3; e ++) {
+  for (int e = 0; e < 3; e ++) { // Calcula a integral por Monte Carlo para 2, 4 e 8 dimensões
     resultado[e] = 1;
     double soma = 0.0;
-    int dimensoes = (int) pow(2, e + 1);
+    int dimensao = 1 << (e + 1);
   
     if (e == 0) printf("\nMetodo de Monte Carlo (x, y).\n");
     else if (e == 1) printf("\nMetodo de Monte Carlo (w, x, y, z).\n");
     else printf("\nMetodo de Monte Carlo (s, t, u, v, w, x, y, z).\n");
 
-    printf("a = (%f), b = (%f), n = (%d), variaveis = %d\n", a, b, namostras, dimensoes);
+    printf("a = (%f), b = (%f), n = (%d), variaveis = %d\n", a, b, namostras, dimensao);
 
     double interval = b - a, randX = 0, soma_aux = 0, soma_total = 0, x_square = 0;
 
@@ -39,7 +39,7 @@ double *styblinskiTang(double a, double b, int namostras) {
       soma = soma_total;
     }
 
-    resultado[e] = (interval * interval) * ((dimensoes / 2) * soma_total / namostras);
+    resultado[e] = pow(interval, dimensao) * ((dimensao / 2) * soma_total / namostras);
   
     double t_final = timestamp();
     printf("Tempo decorrido: %f seg.\n\n", t_final - t_inicial);

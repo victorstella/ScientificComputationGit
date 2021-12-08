@@ -21,16 +21,16 @@ Victor Daniel Stella Paiva - GRR20200234 - VDSP20
 
 ## INFORMAÇÕES RELEVANTES
 
-Como a função Styblinski-Tang consiste em um somatório relacionado ao número de variáveis (dimensões) e este somatório é dividido por 2, consideramos que a divisão pode ser eliminada, de forma a tornar-se uma constante dada por 1/2, que multiplica a função. Também, como a função do somatório se repete para cada dimensão, recebendo basicamente os mesmos valores dentro do intervalo todas as vezes que calculada, consideramos que nesta aplicação específica, o somatório consiste apenas de n multiplicado pela função principal, eliminando o somatório de Styblinski-Tang. Este mesmo princípio foi aplicado ào segundo somatório do método dos retângulos, considerado assim uma simples multiplicação pelo número de pontos. Assim, essa constante n que agora multiplica a função pode ser combinada com a outra constante 1/2 obtida, de forma que fique (n / 2) * f( x1, ... , xn ). Nos dois métodos, para n = 2 a constante desaparece, para n = 4 se torna 2 e para n = 8 fica 4, assim:
+Como a função Styblinski-Tang consiste em um somatório relacionado ao número de variáveis (dimensões) e este somatório é dividido por 2, consideramos que a divisão pode ser eliminada, de forma a tornar-se uma constante dada por 1/2, que multiplica a função. Ainda, no método de Monte Carlo, a constante b - a se multiplica para cada dimensão, ou seja, é elevada ao número de dimensões (b - a)^n. Também, como a função do somatório se repete para cada dimensão, recebendo basicamente os mesmos valores dentro do intervalo todas as vezes que calculada, consideramos que nesta aplicação específica, o somatório consiste apenas de n multiplicado pela função principal, eliminando o somatório de Styblinski-Tang. Este mesmo princípio foi aplicado ào segundo somatório do método dos retângulos, considerado assim uma simples multiplicação pelo número de pontos. Assim, essa constante n que agora multiplica a função pode ser combinada com a outra constante 1/2 obtida, de forma que fique (n / 2) * f( x1, ... , xn ). Nos dois métodos, para n = 2 a constante desaparece, para n = 4 se torna 2 e para n = 8 fica 4, assim:
 
 * ### Monte Carlo
-(b - a) * (1 / nAmostras) * (n / 2) * sum( f( x1, ... , xn ) )
+((b - a)^n ) * (1 / (nAmostras^n)) * (n / 2) * sum( f( x1, ... , xn ) )
 
-n = 2 dimensões: (b - a) * (1 / nAmostras) * sum( f( x1, ... , xn ) )
+n = 2 dimensões: (b - a)² * (1 / nAmostras²) * sum( f( x1, ... , xn ) )
 
-n = 4 dimensões: (b - a) * (1 / nAmostras) * 2 * sum( f( x1, ... , xn ) )
+n = 4 dimensões: (b - a)⁴ * (1 / nAmostras⁴) * 2 * sum( f( x1, ... , xn ) )
 
-n = 8 dimensões: (b - a) * (1 / nAmostras) * 4 * sum( f( x1, ... , xn ) )
+n = 8 dimensões: (b - a)⁸ * (1 / nAmostras⁸) * 4 * sum( f( x1, ... , xn ) )
 
 * ### Retângulos
 h² * nPontos * (n / 2) * sum( f( x1, ... , xn ) )
