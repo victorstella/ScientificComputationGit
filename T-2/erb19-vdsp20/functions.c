@@ -3,7 +3,7 @@
 void **funcs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
 
 // Lê e trata as entradas
-int inputs (){
+int inputs () {
     char *sIn = ""; // String para receber dinamicamente as funções de entrada
     char aux[124]; // String auxiliar
 
@@ -58,11 +58,11 @@ int inputs (){
 // Cria matriz jacobiana
 void criaJacobs() {
 
-   char *currFunc, currX[3];  // Declara as strings que receberão dinamicamente a função e o X sendo tratados
+   char *currFunc, *currX = (char *) calloc(3, sizeof(char));  // Declara as strings que receberão dinamicamente a função e o X sendo tratados
 
     jacobs = (void ***) calloc(n, sizeof(void **)); // Aloca um array de arrays de ponteiros para void (matriz jacobiana)
 
-    if(!jacobs) {
+    if (!jacobs) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -76,13 +76,13 @@ void criaJacobs() {
             currFunc = strdup(sFuncs[i]);
             sprintf(currX, "x%d", j + 1);
             
-            // Percorre a função atual, procurando uma ocorrência do caractere 'x' 
-            for(int k = 0; k < strlen(currFunc); k++) {
-                if(currFunc[k] == 'x') {
+            /* // Percorre a função atual, procurando uma ocorrência do caractere 'x' 
+            for (int k = 0; k < strlen(currFunc); k++) {
+                if (currFunc[k] == 'x') {
                     int numSize = 0;
 
                     // Encontrado um X, verifica se o valor a seguir é um número e descobre quantas casas decimais possui
-                    while(isdigit(currFunc[k + numSize + 1]))
+                    while (isdigit(currFunc[k + numSize + 1]))
                         numSize++;
                     
                     // Verifica se o X encontrado de fato corresponde ao X de interesse (ex.: x1, x2, etc)
@@ -95,14 +95,17 @@ void criaJacobs() {
 
                 }
 
-            }
+            } */
 
             // Calcula a derivada parcial e insere a função obtida na matriz jacobiana
-            void *currFuncDx = evaluator_derivative_x(evaluator_create(currFunc));
+            void *currFuncDx = evaluator_derivative(evaluator_create(currFunc), currX);
+            // printf("\n** derivada parcial [%d][%d]: %s\n", i, j, evaluator_get_string(currFuncDx));
             jacobs[i][j] = currFuncDx;
         }
     
     }
+    free(currX);
+    free(currFunc);
 }
 
 // Retorna o maior entre 2 valores
@@ -111,8 +114,8 @@ double maior(double x, double y) {
     a = fabs(x);
     b = fabs(y);
 
-    if(a > b) return a;
-    else if(b > a) return b;
+    if (a > b) return a;
+    else if (b > a) return b;
     else return a;
 }
 
@@ -120,10 +123,10 @@ double maior(double x, double y) {
 void destroi_funcoes() {
     free(results);
     
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         evaluator_destroy(funcs[i]);
         
-        for(int j = 0; j < n; j++){
+        for (int j = 0; j < n; j++) {
             evaluator_destroy(jacobs[i][j]);
         }
     }

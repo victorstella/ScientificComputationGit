@@ -6,7 +6,7 @@ double *delta;
 double** criaSL() {
     double **sl = (double **) calloc(n, sizeof(double *));
 
-    if(!sl) {
+    if (!sl) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -22,7 +22,7 @@ double** criaSL() {
 // Retorna quantas substrings a foram encontradas em str
 int buscaETroca(char *str, char *a, char b) {
     
-    if(strlen(a) == 0) return 0;
+    if (strlen(a) == 0) return 0;
 
     int vezes = 0;
     size_t tamSTR = strlen(str);
@@ -33,16 +33,16 @@ int buscaETroca(char *str, char *a, char b) {
     char *p;
     
     p = strstr(str, a);
-    while(p) {
+    while (p) {
         overDigit = 0;
         i = p - str;
 
-        while(isdigit(str[i + 1 + overDigit]))
+        while (isdigit(str[i + 1 + overDigit]))
             overDigit++;
 
-        if(overDigit == tamA - 1) {
+        if (overDigit == tamA - 1) {
             str[i] = b;
-            for(int j = 1; j < tamA; j++)
+            for (int j = 1; j < tamA; j++)
                 str[i + j] = ' ';
 
             vezes++;
@@ -66,12 +66,12 @@ double calculaFunc(char *func) {
 
     char currX[4];
     
-    for(int i = 1; i <= n && xyzPos <= 2; i++) {
+    for (int i = 1; i <= n && xyzPos <= 2; i++) {
 
-        for(int j = 0; j < strlen(currFunc); j++) {
+        for (int j = 0; j < strlen(currFunc); j++) {
             sprintf(currX, "x%d", i);
 
-            switch(xyzPos) {
+            switch (xyzPos) {
                 case 0:
                     var = 'x';
                     break;
@@ -87,7 +87,7 @@ double calculaFunc(char *func) {
                     break;
             }
 
-            if(buscaETroca(currFunc, currX, var) > 0) {
+            if (buscaETroca(currFunc, currX, var) > 0) {
                 xyz[xyzPos] = i - 1;
                 xyzPos++;
                 break;
@@ -100,7 +100,7 @@ double calculaFunc(char *func) {
     void* currF = evaluator_create(currFunc);
 
     double temp;
-    switch(xyzPos) {
+    switch (xyzPos) {
         case 0:
             temp = atoi(evaluator_get_string(currF));
             break;
@@ -123,7 +123,7 @@ double calculaFunc(char *func) {
 // Calcula as funções e retorna o maior valor dentre elas
 double maiorFunc() {
     double max = 0; 
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         resultsFuncs[i] = calculaFunc(sFuncs[i]);
         max = maior(fabs(max), fabs(resultsFuncs[i]));
     }
@@ -133,31 +133,33 @@ double maiorFunc() {
 // Calcula nova aproximação para dados X e delta
 int calculaNovoX(double *old, double *new, double *d) {
     int diff = 1;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         old[i] = new[i];
         new[i] = old[i] + d[i];
-        if(fabs(d[i]) <= fabs(epsilon)) diff = 0;
+        if (fabs(d[i]) <= fabs(epsilon)) diff = 0;
     }
     return diff;
 }
 
 // Calcula o valor de cada posição da jacobiana aplicando o respectivo X de results
 void calculaSL(double **sl) {
-    char** varNames;
+    char *currX = (char *) calloc(3, sizeof(char));
     int countVars;
 
-    for(int i = 0; i < n; i++) 
-        for(int j = 0; j < n; j++){
-            evaluator_get_variables(jacobs[i][j], &varNames, &countVars);
-            sl[i][j] = evaluator_evaluate(jacobs[i][j], countVars, varNames, &results[j]);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            sprintf(currX, "x%d", j + 1);
+            // evaluator_get_variables(jacobs[i][j], &varNames, &countVars);
+            sl[i][j] = evaluator_evaluate(jacobs[i][j], countVars, &currX, &results[i]);
             
-            printf("Calculando jacobs = %s, countVars = %d = ", evaluator_get_string(jacobs[i][j]), countVars);
-            for(int k = 0; k < countVars; k++){
+            /* printf("Calculando jacobs = %s, countVars = %d = ", evaluator_get_string(jacobs[i][j]), countVars);
+            for (int k = 0; k < countVars; k++) {
                 printf("(%s=%f) ", varNames[k], results[k]);
-            }printf("\n");
-        
+            }
+            printf("\n"); */
         }
-
+    }
+    free(currX);
 }
 
 // Função principal para cada SL, alocando variáveis necessárias e executando cada função
@@ -168,7 +170,7 @@ int newton() {
 
     double **sl = criaSL();
 
-    if(!resultsFuncs || !delta || !oldX) {
+    if (!resultsFuncs || !delta || !oldX) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -178,7 +180,7 @@ int newton() {
     iter = 0;
 
     printf("%d\n", n);
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         printf("%s = 0\n", sFuncs[i]);
     
     criterio1 = 1;
@@ -191,7 +193,7 @@ int newton() {
     // de parada serem satisfeitos
     do {
         printf("#\n");
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             printf("x%d = %lf\n", i + 1, results[i]);
 
         double maior = 0;
@@ -201,7 +203,7 @@ int newton() {
 
         maior = maiorFunc();
 
-        if(maior < epsilon)
+        if (maior < epsilon)
             criterio2 = 0;
         
         // Calcula o tempo levado pelo algoritmo para criar a matriz jacobiana
@@ -222,11 +224,11 @@ int newton() {
         tempoSL = timestamp() - tempoSL;
 
         iter++;
-        if(iter > MAXIT)
+        if (iter > MAXIT)
             criterio1 = 0;
         
         tempoTotal = timestamp() - tempoTotal;
-    } while(criterio1 && criterio2 && criterio3);
+    } while (criterio1 && criterio2 && criterio3);
 
     return 1;
 }

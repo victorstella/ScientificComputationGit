@@ -5,7 +5,7 @@
 int encontraMax(double** sl, int k) {
     int posMaior = k;
     for (int l = k; l < n; l++) {
-        if(fabs(sl[l][k]) > fabs(sl[posMaior][k]))
+        if (fabs(sl[l][k]) > fabs(sl[posMaior][k]))
             posMaior = l;
     }
     return posMaior;
@@ -35,12 +35,12 @@ void triangulariza(double **sl, double *resultsFuncs) {
             trocaLinha(sl, resultsFuncs, i, pivo);
         
         // Calcula multiplicador
-        for(int j = i + 1; j < n; j++) {
+        for (int j = i + 1; j < n; j++) {
             double m = sl[j][i] / sl[i][i];
             sl[j][i] = 0.0;
 
             // Multiplica todas as linhas pelo multiplicador
-            for(int k = i + 1; k < n; k++)
+            for (int k = i + 1; k < n; k++)
                 sl[j][k] -= sl[i][k] * m;
             
             // Multiplica todas as posições do vetor de resultados pelo multiplicador
@@ -52,9 +52,9 @@ void triangulariza(double **sl, double *resultsFuncs) {
 // Retro-substitui o SL triangularizado
  void retroSubst(double **sl, double *resultsFuncs, double* delta) {
     double soma;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         soma = 0;
-        for(int j = i; j > 0; j--)
+        for (int j = i; j > 0; j--)
             soma += sl[n - (i + 1)][j] * delta[n - j];
         delta[n - (i + 1)] = (resultsFuncs[n - (i + 1)] - soma ) / sl[n - (i + 1)][n - (i + 1)];
     }
@@ -63,12 +63,12 @@ void triangulariza(double **sl, double *resultsFuncs) {
 // Inverte o sinal dos valores do vetor de resultados para efetuar a triangularização e a retrosubstituição
 // Depois inverte novamente para o vetor ficar como era inicialmente.
 void calculaGauss(double **sl, double *resultsFuncs, double* delta){
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         resultsFuncs[i] = -resultsFuncs[i];
 
     triangulariza(sl, resultsFuncs);
     retroSubst(sl, resultsFuncs, delta);
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         resultsFuncs[i] = -resultsFuncs[i];
 }
