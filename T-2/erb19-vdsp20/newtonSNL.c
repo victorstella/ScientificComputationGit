@@ -150,6 +150,12 @@ void calculaSL(double **sl) {
         for(int j = 0; j < n; j++){
             evaluator_get_variables(jacobs[i][j], &varNames, &countVars);
             sl[i][j] = evaluator_evaluate(jacobs[i][j], countVars, varNames, &results[j]);
+            
+            printf("Calculando jacobs = %s, countVars = %d = ", evaluator_get_string(jacobs[i][j]), countVars);
+            for(int k = 0; k < countVars; k++){
+                printf("(%s=%f) ", varNames[k], results[k]);
+            }printf("\n");
+        
         }
 
 }

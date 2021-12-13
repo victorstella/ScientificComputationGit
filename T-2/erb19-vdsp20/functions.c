@@ -3,13 +3,13 @@
 void **funcs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
 
 // Lê e trata as entradas
-int inputs(){
+int inputs (){
     char *sIn = ""; // String para receber dinamicamente as funções de entrada
     char aux[124]; // String auxiliar
 
     size_t len = 0;
 
-    if(scanf("%d\n", &n) == EOF) // Lê número de funções
+    if (scanf("%d\n", &n) == EOF) // Lê número de funções
         return 0;
 
     // Aloca espaço para variáveis necessárias
@@ -17,7 +17,7 @@ int inputs(){
     sFuncs = (char **) calloc(n, sizeof(char *));
     results = (double *) calloc(n, sizeof(double));
 
-    if(!funcs || !results || !sFuncs) {
+    if (!funcs || !results || !sFuncs) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -28,7 +28,7 @@ int inputs(){
         sIn[strcspn (sIn, "\n")] = '\0';
         funcs[i] = evaluator_create(sIn);
         
-        if(funcs[i] == NULL) {
+        if (funcs[i] == NULL) {
             perror("Erro na entrada de dados.");
             exit(1);
         }
