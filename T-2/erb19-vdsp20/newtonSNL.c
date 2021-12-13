@@ -17,6 +17,7 @@ double** criaSL() {
     return sl;
 }
 
+
 // Busca em str todas as substrings a e troca por b
 // Retorna quantas substrings a foram encontradas em str
 int buscaETroca(char *str, char *a, char b) {
@@ -119,7 +120,6 @@ double calculaFunc(char *func) {
     }
     return temp;
 }
-
 // Calcula as funções e retorna o maior valor dentre elas
 double maiorFunc() {
     double max = 0; 
@@ -143,9 +143,15 @@ int calculaNovoX(double *old, double *new, double *d) {
 
 // Calcula o valor de cada posição da jacobiana aplicando o respectivo X de results
 void calculaSL(double **sl) {
+    char** varNames;
+    int countVars;
+
     for(int i = 0; i < n; i++) 
-        for(int j = 0; j < n; j++) 
-            sl[i][j] = evaluator_evaluate_x(jacobs[i][j], results[j]);    
+        for(int j = 0; j < n; j++){
+            evaluator_get_variables(jacobs[i][j], &varNames, &countVars);
+            sl[i][j] = evaluator_evaluate(jacobs[i][j], countVars, varNames, &results[j]);
+        }
+
 }
 
 // Função principal para cada SL, alocando variáveis necessárias e executando cada função
@@ -172,6 +178,8 @@ int newton() {
     criterio1 = 1;
     criterio2 = 1;
     criterio3 = 1;
+
+
 
     // Laço principal de cada SL da entrada, que executa todas as funções para o SL até os critérios
     // de parada serem satisfeitos
