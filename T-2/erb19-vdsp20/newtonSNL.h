@@ -3,8 +3,5 @@
 
     #include "functions.h"
 
-    double tempoTotal, tempoCriaJacobs, tempoCalcJacobs, tempoSL;
-
-    int newton();
 
 #endif
