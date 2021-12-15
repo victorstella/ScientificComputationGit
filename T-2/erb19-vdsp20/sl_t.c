@@ -2,6 +2,21 @@
 
 // ASSUMINDO QUE É TRIDIAGONAL
 
+// Calcula todas as funcoes em sl->func utilizando os x_aprox 
+void calcula_funcs(sl_t* sl){
+    
+    // Pensa assim, i=0 e i=n tem só duas variáveis, o resto tem três.
+    
+    double xs[2] = {sl->x_aprox[1], sl->x_aprox[2]}
+    evaluator_evaluate(sl->func[0].v_func, sl->func[0].var_count, sl->func[0].var_names, xs);
+
+    for (int i = 0; i < sl->n; i++){
+        evaluator_evaluate(sl->func[i].v_func, sl->func[0].var_count, sl->func[0].var_names, );
+    }
+    
+    
+}
+
 void inicia_function_t(function_t* func , void * v_func) {
     char aux[124];
     func->v_func = v_func;
@@ -33,6 +48,7 @@ sl_t * inicia_sl_t(int n, void ** funcs, double * x_aprox, float epsilon, int ma
     sl->func = calloc(n, sizeof(function_t));
     sl->m_jacobi = calloc(sl->n, sizeof(void ***));
     sl->evaluated_curr_x = calloc(sl->n, sizeof(double));
+    sl->x_aprox_old = calloc(sl->n, sizeof(double));
 
     for (int i = 0; i < n; i++) {
         
@@ -84,7 +100,7 @@ void calcula_jacobi(sl_t* sl) {
             sl->jacobi_solution[i][j] = evaluator_evaluate(sl->m_jacobi[i][j], 1, &currX, sl->x_aprox + j);
         }
     }
-}
+} // !!! Revisar !!! Talvez possa usar evaluator_evaluate_x, testar
 
 void destroi_function(function_t* func) {
         printf("AEa\n");
@@ -123,7 +139,8 @@ void destroi_sl(sl_t* sl) {
     free(sl->evaluated_curr_x);
     free(sl->m_jacobi);
     printf("C\n");
-    // free(sl->x_aprox);
+    free(sl->x_aprox);
+    free(sl->x_aprox_old);
     printf("D\n");
     free(sl->jacobi_solution);
     printf("E\n");
