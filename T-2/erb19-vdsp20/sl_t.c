@@ -13,6 +13,7 @@ void inicia_function_t(function_t* func , void * v_func) {
     func->var_count = 0;
     evaluator_get_variables(func->v_func, &func->var_names, &func->var_count);
 
+
     //printf("** func string: %s\n", func->s_func);
     //printf("** n vars: %d\n\n", func->var_count);
 }
@@ -31,9 +32,10 @@ sl_t * inicia_sl_t(int n, void ** funcs, double * x_aprox, float epsilon, int ma
     sl->epsilon = epsilon;
     sl->func = calloc(n, sizeof(function_t));
     sl->m_jacobi = calloc(sl->n, sizeof(void ***));
-    
+    sl->evaluated_curr_x = calloc(sl->n, sizeof(double));
 
     for (int i = 0; i < n; i++) {
+        
         sl->m_jacobi[i] = calloc(sl->n, sizeof(void **));
         inicia_function_t(&sl->func[i] , funcs[i]);
     }
@@ -118,6 +120,7 @@ void destroi_sl(sl_t* sl) {
 
     destroi_function(sl->func);
     printf("B\n");
+    free(sl->evaluated_curr_x);
     free(sl->m_jacobi);
     printf("C\n");
     // free(sl->x_aprox);

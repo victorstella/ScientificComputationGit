@@ -7,16 +7,17 @@
     #include <matheval.h>
 
     typedef struct {
-        char * s_func;
-        void * v_func;
-        char ** var_names;
-        int var_count;
+        char * s_func;              // Função como string
+        void * v_func;              // Função como void*
+        char ** var_names;          // Nome das variáveis
+        int var_count;              // Quantidade de variaveis na func
     } function_t;
 
     typedef struct {
         int n;
         function_t * func;
         double * x_aprox;
+        double * evaluated_curr_x;    // Resultados das função aplicadas nos x atuais
         void *** m_jacobi;
         double ** jacobi_solution;
         float epsilon;
