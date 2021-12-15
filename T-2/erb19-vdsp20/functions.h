@@ -13,7 +13,7 @@
     #include "utils.h"
     #include "gauss.h"
 
-
+    sl_t * inputs();
 
 
 

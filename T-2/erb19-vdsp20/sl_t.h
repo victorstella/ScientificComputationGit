@@ -9,22 +9,29 @@
     typedef struct {
         char * s_func;
         void * v_func;
-        double* x_aprox;
-        double solution;
-        char** var_names;
+        char ** var_names;
+        int var_count;
     } function_t;
 
     typedef struct {
         int n;
         function_t * func;
+        double * x_aprox;
         void *** m_jacobi;
-        double ** jacobi_solution; 
+        double ** jacobi_solution;
+        float epsilon;
+        int MAXIT;
     } sl_t;
 
 
-    function_t* inicia_function_t(char* s_func, double solution, int var_count);
+    void inicia_function_t(function_t* f, void * s_func);
 
-    sl_t * inicia_sl_t(int n, char ** funcs, double* x_aprox);
+    sl_t * inicia_sl_t(int n, void ** funcs, double * x_aprox, float epsilon, int maxit);
+    
+    void monta_jacobi(sl_t *sl);
 
+    void calcula_jacobi(sl_t* sl);
+
+    void destroi_sl(sl_t* sl);
 
 #endif

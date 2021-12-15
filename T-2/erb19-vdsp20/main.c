@@ -4,16 +4,19 @@
 
 int main(int argc, char **argv) {
 
-    int validaInput = 1;
+    int valida_input = 1;
 
-    sl_t sl;
+    sl_t * sl;
 
     // Laço principal do programa, onde em cada loop ocorre a solução de um dos SL
     do {
 
-        inputs(sl);
+        sl = inputs();
 
-    } while(1);
+        destroi_sl(sl);
+        
+    } while(sl != NULL);
+
 
     exit(1);
 }
