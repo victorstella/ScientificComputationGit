@@ -13,10 +13,13 @@ int main(int argc, char **argv) {
 
         sl = inputs();
 
+        newton();
+
         destroi_sl(sl);
         
     } while(sl != NULL);
 
 
+    printf("\n-- Acabou o programa :)--\n");
     exit(1);
 }
