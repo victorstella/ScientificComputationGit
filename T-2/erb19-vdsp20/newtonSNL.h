@@ -3,6 +3,7 @@
 
     #include "functions.h"
     #include "sl_t.h"
+    #include "gauss.h"
 
     double maior_func_evaluated(sl_t *sl);
 

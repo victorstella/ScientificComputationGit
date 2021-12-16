@@ -50,7 +50,10 @@ int newton(sl_t *sl) {
         
         calcula_jacobi(sl); // Calcula a matriz jacobiana do sistema sl
 
-        //calculaGauss(sl);
+
+        printf("\n***Gauss\n");
+
+        gauss_seidel(sl);
 
         //criterio3 = calculaNovoX(oldX, sl->x_aprox, delta);
 
