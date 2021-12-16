@@ -43,7 +43,13 @@ sl_t *inputs() {
     scanf("%f\n", &epsilon);
     scanf("%d\n", &maxit);
     
-    sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
+    if (aprox_iniciais) sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
+    else {
+        perror("Erro de entrada.");
+        exit(1);
+    }
+
+
     printf("inciado %p\n", sl);
 
 

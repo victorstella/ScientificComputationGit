@@ -42,6 +42,7 @@ int newton(sl_t *sl) {
 
         
         calcula_funcs(sl); // Calcula todas as sl->funcs com os x_aprox
+    //exit(1);
 
         if (maior_func_evaluated(sl) < sl->epsilon)
             criterio2 = 0;
@@ -51,7 +52,6 @@ int newton(sl_t *sl) {
         //calculaGauss(sl);
 
         //criterio3 = calculaNovoX(oldX, sl->x_aprox, delta);
-        
 
         iter++;
         if(iter > sl->MAXIT)

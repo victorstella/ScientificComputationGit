@@ -4,38 +4,41 @@
 
 // Calcula todas as funcoes em sl->func utilizando os x_aprox 
 void calcula_funcs(sl_t *sl) {
-    char *x_ime = calloc(6, sizeof(char));
-    char *x_i = calloc(6, sizeof(char));
-    char *x_ima = calloc(6, sizeof(char));
+    char **x_names = calloc(3, sizeof(char *)); // 3 variáveis * 6 chars
+        x_names[0] = calloc(6, sizeof(char));
+        x_names[1] = calloc(6, sizeof(char));
+        x_names[2] = calloc(6, sizeof(char));
+
+    double *x_values = calloc(3, sizeof(double));
     
-    for (int i = 0; i < sl->n; i++) {
-        if (i == 0) {
-            sprintf(x_i, "x1");
-            sprintf(x_ima, "x2");
-            evaluator_evaluate(sl->func[0].v_func, 2, &x_i, &sl->x_aprox[0]);
-            printf("primeiro foi");
-            evaluator_evaluate(sl->func[0].v_func, 2, &x_ima, &sl->x_aprox[1]);
-            printf("segundo foi");
-        } else if (i == sl->n - 1) {
-            sprintf(x_ime, "x%d", sl->n - 1);
-            sprintf(x_i, "x%d", sl->n);
-            evaluator_evaluate(sl->func[i].v_func, 2, &x_ime, &sl->x_aprox[i - 1]);
-            printf("penultimo foi");
-            evaluator_evaluate(sl->func[i].v_func, 2, &x_i, &sl->x_aprox[i]);
-            printf("ultimo foi");
-        } else {
-            sprintf(x_ime, "x%d", i);
-            sprintf(x_i, "x%d", i + 1);
-            sprintf(x_ima, "x%d", i + 2);
-            evaluator_evaluate(sl->func[i].v_func, 3, &x_ime, &sl->x_aprox[i - 1]);
-            evaluator_evaluate(sl->func[i].v_func, 3, &x_i, &sl->x_aprox[i]);
-            evaluator_evaluate(sl->func[i].v_func, 3, &x_ima, &sl->x_aprox[i + 1]);
-        }
+    x_names[0] = "x1";
+    x_names[1] = "x2";
+    x_values[0] = sl->x_aprox[0];
+    x_values[1] = sl->x_aprox[1];
+    evaluator_evaluate(sl->func[0].v_func, 2, x_names, x_values);
+    
+
+    for (int i = 1; i < sl->n - 1; i++) {
+            sprintf(x_names[0], "x%d", i - 1);
+            sprintf(x_names[1], "x%d", i);
+            sprintf(x_names[2], "x%d", i + 1);
+            x_values[0] = sl->x_aprox[i - 1];
+            x_values[1] = sl->x_aprox[i];
+            x_values[2] = sl->x_aprox[i + 1];
+            evaluator_evaluate(sl->func[i].v_func, 3, x_names, x_values);
     }
     
-    free(x_ime);
-    free(x_i);
-    free(x_ima);
+    sprintf(x_names[0], "x%d", sl->n - 1);
+    sprintf(x_names[0], "x%d", sl->n);
+    x_values[0] = sl->x_aprox[sl->n - 1];
+    x_values[0] = sl->x_aprox[sl->n];
+    evaluator_evaluate(sl->func[sl->n - 1].v_func, 2, x_names, x_values);
+    
+    free(x_names[0]);
+    free(x_names[1]);
+    free(x_names[2]);
+    free(x_names);
+    free(x_values);
 }
 
 /**
@@ -47,71 +50,60 @@ void calcula_funcs(sl_t *sl) {
 sl_t *inicia_sl_t(int n, void **funcs, double *x_aprox, float epsilon, int maxit) {
     sl_t *sl = calloc(1, sizeof(sl_t));
     
+
     sl->n = n;
     sl->MAXIT = maxit;
     sl->epsilon = epsilon;
     sl->func = calloc(n, sizeof(function_t));
     sl->m_jacobi = calloc(sl->n, sizeof(void **));
+    sl->jacobi_solution = calloc(sl->n, sizeof(double *));
     sl->evaluated_curr_x = calloc(sl->n, sizeof(double));
     sl->x_aprox_old = calloc(sl->n, sizeof(double));
+    sl->x_aprox = calloc(sl->n, sizeof(double));
 
     for (int i = 0; i < n; i++) {
         sl->m_jacobi[i] = calloc(sl->n, sizeof(void *));
+        sl->jacobi_solution[i] = calloc(sl->n, sizeof(double));
         sl->func[i].v_func = funcs[i];
         sl->func[i].s_func = strdup(evaluator_get_string(sl->func[i].v_func));
-    }
-
-    if (x_aprox == NULL)
-        sl->x_aprox = calloc(sl->n, sizeof(double));
-    else {
-        sl->x_aprox = x_aprox;
+        sl->x_aprox[i] = x_aprox[i];
     }
 
     monta_jacobi(sl);
 
-    printf("incia %p\n", sl);
     return sl;
 }
 
 /**
- * Monta matriz jacobiana a partir de sistema linear
+ * Monta matriz jacobiana (aloca e insere as func(void*) derivadas) a partir de sistema linear
  * @param sl: sistema linear
  * @return 
  */ 
 void monta_jacobi(sl_t *sl) {
-    char *x_ime = calloc(6, sizeof(char));
+    char *x_min = calloc(6, sizeof(char));
     char *x_i = calloc(6, sizeof(char));
-    char *x_ima = calloc(6, sizeof(char));
+    char *x_max = calloc(6, sizeof(char));
 
-    for (int i = 0; i < sl->n; i++) {
-        if (i == 0) {
-            sl->m_jacobi[i][i] = evaluator_derivative(sl->func[i].v_func, "x1");
-            sl->m_jacobi[i][i + 1] = evaluator_derivative(sl->func[i].v_func, "x2");
-            printf("\njacobi[%d][%d]: %s\n", i, i, evaluator_get_string(sl->m_jacobi[i][i]));
-            printf("\njacobi[%d][%d]: %s\n", i, i + 1, evaluator_get_string(sl->m_jacobi[i][i + 1]));
-        } else if (i == sl->n - 1) {
-            sprintf(x_ime, "x%d", sl->n - 1);
-            sprintf(x_i, "x%d", sl->n);
-            sl->m_jacobi[i][i - 1] = evaluator_derivative(sl->func[i].v_func, x_ime);
-            sl->m_jacobi[i][i] = evaluator_derivative(sl->func[i].v_func, x_i);
-            printf("\njacobi[%d][%d]: %s\n", i, i - 1, evaluator_get_string(sl->m_jacobi[i][i - 1]));
-            printf("\njacobi[%d][%d]: %s\n", i, i, evaluator_get_string(sl->m_jacobi[i][i]));
-        } else {
-            sprintf(x_ime, "x%d", i);
-            sprintf(x_i, "x%d", i + 1);
-            sprintf(x_ima, "x%d", i + 2);
-            sl->m_jacobi[i][i - 1] = evaluator_derivative(sl->func[i].v_func, x_ime);
-            sl->m_jacobi[i][i] = evaluator_derivative(sl->func[i].v_func, x_i);
-            sl->m_jacobi[i][i + 1] = evaluator_derivative(sl->func[i].v_func, x_ima);
-            printf("\njacobi[%d][%d]: %s\n", i, i - 1, evaluator_get_string(sl->m_jacobi[i][i - 1]));
-            printf("\njacobi[%d][%d]: %s\n", i, i, evaluator_get_string(sl->m_jacobi[i][i]));
-            printf("\njacobi[%d][%d]: %s\n", i, i + 1, evaluator_get_string(sl->m_jacobi[i][i + 1]));
-        }
+    sl->m_jacobi[0][0] = evaluator_derivative(sl->func[0].v_func, (char*)"x1");
+    sl->m_jacobi[0][1] = evaluator_derivative(sl->func[0].v_func, (char*)"x2");
+
+    for (int i = 1; i < sl->n - 1; i++) {
+        sprintf(x_min, "x%d", i);
+        sprintf(x_i, "x%d", i + 1);
+        sprintf(x_max, "x%d", i + 2);
+        sl->m_jacobi[i][i - 1] = evaluator_derivative(sl->func[i].v_func, x_min);
+        sl->m_jacobi[i][i] = evaluator_derivative(sl->func[i].v_func, x_i);
+        sl->m_jacobi[i][i + 1] = evaluator_derivative(sl->func[i].v_func, x_max);    
     }
 
-    free(x_ime);
+    sprintf(x_min, "x%d", sl->n - 1);
+    sprintf(x_i, "x%d", sl->n);
+    sl->m_jacobi[sl->n - 1][sl->n - 2] = evaluator_derivative(sl->func[sl->n - 1].v_func, x_min);
+    sl->m_jacobi[sl->n - 1][sl->n - 1] = evaluator_derivative(sl->func[sl->n - 1].v_func, x_i);
+
+    free(x_min);
     free(x_i);
-    free(x_ima);
+    free(x_max);
 }
 
 /**
@@ -120,46 +112,35 @@ void monta_jacobi(sl_t *sl) {
  * @return 
  */ 
 void calcula_jacobi(sl_t *sl) {
-    char *x_ime = calloc(6, sizeof(char));
-    char *x_i = calloc(6, sizeof(char));
-    char *x_ima = calloc(6, sizeof(char));
+    char *x_name = calloc(3, sizeof(char));
+    char *x_names[] = { x_name };
+
+    sprintf(x_names[0], "x1");    
+    sl->jacobi_solution[0][0] = evaluator_evaluate(sl->m_jacobi[0][0], 1, x_names, &sl->x_aprox[0]);
+
+    sprintf(x_names[0], "x2");
+
+    sl->jacobi_solution[0][1] = evaluator_evaluate(sl->m_jacobi[0][1], 1, x_names, &sl->x_aprox[1]);
     
-    for (int i = 0; i < sl->n; i++) {
-        if (i == 0) {
-            sprintf(x_i, "x1");
-            sprintf(x_ima, "x2");
-            sl->jacobi_solution[i][i] = evaluator_evaluate(sl->m_jacobi[i][i], 1, &x_i, &sl->x_aprox[i]);
-            sl->jacobi_solution[i][i + 1] = evaluator_evaluate(sl->m_jacobi[i][i + 1], 1, &x_ima, &sl->x_aprox[i + 1]);
-        } else if (i == sl->n - 1) {
-            sprintf(x_ime, "x%d", sl->n - 1);
-            sprintf(x_i, "x%d", sl->n);
-            sl->jacobi_solution[i][i - 1] = evaluator_evaluate(sl->m_jacobi[i][i - 1], 1, &x_ime, &sl->x_aprox[i - 1]);
-            sl->jacobi_solution[i][i] = evaluator_evaluate(sl->m_jacobi[i][i], 1, &x_i, &sl->x_aprox[i]);
-        } else {
-            sprintf(x_ime, "x%d", i);
-            sprintf(x_i, "x%d", i + 1);
-            sprintf(x_ima, "x%d", i + 2);
-            sl->jacobi_solution[i][i - 1] = evaluator_evaluate(sl->m_jacobi[i][i - 1], 1, &x_ime, &sl->x_aprox[i - 1]);
-            sl->jacobi_solution[i][i] = evaluator_evaluate(sl->m_jacobi[i][i], 1, &x_i, &sl->x_aprox[i]);
-            sl->jacobi_solution[i][i + 1] = evaluator_evaluate(sl->m_jacobi[i][i + 1], 1, &x_ima, &sl->x_aprox[i + 1]);
-        }
-        /* for (int j = 0; j < sl->n; j++) {
-            sprintf(currX, "x%d", j);
-            sl->jacobi_solution[i][j] = evaluator_evaluate(sl->m_jacobi[i][j], 1, &currX, sl->x_aprox + j);
-        } */
+    for (int i = 1; i < sl->n - 1; i++) {
+        sprintf(x_names[0], "x%d", i);
+        sl->jacobi_solution[i][i - 1] = evaluator_evaluate(sl->m_jacobi[i][i - 1], 1, x_names, &sl->x_aprox[i - 1]);
+        sprintf(x_names[0], "x%d", i+1);
+        sl->jacobi_solution[i][i] = evaluator_evaluate(sl->m_jacobi[i][i], 1, x_names, &sl->x_aprox[i]);
+        sprintf(x_names[0], "x%d", i+2);
+        sl->jacobi_solution[i][i + 1] = evaluator_evaluate(sl->m_jacobi[i][i + 1], 1, x_names, &sl->x_aprox[i + 1]);
     }
 
-    free(x_ime);
-    free(x_i);
-    free(x_ima);
-} // !!! Revisar !!! Talvez possa usar evaluator_evaluate_x, testar
+    sprintf(x_names[0], "x%d", sl->n - 1);
+    sl->jacobi_solution[sl->n - 1][sl->n - 2] = evaluator_evaluate(sl->m_jacobi[sl->n - 1][sl->n - 2], 1,x_names, &sl->x_aprox[sl->n - 2]);
+    sprintf(x_names[0], "x%d", sl->n);
+    sl->jacobi_solution[sl->n - 1][sl->n - 1] = evaluator_evaluate(sl->m_jacobi[sl->n - 1][sl->n - 1], 1, x_names, &sl->x_aprox[sl->n - 1]);
+
+}
 
 void destroi_function(function_t *func) {
-        printf("AEa\n");
     free(func->s_func);
-        printf("AGa\n");
     free(func->v_func);
-        printf("AFa\n");
     free(func);
 }
 
