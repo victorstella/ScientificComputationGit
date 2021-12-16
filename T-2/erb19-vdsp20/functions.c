@@ -5,7 +5,7 @@
 
 
 // Lê e trata as entradas
-sl_t* inputs() {
+sl_t *inputs() {
     char *sIn = ""; // String para receber dinamicamente as funções de entrada
     char aux[124]; // String auxiliar
     int n, maxit;
@@ -17,8 +17,8 @@ sl_t* inputs() {
     if (scanf("%d\n", &n) == EOF) // Lê número de funções
         return NULL;
 
-    void ** funcs = calloc(n, sizeof(void *));
-    double * aprox_iniciais = calloc(n, sizeof(double));
+    void **funcs = calloc(n, sizeof(void *));
+    double *aprox_iniciais = calloc(n, sizeof(double));
 
     if (!aprox_iniciais || !funcs) {
         perror("Erro de alocação de memória.");

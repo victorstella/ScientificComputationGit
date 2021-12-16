@@ -1,22 +1,22 @@
 #include "newtonSNL.h"
 
-double maior_func_evaluated(sl_t *sl){
+double maior_func_evaluated(sl_t *sl) {
     double max = __INT_MAX__;
-    for(int i = 0; i < sl->n ; i++){
-        if(sl->evaluated_curr_x[i] > max) max = sl->evaluated_curr_x[i];
+    for (int i = 0; i < sl->n ; i++){
+        if (sl->evaluated_curr_x[i] > max) max = sl->evaluated_curr_x[i];
     }
     return max;
 }
 
 // Função principal para cada SL, executando cada função
-int newton(sl_t* sl) {
+int newton(sl_t *sl) {
 
-    double *delta = (double *) calloc(sl->n, sizeof(double));
-    double *oldX = (double *) calloc(sl->n, sizeof(double));
+    double *delta = calloc(sl->n, sizeof(double));
+    double *oldX = calloc(sl->n, sizeof(double));
 
     //double **sl = criaSL();
 
-    if(!delta || !oldX) {
+    if (!delta || !oldX) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -26,7 +26,7 @@ int newton(sl_t* sl) {
     iter = 0;
 
     printf("%d\n", sl->n);
-    for(int i = 0; i < sl->n; i++)
+    for (int i = 0; i < sl->n; i++)
         printf("%s = 0\n", sl->func[i].s_func);
     
     criterio1 = 1;
@@ -37,20 +37,20 @@ int newton(sl_t* sl) {
     // de parada serem satisfeitos
     do {
         printf("#\n");
-        for(int i = 0; i < sl->n; i++)
+        for (int i = 0; i < sl->n; i++)
             printf("x%d = %lf\n", i + 1, sl->x_aprox[i]);
 
         
         calcula_funcs(sl); // Calcula todas as sl->funcs com os x_aprox
 
-        if(maior_func_evaluated(sl) < sl->epsilon)
+        if (maior_func_evaluated(sl) < sl->epsilon)
             criterio2 = 0;
         
         calcula_jacobi(sl); // Calcula a matriz jacobiana do sistema sl
 
-        calculaGauss(sl);
+        //calculaGauss(sl);
 
-        criterio3 = calculaNovoX(oldX, sl->x_aprox, delta);
+        //criterio3 = calculaNovoX(oldX, sl->x_aprox, delta);
         
 
         iter++;
@@ -58,5 +58,9 @@ int newton(sl_t* sl) {
             criterio1 = 0;
         
     } while(criterio1 && criterio2 && criterio3);
+
+    free(delta);
+    free(oldX);
+
     return 1;
 }

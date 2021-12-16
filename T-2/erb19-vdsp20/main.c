@@ -6,14 +6,14 @@ int main(int argc, char **argv) {
 
     int valida_input = 1;
 
-    sl_t * sl;
+    sl_t *sl;
 
     // Laço principal do programa, onde em cada loop ocorre a solução de um dos SL
     do {
 
         sl = inputs();
 
-        newton();
+        newton(sl);
 
         destroi_sl(sl);
         
