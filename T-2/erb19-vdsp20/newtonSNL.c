@@ -1,10 +1,10 @@
 #include "newtonSNL.h"
 
 double maior_func_evaluated(sl_t *sl) {
-    double max = __INT_MAX__;
-    for (int i = 0; i < sl->n ; i++){
+    double max = 0;
+    for (int i = 0; i < sl->n ; i++)
         if (sl->evaluated_curr_x[i] > max) max = sl->evaluated_curr_x[i];
-    }
+
     return max;
 }
 
@@ -27,7 +27,7 @@ int newton(sl_t *sl) {
 
     printf("%d\n", sl->n);
     for (int i = 0; i < sl->n; i++)
-        printf("%s = 0\n", sl->func[i].s_func);
+        printf("%s\n", sl->func[i].s_func);
     
     criterio1 = 1;
     criterio2 = 1;
@@ -42,10 +42,11 @@ int newton(sl_t *sl) {
 
         
         calcula_funcs(sl); // Calcula todas as sl->funcs com os x_aprox
-    //exit(1);
 
-        if (maior_func_evaluated(sl) < sl->epsilon)
+        if (maior_func_evaluated(sl) < sl->epsilon){
             criterio2 = 0;
+            exit(0);
+        }
         
         calcula_jacobi(sl); // Calcula a matriz jacobiana do sistema sl
 

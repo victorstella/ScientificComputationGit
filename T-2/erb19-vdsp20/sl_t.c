@@ -4,40 +4,41 @@
 
 // Calcula todas as funcoes em sl->func utilizando os x_aprox 
 void calcula_funcs(sl_t *sl) {
-    char **x_names = calloc(3, sizeof(char *)); // 3 variáveis * 6 chars
-        x_names[0] = calloc(6, sizeof(char));
-        x_names[1] = calloc(6, sizeof(char));
-        x_names[2] = calloc(6, sizeof(char));
+    char *x_i = calloc(6, sizeof(char)), *x_j = calloc(6, sizeof(char)), *x_k = calloc(6, sizeof(char));
+    char *x_names[] = { x_i, x_j, x_k };
 
     double *x_values = calloc(3, sizeof(double));
     
-    x_names[0] = "x1";
-    x_names[1] = "x2";
+    sprintf(x_names[0], "x1");
+    sprintf(x_names[1], "x2");
     x_values[0] = sl->x_aprox[0];
     x_values[1] = sl->x_aprox[1];
-    evaluator_evaluate(sl->func[0].v_func, 2, x_names, x_values);
+    sl->evaluated_curr_x[0] = evaluator_evaluate(sl->func[0].v_func, 2, x_names, x_values);
     
 
     for (int i = 1; i < sl->n - 1; i++) {
-            sprintf(x_names[0], "x%d", i - 1);
-            sprintf(x_names[1], "x%d", i);
-            sprintf(x_names[2], "x%d", i + 1);
+            sprintf(x_names[0], "x%d", i);
+            sprintf(x_names[1], "x%d", i + 1);
+            sprintf(x_names[2], "x%d", i + 2);
             x_values[0] = sl->x_aprox[i - 1];
             x_values[1] = sl->x_aprox[i];
             x_values[2] = sl->x_aprox[i + 1];
-            evaluator_evaluate(sl->func[i].v_func, 3, x_names, x_values);
+            sl->evaluated_curr_x[i] = evaluator_evaluate(sl->func[i].v_func, 3, x_names, x_values);
     }
     
     sprintf(x_names[0], "x%d", sl->n - 1);
-    sprintf(x_names[0], "x%d", sl->n);
+    sprintf(x_names[1], "x%d", sl->n);
     x_values[0] = sl->x_aprox[sl->n - 1];
-    x_values[0] = sl->x_aprox[sl->n];
-    evaluator_evaluate(sl->func[sl->n - 1].v_func, 2, x_names, x_values);
+    x_values[1] = sl->x_aprox[sl->n];
+    sl->evaluated_curr_x[sl->n] = evaluator_evaluate(sl->func[sl->n - 1].v_func, 2, x_names, x_values);
     
-    free(x_names[0]);
-    free(x_names[1]);
-    free(x_names[2]);
-    free(x_names);
+    for (size_t i = 0; i < sl->n; i++){
+        printf("> %f\n", sl->evaluated_curr_x[i]);
+    }
+    
+
+    printf("Deu boa :)\n");
+    //free(x_names);
     free(x_values);
 }
 
