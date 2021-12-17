@@ -12,13 +12,14 @@
     } function_t;
 
     typedef struct {
-    int n;                          // Tamanho do sl
-        function_t *func;          // Vetor de funcoes
-        double *x_aprox;           // Aproximação atual de x
-        double *x_aprox_old;       // Aproximação antiga de x
-        double *evaluated_curr_x;  // Resultados das função aplicadas nos x atuais
-        void ***m_jacobi;          // Matriz de funcoes jacobi
-        double **jacobi_solution;  // Matriz de resultado das funcoes jacobi
+        int n;                      // Tamanho do sl
+        function_t *func;           // Vetor de funcoes
+        double *x_aprox;            // Aproximação atual de x
+        double *x_aprox_old;        // Aproximação antiga de x
+        double *delta_x;            // Delta entre x_aprox e x_aprox_old
+        double *evaluated_curr_x;   // Resultados das função aplicadas nos x atuais
+        void ***m_jacobi;           // Matriz de funcoes jacobi
+        double **jacobi_solution;   // Matriz de resultado das funcoes jacobi
         float epsilon;
         int MAXIT;
     } sl_t;

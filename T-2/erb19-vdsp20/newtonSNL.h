@@ -7,6 +7,8 @@
 
     double maior_func_evaluated(sl_t *sl);
 
+    int calcula_novo_x(sl_t *sl);
+
     int newton(sl_t* sl);
 
 #endif

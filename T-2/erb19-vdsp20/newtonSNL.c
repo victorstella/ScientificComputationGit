@@ -8,6 +8,16 @@ double maior_func_evaluated(sl_t *sl) {
     return max;
 }
 
+int calcula_novo_x(sl_t *sl) {
+    int diff = 0;
+    for(int i = 0; i < sl->n; i++) {
+        sl->x_aprox_old[i] = sl->x_aprox[i];
+        sl->x_aprox[i] = sl->x_aprox_old[i] + sl->delta_x[i];
+        if(fabs(sl->delta_x[i]) >= fabs(sl->epsilon)) diff = 1;
+    }
+    return diff;
+}
+
 // Função principal para cada SL, executando cada função
 int newton(sl_t *sl) {
 
@@ -55,7 +65,15 @@ int newton(sl_t *sl) {
 
         gauss_seidel(sl);
 
-        //criterio3 = calculaNovoX(oldX, sl->x_aprox, delta);
+        /* double new_x_aux = 0;
+        for (int i = 0; i < sl->n; i++) {
+            sl->x_aprox_old[i] = sl->x_aprox[i];            
+            sl->x_aprox[i] = sl->x_aprox_old[i] + sl->delta_x[i];
+            new_x_aux = sl->x_aprox_old[i];
+        } */
+
+        // Calcula novo x
+        criterio3 = calcula_novo_x(sl);
 
         iter++;
         if(iter > sl->MAXIT)
