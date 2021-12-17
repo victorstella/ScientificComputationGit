@@ -49,7 +49,6 @@ int newton(sl_t *sl) {
         printf("#\n");
         for (int i = 0; i < sl->n; i++)
             printf("x%d = %lf\n", i + 1, sl->x_aprox[i]);
-
         
         calcula_funcs(sl); // Calcula todas as sl->funcs com os x_aprox
 

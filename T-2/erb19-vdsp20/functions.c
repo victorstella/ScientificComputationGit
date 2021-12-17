@@ -49,7 +49,6 @@ sl_t *inputs() {
         exit(1);
     }
 
-
     printf("inciado %p\n", sl);
 
 

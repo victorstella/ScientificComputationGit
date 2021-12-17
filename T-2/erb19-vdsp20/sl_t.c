@@ -5,32 +5,32 @@
 // Calcula todas as funcoes em sl->func utilizando os x_aprox 
 void calcula_funcs(sl_t *sl) {
     char *x_i = calloc(6, sizeof(char)), *x_j = calloc(6, sizeof(char)), *x_k = calloc(6, sizeof(char));
-    char *x_names_3[] = { x_i, x_j, x_k }, *x_names_2[] = { x_i, x_j };
+    char *x_names[] = { x_i, x_j, x_k };
 
-    double *x_values_3 = calloc(3, sizeof(double)), *x_values_2 = calloc(2, sizeof(double));
+    double *x_values = calloc(3, sizeof(double));
     
-    sprintf(x_names_2[0], "x1");
-    sprintf(x_names_2[1], "x2");
-    x_values_2[0] = sl->x_aprox[0];
-    x_values_2[1] = sl->x_aprox[1];
-    sl->evaluated_curr_x[0] = evaluator_evaluate(sl->func[0].v_func, 2, x_names_2, x_values_2);
+    sprintf(x_names[0], "x1");
+    sprintf(x_names[1], "x2");
+    x_values[0] = sl->x_aprox[0];
+    x_values[1] = sl->x_aprox[1];
+    sl->evaluated_curr_x[0] = evaluator_evaluate(sl->func[0].v_func, 2, x_names, x_values);
     
 
     for (int i = 1; i < sl->n - 1; i++) {
-            sprintf(x_names_3[0], "x%d", i);
-            sprintf(x_names_3[1], "x%d", i + 1);
-            sprintf(x_names_3[2], "x%d", i + 2);
-            x_values_3[0] = sl->x_aprox[i - 1];
-            x_values_3[1] = sl->x_aprox[i];
-            x_values_3[2] = sl->x_aprox[i + 1];
-            sl->evaluated_curr_x[i] = evaluator_evaluate(sl->func[i].v_func, 3, x_names_3, x_values_3);
+        sprintf(x_names[0], "x%d", i);
+        sprintf(x_names[1], "x%d", i + 1);
+        sprintf(x_names[2], "x%d", i + 2);
+        x_values[0] = sl->x_aprox[i - 1];
+        x_values[1] = sl->x_aprox[i];
+        x_values[2] = sl->x_aprox[i + 1];
+        sl->evaluated_curr_x[i] = evaluator_evaluate(sl->func[i].v_func, 3, x_names, x_values);
     }
     
-    sprintf(x_names_2[0], "x%d", sl->n - 1);
-    sprintf(x_names_2[1], "x%d", sl->n);
-    x_values_2[0] = sl->x_aprox[sl->n - 1];
-    x_values_2[1] = sl->x_aprox[sl->n];
-    sl->evaluated_curr_x[sl->n] = evaluator_evaluate(sl->func[sl->n - 1].v_func, 2, x_names_2, x_values_2);
+    sprintf(x_names[0], "x%d", sl->n - 1);
+    sprintf(x_names[1], "x%d", sl->n);
+    x_values[0] = sl->x_aprox[sl->n - 2];
+    x_values[1] = sl->x_aprox[sl->n - 1];
+    sl->evaluated_curr_x[sl->n - 1] = evaluator_evaluate(sl->func[sl->n - 1].v_func, 2, x_names, x_values);
     
     for (size_t i = 0; i < sl->n; i++){
         printf("> %f\n", sl->evaluated_curr_x[i]);
@@ -39,8 +39,7 @@ void calcula_funcs(sl_t *sl) {
 
     printf("Deu boa :)\n");
     //free(x_names);
-    free(x_values_3);
-    free(x_values_2);
+    free(x_values);
 }
 
 /**

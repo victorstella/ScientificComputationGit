@@ -20,6 +20,12 @@ void gauss_seidel(sl_t *sl) {
 
     sl->delta_x[sl->n - 1] = (sl->evaluated_curr_x[sl->n - 1] - (a * sl->delta_x[sl->n - 2])) / d;
 
-    for (int k = 0; k < sl->n; k++) printf("> delta_x[%d]: %1.16f\n", k, sl->delta_x[k]);
 
+    for (int j = 0; j < sl->n; j++)
+        for (int l = 0; l < sl->n; l++) printf(">[%d][%d] jacobi_solution: %f\n", j, l, sl->jacobi_solution[j][l]);
+
+    for (int k = 0; k < sl->n; k++) printf("> delta_x%d: %1.16f  --  a: %f | d: %f | c: %f | b: %f\n", k + 1, sl->delta_x[k], a, d, c, sl->evaluated_curr_x[k]);
+
+    for (int m = 0; m < sl->n; m++)
+        printf("* %d * evaluated_curr_x: %f | x_aprox: %f | x_aprox_old: %f\n", m + 1, sl->evaluated_curr_x[m], sl->x_aprox[m], sl->x_aprox_old[m]);
 }
