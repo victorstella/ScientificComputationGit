@@ -8,17 +8,20 @@ int main(int argc, char **argv) {
 
     sl_t *sl;
 
+    int end = 1;
+    /* int end[] = calloc(1, sizeof(int));
+    end[0] = 1;
+ */
     // Laço principal do programa, onde em cada loop ocorre a solução de um dos SL
     do {
 
-        sl = inputs();
+        end = inputs(&sl);
 
         newton(sl);
 
-    exit(0);
         destroi_sl(sl);
         
-    } while(sl != NULL);
+    } while(end);
 
 
     printf("\n-- Acabou o programa :)--\n");

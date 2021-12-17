@@ -1,21 +1,18 @@
 #include "functions.h"
 
-//void **funcs; // Array de funções em forma de ponteiros para void e a matriz jacobiana seguindo a mesma estrutura com 1 dimensão a mais
-
-
-
 // Lê e trata as entradas
-sl_t *inputs() {
+int inputs(sl_t **sl) {
     char *sIn = ""; // String para receber dinamicamente as funções de entrada
     char aux[124]; // String auxiliar
     int n, maxit;
     float epsilon;
 
-    sl_t *sl;
     size_t len = 0;
 
-    if (scanf("%d\n", &n) == EOF) // Lê número de funções
-        return NULL;
+    if (scanf("%d\n", &n) == EOF) { // Lê número de funções
+        *sl = NULL;
+        return 0;
+    }
 
     void **funcs = calloc(n, sizeof(void *));
     double *aprox_iniciais = calloc(n, sizeof(double));
@@ -43,17 +40,14 @@ sl_t *inputs() {
     scanf("%f\n", &epsilon);
     scanf("%d\n", &maxit);
     
-    sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
-
-    printf("inciado %p\n", sl);
-
+    *sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
 
     // Desaloca espaço que não é mais utilizado
     free(sIn);
 
     free(aprox_iniciais);
 
-    return sl;
+    return 1;
 }
 
 

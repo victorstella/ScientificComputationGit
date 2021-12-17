@@ -21,6 +21,9 @@ int calcula_novo_x(sl_t *sl) {
 // Função principal para cada SL, executando cada função
 int newton(sl_t *sl) {
 
+    if(sl == NULL)
+        return 0;
+
     double *oldX = calloc(sl->n, sizeof(double));
 
     //double **sl = criaSL();
@@ -34,9 +37,9 @@ int newton(sl_t *sl) {
 
     iter = 0;
 
-    printf("%d\n", sl->n);
+    /* printf("%d\n", sl->n);
     for (int i = 0; i < sl->n; i++)
-        printf("%s\n", sl->func[i].s_func);
+        printf("%s\n", sl->func[i].s_func); */
     
     criterio1 = 1;
     criterio2 = 1;
@@ -59,10 +62,10 @@ int newton(sl_t *sl) {
         calcula_jacobi(sl); // Calcula a matriz jacobiana do sistema sl
 
 
-        printf("\n***Gauss\n");
 
         //gauss_seidel(sl);
-        calculaGauss(sl->jacobi_solution, sl->evaluated_curr_x, sl->delta_x, sl->n);
+        // calcula_gauss(sl->jacobi_solution, sl->evaluated_curr_x, sl->delta_x, sl->n);
+        calcula_gauss(sl);
 
         /* double new_x_aux = 0;
         for (int i = 0; i < sl->n; i++) {

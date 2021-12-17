@@ -1,7 +1,7 @@
 
 #include "gauss.h"
 
-void gauss_seidel(sl_t *sl) {
+/* void gauss_seidel(sl_t *sl) {
 
     sl->diagonal_central[0] = sl->jacobi_solution[0][0];
     sl->diagonal_direita[0] = sl->jacobi_solution[0][1];
@@ -43,7 +43,11 @@ void gauss_seidel(sl_t *sl) {
     
     } while (fabs(fabs(maior) - fabs(oldMaior)) > 0.00001);
     printf("Saiu com maior = %1.16lf > %1.16lf\n", fabs(fabs(maior) - fabs(oldMaior)), 0.00001 );
-}
+} */
+
+
+
+
 
 /**
  * Resolve o sl e descobre o delta
@@ -76,73 +80,77 @@ void gauss_seidel(sl_t *sl) {
 
 
 // Encontra maior valor no SL na coluna k
-int encontraMax(double** sl, int k, int n) {
+int encontraMax(sl_t *sl, int k) {
     int posMaior = k;
-    for (int l = k; l < n; l++) {
-        if(fabs(sl[l][k]) > fabs(sl[posMaior][k]))
+    for (int l = k; l < sl->n; l++) {
+        if(fabs(sl->jacobi_solution[l][k]) > fabs(sl->jacobi_solution[posMaior][k]))
             posMaior = l;
     }
     return posMaior;
 }
 
 // Troca o conteúdo de 2 linhas do SL e do vetor de resultados
-void trocaLinha(double **sl, double *res, int a, int b, int n) {
+void trocaLinha(sl_t *sl, int a, int pivo) {
     double aux;
-    for (int i = 0; i < n; i++) {
-        aux = sl[a][i];
-        sl[a][i] = sl[b][i];
-        sl[b][i] = aux;
+    for (int i = 0; i < sl->n; i++) {
+        aux = sl->jacobi_solution[a][i];
+        sl->jacobi_solution[a][i] = sl->jacobi_solution[pivo][i];
+        sl->jacobi_solution[pivo][i] = aux;
     }
-    aux = res[a];
-    res[a] = res[b];
-    res[b] = aux;
+    aux = sl->evaluated_curr_x[a];
+    sl->evaluated_curr_x[a] = sl->evaluated_curr_x[pivo];
+    sl->evaluated_curr_x[pivo] = aux;
 }
 
 // Triangulariza o SL com pivoteamento parcial
-void triangulariza(double **sl, double *resultsFuncs, int n) {
+// void triangulariza(double **sl, double *resultsFuncs, int n) {
+void triangulariza(sl_t *sl) {
     int pivo = 0;
 
     // Encontra o pivo para cada coluna do SL
-    for (int i = 0; i < n - 1; i++) {
-        pivo = encontraMax(sl, i, n);
+    for (int i = 0; i < sl->n - 1; i++) {
+        pivo = encontraMax(sl, i);
         if (i != pivo)
-            trocaLinha(sl, resultsFuncs, i, pivo, n);
+            trocaLinha(sl, i, pivo);
         
         // Calcula multiplicador
-        for(int j = i + 1; j < n; j++) {
-            double m = sl[j][i] / sl[i][i];
-            sl[j][i] = 0.0;
+        for(int j = i + 1; j < sl->n; j++) {
+            double m = sl->jacobi_solution[j][i] / sl->jacobi_solution[i][i];
+            sl->jacobi_solution[j][i] = 0.0;
 
             // Multiplica todas as linhas pelo multiplicador
-            for(int k = i + 1; k < n; k++)
-                sl[j][k] -= sl[i][k] * m;
+            for(int k = i + 1; k < sl->n; k++)
+                sl->jacobi_solution[j][k] -= sl->jacobi_solution[i][k] * m;
             
             // Multiplica todas as posições do vetor de resultados pelo multiplicador
-            resultsFuncs[j] -= resultsFuncs[i] * m;
+            sl->evaluated_curr_x[j] -= sl->evaluated_curr_x[i] * m;
         }
     }
 }
 
 // Retro-substitui o SL triangularizado
- void retroSubst(double **sl, double *resultsFuncs, double* delta, int n) {
+ void retroSubst(sl_t *sl) {
+     int n = sl->n;
     double soma;
     for(int i = 0; i < n; i++) {
         soma = 0;
         for(int j = i; j > 0; j--)
-            soma += sl[n - (i + 1)][j] * delta[n - j];
-        delta[n - (i + 1)] = (resultsFuncs[n - (i + 1)] - soma ) / sl[n - (i + 1)][n - (i + 1)];
+            soma += sl->jacobi_solution[n - (i + 1)][j] * sl->delta_x[n - j];
+        sl->delta_x[n - (i + 1)] = (sl->evaluated_curr_x[n - (i + 1)] - soma ) / sl->jacobi_solution[n - (i + 1)][n - (i + 1)];
     }
 } 
 
 // Inverte o sinal dos valores do vetor de resultados para efetuar a triangularização e a retrosubstituição
 // Depois inverte novamente para o vetor ficar como era inicialmente.
-void calculaGauss(double **sl, double *resultsFuncs, double* delta, int n){
-    for(int i = 0; i < n; i++)
-        resultsFuncs[i] = -resultsFuncs[i];
+//void calcula_gauss(double **sl, double *resultsFuncs, double* delta, int n){
 
-    triangulariza(sl, resultsFuncs, n);
-    retroSubst(sl, resultsFuncs, delta, n);
+void calcula_gauss(sl_t *sl){
+    for(int i = 0; i < sl->n; i++)
+        sl->evaluated_curr_x[i] = - sl->evaluated_curr_x[i];
 
-    for(int i = 0; i < n; i++)
-        resultsFuncs[i] = -resultsFuncs[i];
+    triangulariza(sl);
+    retroSubst(sl);
+
+    for(int i = 0; i < sl->n; i++)
+        sl->evaluated_curr_x[i] = - sl->evaluated_curr_x[i];
 }
