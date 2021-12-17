@@ -21,6 +21,11 @@
         void ***m_jacobi;           // Matriz de funcoes jacobi
         double **jacobi_solution;   // Matriz de resultado das funcoes jacobi
         float epsilon;
+
+        double * diagonal_central;
+        double *diagonal_direita;
+        double *diagonal_esquerda;
+
         int MAXIT;
     } sl_t;
 
