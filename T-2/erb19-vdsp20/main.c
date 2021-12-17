@@ -15,6 +15,7 @@ int main(int argc, char **argv) {
 
         newton(sl);
 
+    exit(0);
         destroi_sl(sl);
         
     } while(sl != NULL);

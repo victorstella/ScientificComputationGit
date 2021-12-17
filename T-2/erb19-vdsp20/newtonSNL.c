@@ -3,7 +3,7 @@
 double maior_func_evaluated(sl_t *sl) {
     double max = 0;
     for (int i = 0; i < sl->n ; i++)
-        if (sl->evaluated_curr_x[i] > max) max = sl->evaluated_curr_x[i];
+        if (fabs(sl->evaluated_curr_x[i]) > max) max = fabs(sl->evaluated_curr_x[i]);
 
     return max;
 }
@@ -21,12 +21,11 @@ int calcula_novo_x(sl_t *sl) {
 // Função principal para cada SL, executando cada função
 int newton(sl_t *sl) {
 
-    double *delta = calloc(sl->n, sizeof(double));
     double *oldX = calloc(sl->n, sizeof(double));
 
     //double **sl = criaSL();
 
-    if (!delta || !oldX) {
+    if (!oldX) {
         perror("Erro de alocação de memória.");
         exit(1);
     }
@@ -62,7 +61,8 @@ int newton(sl_t *sl) {
 
         printf("\n***Gauss\n");
 
-        gauss_seidel(sl);
+        //gauss_seidel(sl);
+        calculaGauss(sl->jacobi_solution, sl->evaluated_curr_x, sl->delta_x, sl->n);
 
         /* double new_x_aux = 0;
         for (int i = 0; i < sl->n; i++) {
@@ -80,7 +80,6 @@ int newton(sl_t *sl) {
         
     } while(criterio1 && criterio2 && criterio3);
 
-    free(delta);
     free(oldX);
 
     return 1;

@@ -43,11 +43,7 @@ sl_t *inputs() {
     scanf("%f\n", &epsilon);
     scanf("%d\n", &maxit);
     
-    if (aprox_iniciais) sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
-    else {
-        perror("Erro de entrada.");
-        exit(1);
-    }
+    sl = inicia_sl_t(n, funcs, aprox_iniciais, epsilon, maxit);
 
     printf("inciado %p\n", sl);
 
@@ -59,8 +55,6 @@ sl_t *inputs() {
 
     return sl;
 }
-
-
 
 
 // Retorna o maior entre 2 valores

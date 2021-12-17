@@ -1,2966 +1,549 @@
-inciado 0x562a70cd1210
-10
+inciado 0x563993afabb0
+3
 ((((3-(2*x1))*x1)-(2*x2))+1)
 (((((3-(2*x2))*x2)-x1)-(2*x3))+1)
-(((((3-(2*x3))*x3)-x2)-(2*x4))+1)
-(((((3-(2*x4))*x4)-x3)-(2*x5))+1)
-(((((3-(2*x5))*x5)-x4)-(2*x6))+1)
-(((((3-(2*x6))*x6)-x5)-(2*x7))+1)
-(((((3-(2*x7))*x7)-x6)-(2*x8))+1)
-(((((3-(2*x8))*x8)-x7)-(2*x9))+1)
-(((((3-(2*x9))*x9)-x8)-(2*x10))+1)
-((((3-(2*x10))*x10)-x9)+1)
+((((3-(2*x3))*x3)-x2)+1)
 #
 x1 = -1.000000
 x2 = -1.000000
 x3 = -1.000000
-x4 = -1.000000
-x5 = -1.000000
-x6 = -1.000000
-x7 = -1.000000
-x8 = -1.000000
-x9 = -1.000000
-x10 = -1.000000
 > -2.000000
-> -1.000000
-> -1.000000
-> -1.000000
-> -1.000000
-> -1.000000
-> -1.000000
-> -1.000000
 > -1.000000
 > -3.000000
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 7.000000
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 7.000000
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 7.000000
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 7.000000
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 7.000000
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 7.000000
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 7.000000
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 7.000000
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 7.000000
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 7.000000
-> delta_x1: -0.2857142857142857  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -2.000000
-> delta_x2: -0.1836734693877551  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x3: -0.1690962099125364  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x4: -0.1670137442732195  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x5: -0.1667162491818885  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x6: -0.1666737498831269  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x7: -0.1666676785547324  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x8: -0.1666668112221046  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x9: -0.1666666873174435  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -1.000000
-> delta_x10: -0.4523809553310634  --  a: -1.000000 | d: 7.000000 | c: -2.000000 | b: -3.000000
-* 1 * evaluated_curr_x: -2.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 2 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 3 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 4 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 5 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 6 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 7 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 8 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 9 * evaluated_curr_x: -1.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-* 10 * evaluated_curr_x: -3.000000 | x_aprox: -1.000000 | x_aprox_old: 0.000000
-#
-x1 = -1.285714
-x2 = -1.183673
-x3 = -1.169096
-x4 = -1.167014
-x5 = -1.166716
-x6 = -1.166674
-x7 = -1.166668
-x8 = -1.166667
-x9 = -1.166667
-x10 = -1.452381
-> -3.795918
-> -1.729279
-> -1.723160
-> -1.722355
-> -1.722241
-> -1.722225
-> -1.722223
-> -1.722222
-> -1.150794
-> -6.409297
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -1.000000; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -1.000000; jacobi[1][1] = 7.000000; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -1.000000; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 8.142857
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 7.734694
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 7.676385
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 7.668055
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 7.666865
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 7.666695
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 7.666671
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 7.666667
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 7.666667
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 8.809524
-> delta_x1: -0.5112781954887218  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -3.795918
-> delta_x2: -0.3166886065862831  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.729279
-> delta_x3: -0.2915285901929643  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.723160
-> delta_x4: -0.2882668491617019  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.722355
-> delta_x5: -0.2878418991668386  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.722241
-> delta_x6: -0.2877862322591108  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.722225
-> delta_x7: -0.2877788988923037  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.722223
-> delta_x8: -0.2877779272934623  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.722222
-> delta_x9: -0.2877777978300602  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -1.150794
-> delta_x10: -0.8224477892501380  --  a: -1.000000 | d: 8.142857 | c: -2.000000 | b: -6.409297
-* 1 * evaluated_curr_x: -3.795918 | x_aprox: -1.285714 | x_aprox_old: -1.000000
-* 2 * evaluated_curr_x: -1.729279 | x_aprox: -1.183673 | x_aprox_old: -1.000000
-* 3 * evaluated_curr_x: -1.723160 | x_aprox: -1.169096 | x_aprox_old: -1.000000
-* 4 * evaluated_curr_x: -1.722355 | x_aprox: -1.167014 | x_aprox_old: -1.000000
-* 5 * evaluated_curr_x: -1.722241 | x_aprox: -1.166716 | x_aprox_old: -1.000000
-* 6 * evaluated_curr_x: -1.722225 | x_aprox: -1.166674 | x_aprox_old: -1.000000
-* 7 * evaluated_curr_x: -1.722223 | x_aprox: -1.166668 | x_aprox_old: -1.000000
-* 8 * evaluated_curr_x: -1.722222 | x_aprox: -1.166667 | x_aprox_old: -1.000000
-* 9 * evaluated_curr_x: -1.150794 | x_aprox: -1.166667 | x_aprox_old: -1.000000
-* 10 * evaluated_curr_x: -6.409297 | x_aprox: -1.452381 | x_aprox_old: -1.000000
+ççç -0.2857142857142857
+ççç -0.1428571428571428
+ççç -0.4489795918367347
+Maior = -0.4489795918367347
+ççç -0.3265306122448979
+ççç -0.2711370262390670
+ççç -0.4673052894627238
+Maior = -0.4673052894627238
+ççç -0.3631820074968763
+ççç -0.2763729398464925
+ççç -0.4680532771209275
+Maior = -0.4680532771209275
+Saiu com maior = 0.0007479876582037 > 0.0010000000000000
 #
-x1 = -1.796992
-x2 = -1.500362
-x3 = -1.460625
-x4 = -1.455281
-x5 = -1.454558
-x6 = -1.454460
-x7 = -1.454447
-x8 = -1.454445
-x9 = -1.454444
-x10 = -2.274829
-> -7.848617
-> -3.285017
-> -3.237801
-> -3.231784
-> -3.230953
-> -3.230836
-> -3.230820
-> -3.230818
-> -1.590049
-> -14.719733
+x1 = -1.363182
+x2 = -1.276373
+x3 = -1.468053
+> -4.253331
+> -1.788086
+> -6.438148
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 10.187970
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 9.001448
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 8.842499
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 8.821122
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 8.818233
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 8.817840
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 8.817786
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 8.817779
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 8.817778
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 12.099315
-> delta_x1: -0.8325500097106233  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -7.848617
-> delta_x2: -0.4613896673564862  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.285017
-> delta_x3: -0.4196836217690214  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.237801
-> delta_x4: -0.4149159593184696  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.231784
-> delta_x5: -0.4143554757398558  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.230953
-> delta_x6: -0.4142875987232212  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.230836
-> delta_x7: -0.4142791400957684  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.230820
-> delta_x8: -0.4142780582884031  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -3.230818
-> delta_x9: -0.3581893559008051  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -1.590049
-> delta_x10: -1.4799732282406464  --  a: -1.000000 | d: 10.187970 | c: -2.000000 | b: -14.719733
-* 1 * evaluated_curr_x: -7.848617 | x_aprox: -1.796992 | x_aprox_old: -1.285714
-* 2 * evaluated_curr_x: -3.285017 | x_aprox: -1.500362 | x_aprox_old: -1.183673
-* 3 * evaluated_curr_x: -3.237801 | x_aprox: -1.460625 | x_aprox_old: -1.169096
-* 4 * evaluated_curr_x: -3.231784 | x_aprox: -1.455281 | x_aprox_old: -1.167014
-* 5 * evaluated_curr_x: -3.230953 | x_aprox: -1.454558 | x_aprox_old: -1.166716
-* 6 * evaluated_curr_x: -3.230836 | x_aprox: -1.454460 | x_aprox_old: -1.166674
-* 7 * evaluated_curr_x: -3.230820 | x_aprox: -1.454447 | x_aprox_old: -1.166668
-* 8 * evaluated_curr_x: -3.230818 | x_aprox: -1.454445 | x_aprox_old: -1.166667
-* 9 * evaluated_curr_x: -1.590049 | x_aprox: -1.454444 | x_aprox_old: -1.166667
-* 10 * evaluated_curr_x: -14.719733 | x_aprox: -2.274829 | x_aprox_old: -1.452381
-#
-x1 = -2.629542
-x2 = -1.961752
-x3 = -1.880308
-x4 = -1.870197
-x5 = -1.868914
-x6 = -1.868748
-x7 = -1.868726
-x8 = -1.868723
-x9 = -1.812634
-x10 = -3.754802
-> -16.794111
-> -6.192036
-> -6.009900
-> -5.987724
-> -5.984725
-> -5.984313
-> -5.984256
-> -6.096425
-> -1.630858
-> -36.648848
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -1.363182; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -1.276373; jacobi[1][1] = 8.105492; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -1.468053; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 13.518170
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 10.847007
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 10.521234
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 10.480786
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 10.475654
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 10.474990
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 10.474903
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 10.474891
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 10.250535
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 18.019208
-> delta_x1: -1.3105983126020506  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -16.794111
-> delta_x2: -0.6170954558803686  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -6.192036
-> delta_x3: -0.5516151471757492  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -6.009900
-> delta_x4: -0.5450479168804141  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -5.987724
-> delta_x5: -0.5443302281669841  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -5.984725
-> delta_x6: -0.5442453566971397  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -5.984313
-> delta_x7: -0.5442346919754056  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -5.984256
-> delta_x8: -0.5442332946633773  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -6.096425
-> delta_x9: -0.3798618769460131  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -1.630858
-> delta_x10: -2.7391806556755656  --  a: -1.000000 | d: 13.518170 | c: -2.000000 | b: -36.648848
-* 1 * evaluated_curr_x: -16.794111 | x_aprox: -2.629542 | x_aprox_old: -1.796992
-* 2 * evaluated_curr_x: -6.192036 | x_aprox: -1.961752 | x_aprox_old: -1.500362
-* 3 * evaluated_curr_x: -6.009900 | x_aprox: -1.880308 | x_aprox_old: -1.460625
-* 4 * evaluated_curr_x: -5.987724 | x_aprox: -1.870197 | x_aprox_old: -1.455281
-* 5 * evaluated_curr_x: -5.984725 | x_aprox: -1.868914 | x_aprox_old: -1.454558
-* 6 * evaluated_curr_x: -5.984313 | x_aprox: -1.868748 | x_aprox_old: -1.454460
-* 7 * evaluated_curr_x: -5.984256 | x_aprox: -1.868726 | x_aprox_old: -1.454447
-* 8 * evaluated_curr_x: -6.096425 | x_aprox: -1.868723 | x_aprox_old: -1.454445
-* 9 * evaluated_curr_x: -1.630858 | x_aprox: -1.812634 | x_aprox_old: -1.454444
-* 10 * evaluated_curr_x: -36.648848 | x_aprox: -3.754802 | x_aprox_old: -2.274829
+ççç -0.5685828736671373
+ççç -0.3360922021828973
+ççç -0.7635344034007220
+Maior = -0.7635344034007220
+ççç -0.5827130484756822
+ççç -0.4090010731191077
+ççç -0.7717520679275688
+Maior = -0.7717520679275688
+ççç -0.5999640166075216
+ççç -0.4110287513330373
+ççç -0.7719806104782420
+Maior = -0.7719806104782420
+Saiu com maior = 0.0002285425506732 > 0.0010000000000000
 #
-x1 = -3.940141
-x2 = -2.578847
-x3 = -2.431924
-x4 = -2.415244
-x5 = -2.413244
-x6 = -2.412993
-x7 = -2.412960
-x8 = -2.412956
-x9 = -2.192496
-x10 = -6.493983
-> -36.712147
-> -11.233459
-> -10.714939
-> -10.654134
-> -10.645993
-> -10.644884
-> -10.644732
-> -11.085631
-> 0.209359
-> -100.633073
+x1 = -1.963146
+x2 = -1.687402
+x3 = -2.240034
+> -9.222519
+> -3.313640
+> -14.068204
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 18.760563
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 13.315389
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 12.727694
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 12.660978
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 12.652975
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 12.651972
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 12.651842
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 12.651824
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 11.769983
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 28.975931
-> delta_x1: -2.0226651830207425  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -36.712147
-> delta_x2: -0.7654010555706986  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -11.233459
-> delta_x3: -0.6700457660026746  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -10.714939
-> delta_x4: -0.6616453841090163  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -10.654134
-> delta_x5: -0.6607546345473020  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -10.645993
-> delta_x6: -0.6606469033966623  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -10.644884
-> delta_x7: -0.6606329103859225  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -10.644732
-> delta_x8: -0.6666104396320860  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -11.085631
-> delta_x9: -0.3163877563601933  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: 0.209359
-> delta_x10: -5.3809397687293199  --  a: -1.000000 | d: 18.760563 | c: -2.000000 | b: -100.633073
-* 1 * evaluated_curr_x: -36.712147 | x_aprox: -3.940141 | x_aprox_old: -2.629542
-* 2 * evaluated_curr_x: -11.233459 | x_aprox: -2.578847 | x_aprox_old: -1.961752
-* 3 * evaluated_curr_x: -10.714939 | x_aprox: -2.431924 | x_aprox_old: -1.880308
-* 4 * evaluated_curr_x: -10.654134 | x_aprox: -2.415244 | x_aprox_old: -1.870197
-* 5 * evaluated_curr_x: -10.645993 | x_aprox: -2.413244 | x_aprox_old: -1.868914
-* 6 * evaluated_curr_x: -10.644884 | x_aprox: -2.412993 | x_aprox_old: -1.868748
-* 7 * evaluated_curr_x: -10.644732 | x_aprox: -2.412960 | x_aprox_old: -1.868726
-* 8 * evaluated_curr_x: -11.085631 | x_aprox: -2.412956 | x_aprox_old: -1.868723
-* 9 * evaluated_curr_x: 0.209359 | x_aprox: -2.192496 | x_aprox_old: -1.812634
-* 10 * evaluated_curr_x: -100.633073 | x_aprox: -6.493983 | x_aprox_old: -3.754802
-#
-x1 = -5.962806
-x2 = -3.344248
-x3 = -3.101969
-x4 = -3.076890
-x5 = -3.073998
-x6 = -3.073640
-x7 = -3.073593
-x8 = -3.079567
-x9 = -2.508883
-x10 = -11.874922
-> -81.310032
-> -19.233993
-> -18.052308
-> -17.915206
-> -17.896759
-> -17.894258
-> -17.881959
-> -19.114799
-> 7.713768
-> -314.143448
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -1.963146; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -1.687402; jacobi[1][1] = 9.749607; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -2.240034; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 26.851224
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 16.376993
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 15.407877
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 15.307559
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 15.295994
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 15.294559
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 15.294373
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 15.318266
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 13.035534
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 50.499690
-> delta_x1: -3.0851790664547316  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -81.310032
-> delta_x2: -0.8811242099367355  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -19.233993
-> delta_x3: -0.7544059284929436  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -18.052308
-> delta_x4: -0.7445143221174451  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -17.915206
-> delta_x5: -0.7434509312286373  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -17.896759
-> delta_x6: -0.7433171363868586  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -17.894258
-> delta_x7: -0.7432993335631105  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -17.881959
-> delta_x8: -0.7631262638530693  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -19.114799
-> delta_x9: -0.1419390595469596  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: 7.713768
-> delta_x10: -11.7046949996594236  --  a: -1.000000 | d: 26.851224 | c: -2.000000 | b: -314.143448
-* 1 * evaluated_curr_x: -81.310032 | x_aprox: -5.962806 | x_aprox_old: -3.940141
-* 2 * evaluated_curr_x: -19.233993 | x_aprox: -3.344248 | x_aprox_old: -2.578847
-* 3 * evaluated_curr_x: -18.052308 | x_aprox: -3.101969 | x_aprox_old: -2.431924
-* 4 * evaluated_curr_x: -17.915206 | x_aprox: -3.076890 | x_aprox_old: -2.415244
-* 5 * evaluated_curr_x: -17.896759 | x_aprox: -3.073998 | x_aprox_old: -2.413244
-* 6 * evaluated_curr_x: -17.894258 | x_aprox: -3.073640 | x_aprox_old: -2.412993
-* 7 * evaluated_curr_x: -17.881959 | x_aprox: -3.073593 | x_aprox_old: -2.412960
-* 8 * evaluated_curr_x: -19.114799 | x_aprox: -3.079567 | x_aprox_old: -2.412956
-* 9 * evaluated_curr_x: 7.713768 | x_aprox: -2.508883 | x_aprox_old: -2.192496
-* 10 * evaluated_curr_x: -314.143448 | x_aprox: -11.874922 | x_aprox_old: -6.493983
+ççç -0.9255470150975110
+ççç -0.4982356260318212
+ççç -1.2179158983153813
+Maior = -1.2179158983153813
+ççç -0.9416181874420904
+ççç -0.5897132206874108
+ççç -1.2255644399452088
+Maior = -1.2255644399452088
+ççç -0.9584764018254807
+ççç -0.5912822155842115
+ççç -1.2256956253226814
+Maior = -1.2256956253226814
+Saiu com maior = 0.0001311853774726 > 0.0010000000000000
 #
-x1 = -9.047985
-x2 = -4.225372
-x3 = -3.856375
-x4 = -3.821404
-x5 = -3.817449
-x6 = -3.816957
-x7 = -3.816893
-x8 = -3.842693
-x9 = -2.650823
-x10 = -23.579617
-> -181.425277
-> -30.622927
-> -28.444205
-> -28.179198
-> -28.142870
-> -28.137957
-> -28.085674
-> -30.942116
-> 29.995740
-> -1179.084743
+x1 = -2.921622
+x2 = -2.278684
+x3 = -3.465730
+> -20.279255
+> -6.367771
+> -31.141067
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 39.191940
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 19.901490
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 18.425501
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 18.285617
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 18.269798
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 18.267828
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 18.267571
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 18.370771
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 13.603290
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 97.318470
-> delta_x1: -4.6741121949300428  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -181.425277
-> delta_x2: -0.9391178542865669  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -30.622927
-> delta_x3: -0.7877219564106379  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -28.444205
-> delta_x4: -0.7770429795692366  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -28.179198
-> delta_x5: -0.7758367493391038  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -28.142870
-> delta_x6: -0.7756797084539186  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -28.137957
-> delta_x7: -0.7753534660735751  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -28.085674
-> delta_x8: -0.8165288043521028  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -30.942116
-> delta_x9: 0.1472195798336196  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: 29.995740
-> delta_x10: -30.0811217017545580  --  a: -1.000000 | d: 39.191940 | c: -2.000000 | b: -1179.084743
-* 1 * evaluated_curr_x: -181.425277 | x_aprox: -9.047985 | x_aprox_old: -5.962806
-* 2 * evaluated_curr_x: -30.622927 | x_aprox: -4.225372 | x_aprox_old: -3.344248
-* 3 * evaluated_curr_x: -28.444205 | x_aprox: -3.856375 | x_aprox_old: -3.101969
-* 4 * evaluated_curr_x: -28.179198 | x_aprox: -3.821404 | x_aprox_old: -3.076890
-* 5 * evaluated_curr_x: -28.142870 | x_aprox: -3.817449 | x_aprox_old: -3.073998
-* 6 * evaluated_curr_x: -28.137957 | x_aprox: -3.816957 | x_aprox_old: -3.073640
-* 7 * evaluated_curr_x: -28.085674 | x_aprox: -3.816893 | x_aprox_old: -3.073593
-* 8 * evaluated_curr_x: -30.942116 | x_aprox: -3.842693 | x_aprox_old: -3.079567
-* 9 * evaluated_curr_x: 29.995740 | x_aprox: -2.650823 | x_aprox_old: -2.508883
-* 10 * evaluated_curr_x: -1179.084743 | x_aprox: -23.579617 | x_aprox_old: -11.874922
-#
-x1 = -13.722097
-x2 = -5.164490
-x3 = -4.644097
-x4 = -4.598447
-x5 = -4.593286
-x6 = -4.592637
-x7 = -4.592246
-x8 = -4.659222
-x9 = -2.503603
-x10 = -53.660739
-> -406.429217
-> -44.827100
-> -41.706185
-> -41.256104
-> -41.192694
-> -41.184755
-> -41.043107
-> -46.794905
-> 92.933835
-> -5916.428456
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -2.921622; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -2.278684; jacobi[1][1] = 12.114736; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -3.465730; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 57.888389
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 23.657961
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 21.576389
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 21.393789
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 21.373145
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 21.370547
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 21.368984
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 21.636886
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 13.014412
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 217.642956
-> delta_x1: -7.0533566348821708  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -406.429217
-> delta_x2: -0.9234304367107702  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -44.827100
-> delta_x3: -0.7632567112727467  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -41.706185
-> delta_x4: -0.7526731243178266  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -41.256104
-> delta_x5: -0.7513894738592958  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -41.192694
-> delta_x6: -0.7512188932864167  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -41.184755
-> delta_x7: -0.7501916114355374  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -41.043107
-> delta_x8: -0.8162372086679749  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -46.794905
-> delta_x9: 0.5520166543857516  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: 92.933835
-> delta_x10: -102.1945253954470019  --  a: -1.000000 | d: 57.888389 | c: -2.000000 | b: -5916.428456
-* 1 * evaluated_curr_x: -406.429217 | x_aprox: -13.722097 | x_aprox_old: -9.047985
-* 2 * evaluated_curr_x: -44.827100 | x_aprox: -5.164490 | x_aprox_old: -4.225372
-* 3 * evaluated_curr_x: -41.706185 | x_aprox: -4.644097 | x_aprox_old: -3.856375
-* 4 * evaluated_curr_x: -41.256104 | x_aprox: -4.598447 | x_aprox_old: -3.821404
-* 5 * evaluated_curr_x: -41.192694 | x_aprox: -4.593286 | x_aprox_old: -3.817449
-* 6 * evaluated_curr_x: -41.184755 | x_aprox: -4.592637 | x_aprox_old: -3.816957
-* 7 * evaluated_curr_x: -41.043107 | x_aprox: -4.592246 | x_aprox_old: -3.816893
-* 8 * evaluated_curr_x: -46.794905 | x_aprox: -4.659222 | x_aprox_old: -3.842693
-* 9 * evaluated_curr_x: 92.933835 | x_aprox: -2.503603 | x_aprox_old: -2.650823
-* 10 * evaluated_curr_x: -5916.428456 | x_aprox: -53.660739 | x_aprox_old: -23.579617
+ççç -1.4613307555302280
+ççç -0.7279698447034983
+ççç -1.8898886000926369
+Maior = -1.8898886000926369
+ççç -1.4799448194592919
+ççç -0.8376202729450624
+ççç -1.8963910587955417
+Maior = -1.8963910587955417
+ççç -1.4948769687275809
+ççç -0.8386937522025683
+ççç -1.8964547179590516
+Maior = -1.8964547179590516
+Saiu com maior = 0.0000636591635099 > 0.0010000000000000
 #
-x1 = -20.775454
-x2 = -6.087921
-x3 = -5.407354
-x4 = -5.351120
-x5 = -5.344676
-x6 = -5.343856
-x7 = -5.342438
-x8 = -5.475459
-x9 = -1.951586
-x10 = -155.855264
-> -912.389488
-> -59.799159
-> -56.910854
-> -56.225632
-> -56.126311
-> -56.115601
-> -55.815822
-> -66.142064
-> 304.713851
-> -49046.341148
+x1 = -4.416499
+x2 = -3.117378
+x3 = -5.362184
+> -45.025677
+> -12.647352
+> -69.475214
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 86.101816
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 27.351683
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 24.629416
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 24.404481
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 24.378703
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 24.375422
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 24.369751
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 24.901835
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 10.806345
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 626.421058
-> delta_x1: -10.6180844555124629  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -912.389488
-> delta_x2: -0.8355660819905625  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -59.799159
-> delta_x3: -0.6881593090541190  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -56.910854
-> delta_x4: -0.6784592173645260  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -56.225632
-> delta_x5: -0.6771890644800864  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -56.126311
-> delta_x6: -0.6770260587660015  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -56.115601
-> delta_x7: -0.6750766163768928  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -55.815822
-> delta_x8: -0.7632023472602547  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -66.142064
-> delta_x9: 1.1563240214445978  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: 304.713851
-> delta_x10: -569.6184746119022293  --  a: -1.000000 | d: 86.101816 | c: -2.000000 | b: -49046.341148
-* 1 * evaluated_curr_x: -912.389488 | x_aprox: -20.775454 | x_aprox_old: -13.722097
-* 2 * evaluated_curr_x: -59.799159 | x_aprox: -6.087921 | x_aprox_old: -5.164490
-* 3 * evaluated_curr_x: -56.910854 | x_aprox: -5.407354 | x_aprox_old: -4.644097
-* 4 * evaluated_curr_x: -56.225632 | x_aprox: -5.351120 | x_aprox_old: -4.598447
-* 5 * evaluated_curr_x: -56.126311 | x_aprox: -5.344676 | x_aprox_old: -4.593286
-* 6 * evaluated_curr_x: -56.115601 | x_aprox: -5.343856 | x_aprox_old: -4.592637
-* 7 * evaluated_curr_x: -55.815822 | x_aprox: -5.342438 | x_aprox_old: -4.592246
-* 8 * evaluated_curr_x: -66.142064 | x_aprox: -5.475459 | x_aprox_old: -4.659222
-* 9 * evaluated_curr_x: 304.713851 | x_aprox: -1.951586 | x_aprox_old: -2.503603
-* 10 * evaluated_curr_x: -49046.341148 | x_aprox: -155.855264 | x_aprox_old: -53.660739
-#
-x1 = -31.393538
-x2 = -6.923487
-x3 = -6.095513
-x4 = -6.029579
-x5 = -6.021865
-x6 = -6.020882
-x7 = -6.017514
-x8 = -6.238661
-x9 = -0.795262
-x10 = -725.473739
-> -2050.442140
-> -72.055236
-> -72.614457
-> -71.661154
-> -71.519960
-> -71.507783
-> -70.975297
-> -87.949731
-> 1454.535468
-> -1054798.918220
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -4.416499; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -3.117378; jacobi[1][1] = 15.469511; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -5.362184; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 128.574153
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 30.693947
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 27.382053
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 27.118318
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 27.087459
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 27.083527
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 27.070057
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 27.954645
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: 6.181049
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 2904.894956
-> delta_x1: -15.9605427590400204  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -2050.442140
-> delta_x2: -0.6952571315757238  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -72.055236
-> delta_x3: -0.5807281699535315  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -72.614457
-> delta_x4: -0.5724032244670522  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -71.661154
-> delta_x5: -0.5712377942109894  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -71.519960
-> delta_x6: -0.5711036940092727  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -71.507783
-> delta_x7: -0.5683319968882463  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -70.975297
-> delta_x8: -0.6704723483470133  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -87.949731
-> delta_x9: 2.4470551706727459  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: 1454.535468
-> delta_x10: -8203.7986924683027610  --  a: -1.000000 | d: 128.574153 | c: -2.000000 | b: -1054798.918220
-* 1 * evaluated_curr_x: -2050.442140 | x_aprox: -31.393538 | x_aprox_old: -20.775454
-* 2 * evaluated_curr_x: -72.055236 | x_aprox: -6.923487 | x_aprox_old: -6.087921
-* 3 * evaluated_curr_x: -72.614457 | x_aprox: -6.095513 | x_aprox_old: -5.407354
-* 4 * evaluated_curr_x: -71.661154 | x_aprox: -6.029579 | x_aprox_old: -5.351120
-* 5 * evaluated_curr_x: -71.519960 | x_aprox: -6.021865 | x_aprox_old: -5.344676
-* 6 * evaluated_curr_x: -71.507783 | x_aprox: -6.020882 | x_aprox_old: -5.343856
-* 7 * evaluated_curr_x: -70.975297 | x_aprox: -6.017514 | x_aprox_old: -5.342438
-* 8 * evaluated_curr_x: -87.949731 | x_aprox: -6.238661 | x_aprox_old: -5.475459
-* 9 * evaluated_curr_x: 1454.535468 | x_aprox: -0.795262 | x_aprox_old: -1.951586
-* 10 * evaluated_curr_x: -1054798.918220 | x_aprox: -725.473739 | x_aprox_old: -155.855264
+ççç -2.2598988506975690
+ççç -1.0627525253143066
+ççç -2.8851374707597874
+Maior = -2.8851374707597874
+ççç -2.2815826597911526
+ççç -1.1905759291792650
+ççç -2.8903656919257634
+Maior = -2.8903656919257634
+ççç -2.2939530671115462
+ççç -1.1912518679712594
+ççç -2.8903933391123693
+Maior = -2.8903933391123693
+Saiu com maior = 0.0000276471866059 > 0.0010000000000000
 #
-x1 = -47.354081
-x2 = -7.618744
-x3 = -6.676241
-x4 = -6.601983
-x5 = -6.593102
-x6 = -6.591985
-x7 = -6.585846
-x8 = -6.909134
-x9 = 1.651793
-x10 = -8929.272432
-> -4610.642749
-> -77.240187
-> -87.350414
-> -86.115853
-> -85.931355
-> -85.919702
-> -85.094031
-> -111.917391
-> 17865.952536
-> -159490600.783633
+x1 = -6.710452
+x2 = -4.308630
+x3 = -8.252578
+> -100.574443
+> -25.838858
+> -155.659176
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 192.416324
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 33.474976
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 29.704966
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 29.407931
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 29.372410
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 29.367941
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 29.343385
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 30.636534
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -3.607172
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 35720.089726
-> delta_x1: -23.9690331753373549  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -4610.642749
-> delta_x2: -0.5320269845557231  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -77.240187
-> delta_x3: -0.4626803223156208  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -87.350414
-> delta_x4: -0.4558917215356083  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -86.115853
-> delta_x5: -0.4548961978703849  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -85.931355
-> delta_x6: -0.4548016521336207  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -85.919702
-> delta_x7: -0.4515717544141223  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -85.094031
-> delta_x8: -0.5585537154711592  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -111.917391
-> delta_x9: 7.5762625743126684  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: 17865.952536
-> delta_x10: -828882.8596714279847220  --  a: -1.000000 | d: 192.416324 | c: -2.000000 | b: -159490600.783633
-* 1 * evaluated_curr_x: -4610.642749 | x_aprox: -47.354081 | x_aprox_old: -31.393538
-* 2 * evaluated_curr_x: -77.240187 | x_aprox: -7.618744 | x_aprox_old: -6.923487
-* 3 * evaluated_curr_x: -87.350414 | x_aprox: -6.676241 | x_aprox_old: -6.095513
-* 4 * evaluated_curr_x: -86.115853 | x_aprox: -6.601983 | x_aprox_old: -6.029579
-* 5 * evaluated_curr_x: -85.931355 | x_aprox: -6.593102 | x_aprox_old: -6.021865
-* 6 * evaluated_curr_x: -85.919702 | x_aprox: -6.591985 | x_aprox_old: -6.020882
-* 7 * evaluated_curr_x: -85.094031 | x_aprox: -6.585846 | x_aprox_old: -6.017514
-* 8 * evaluated_curr_x: -111.917391 | x_aprox: -6.909134 | x_aprox_old: -6.238661
-* 9 * evaluated_curr_x: 17865.952536 | x_aprox: 1.651793 | x_aprox_old: -0.795262
-* 10 * evaluated_curr_x: -159490600.783633 | x_aprox: -8929.272432 | x_aprox_old: -725.473739
-#
-x1 = -71.323114
-x2 = -8.150771
-x3 = -7.138922
-x4 = -7.057874
-x5 = -7.047999
-x6 = -7.046787
-x7 = -7.037418
-x8 = -7.467687
-x9 = 9.228055
-x10 = -837812.132103
-> -10370.641060
-> -70.721489
-> -100.078652
-> -98.565888
-> -98.341119
-> -98.331940
-> -97.180600
-> -144.354459
-> 1675490.102044
-> -1403860850842.581543
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -6.710452; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -4.308630; jacobi[1][1] = 20.234518; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -8.252578; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 288.292457
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 35.603084
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 31.555687
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 31.231498
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 31.191995
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 31.187148
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 31.149672
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 32.870749
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -33.912222
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 3351251.528412
-> delta_x1: -35.9763318771991010  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -10370.641060
-> delta_x2: -0.3733125140194223  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -70.721489
-> delta_x3: -0.3516004176612498  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -100.078652
-> delta_x4: -0.3462708713628133  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -98.565888
-> delta_x5: -0.3454720742647701  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -98.341119
-> delta_x6: -0.3454150560874187  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -98.331940
-> delta_x7: -0.3421633827915635  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -97.180600
-> delta_x8: -0.4493495904699522  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -144.354459
-> delta_x9: 61.4790047947803018  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: 1675490.102044
-> delta_x10: -4869571909.5386457443237305  --  a: -1.000000 | d: 288.292457 | c: -2.000000 | b: -1403860850842.581543
-* 1 * evaluated_curr_x: -10370.641060 | x_aprox: -71.323114 | x_aprox_old: -47.354081
-* 2 * evaluated_curr_x: -70.721489 | x_aprox: -8.150771 | x_aprox_old: -7.618744
-* 3 * evaluated_curr_x: -100.078652 | x_aprox: -7.138922 | x_aprox_old: -6.676241
-* 4 * evaluated_curr_x: -98.565888 | x_aprox: -7.057874 | x_aprox_old: -6.601983
-* 5 * evaluated_curr_x: -98.341119 | x_aprox: -7.047999 | x_aprox_old: -6.593102
-* 6 * evaluated_curr_x: -98.331940 | x_aprox: -7.046787 | x_aprox_old: -6.591985
-* 7 * evaluated_curr_x: -97.180600 | x_aprox: -7.037418 | x_aprox_old: -6.585846
-* 8 * evaluated_curr_x: -144.354459 | x_aprox: -7.467687 | x_aprox_old: -6.909134
-* 9 * evaluated_curr_x: 1675490.102044 | x_aprox: 9.228055 | x_aprox_old: 1.651793
-* 10 * evaluated_curr_x: -1403860850842.581543 | x_aprox: -837812.132103 | x_aprox_old: -8929.272432
+ççç -3.4500905634845669
+ççç -1.5626586355900112
+ççç -4.3660227777482463
+Maior = -4.3660227777482463
+ççç -3.4749822687478886
+ççç -1.7085113246215011
+ççç -4.3700730813390098
+Maior = -4.3700730813390098
+ççç -3.4847573252728723
+ççç -1.7089116606778574
+ççç -4.3700841986010737
+Maior = -4.3700841986010737
+Saiu com maior = 0.0000111172620638 > 0.0010000000000000
 #
-x1 = -107.299446
-x2 = -8.524083
-x3 = -7.490522
-x4 = -7.404145
-x5 = -7.393471
-x6 = -7.392202
-x7 = -7.379581
-x8 = -7.917037
-x9 = 70.707060
-x10 = -4870409721.670749
-> -23330.192460
-> -47.611758
-> -110.355037
-> -108.577708
-> -108.318683
-> -108.313274
-> -106.828914
-> -282.144593
-> 9740809665.402973
-> -47441781728501112832.000000
+x1 = -10.195210
+x2 = -6.017541
+x3 = -12.622662
+> -225.435152
+> -54.033694
+> -349.513624
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 432.197785
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 37.096334
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 32.962089
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 32.616581
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 32.573883
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 32.568808
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 32.518326
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 34.668147
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -279.828241
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 19481638889.682995
-> delta_x1: -53.9820885623126685  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -23330.192460
-> delta_x2: -0.2366903555039135  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -47.611758
-> delta_x3: -0.2574845882675010  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -110.355037
-> delta_x4: -0.2534167007893666  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -108.577708
-> delta_x5: -0.2528077045795560  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -108.318683
-> delta_x6: -0.2527787340684510  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -108.313274
-> delta_x7: -0.2498402264669293  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -106.828914
-> delta_x8: -0.3688969020084537  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -282.144593
-> delta_x9: 3854.3602400197551106  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: 9740809665.402973
-> delta_x10: -109768683271840160.0000000000000000  --  a: -1.000000 | d: 432.197785 | c: -2.000000 | b: -47441781728501112832.000000
-* 1 * evaluated_curr_x: -23330.192460 | x_aprox: -107.299446 | x_aprox_old: -71.323114
-* 2 * evaluated_curr_x: -47.611758 | x_aprox: -8.524083 | x_aprox_old: -8.150771
-* 3 * evaluated_curr_x: -110.355037 | x_aprox: -7.490522 | x_aprox_old: -7.138922
-* 4 * evaluated_curr_x: -108.577708 | x_aprox: -7.404145 | x_aprox_old: -7.057874
-* 5 * evaluated_curr_x: -108.318683 | x_aprox: -7.393471 | x_aprox_old: -7.047999
-* 6 * evaluated_curr_x: -108.313274 | x_aprox: -7.392202 | x_aprox_old: -7.046787
-* 7 * evaluated_curr_x: -106.828914 | x_aprox: -7.379581 | x_aprox_old: -7.037418
-* 8 * evaluated_curr_x: -282.144593 | x_aprox: -7.917037 | x_aprox_old: -7.467687
-* 9 * evaluated_curr_x: 9740809665.402973 | x_aprox: 70.707060 | x_aprox_old: 9.228055
-* 10 * evaluated_curr_x: -47441781728501112832.000000 | x_aprox: -4870409721.670749 | x_aprox_old: -837812.132103
-#
-x1 = -161.281535
-x2 = -8.760774
-x3 = -7.748007
-x4 = -7.657562
-x5 = -7.646278
-x6 = -7.644981
-x7 = -7.629422
-x8 = -8.285934
-x9 = 3925.067300
-x10 = -109768688142249888.000000
-> -52488.789935
-> -2.007089
-> -118.231339
-> -116.208634
-> -115.922461
-> -115.921283
-> -114.087568
-> -8003.676375
-> 219537376253699264.000000
-> -24098329792941024502350130553290752.000000
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -10.195210; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -6.017541; jacobi[1][1] = 27.070165; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -12.622662; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 648.126139
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.043095
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 33.992027
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 33.630248
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 33.585114
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 33.579923
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 33.517687
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 36.143735
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -15697.269201
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 439074752568999552.000000
-> delta_x1: -80.9861848940068114  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -52488.789935
-> delta_x2: -0.1288456649317629  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -2.007089
-> delta_x3: -0.1834010559708189  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -118.231339
-> delta_x4: -0.1803625002104030  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -116.208634
-> delta_x5: -0.1799161828688559  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -115.922461
-> delta_x6: -0.1799046083022953  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -115.921283
-> delta_x7: -0.1774427223958319  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -114.087568
-> delta_x8: -0.4553640409258165  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -8003.676375
-> delta_x9: 14981680.8210306297987700  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: 219537376253699264.000000
-> delta_x10: -37181542833226380931879430782976.0000000000000000  --  a: -1.000000 | d: 648.126139 | c: -2.000000 | b: -24098329792941024502350130553290752.000000
-* 1 * evaluated_curr_x: -52488.789935 | x_aprox: -161.281535 | x_aprox_old: -107.299446
-* 2 * evaluated_curr_x: -2.007089 | x_aprox: -8.760774 | x_aprox_old: -8.524083
-* 3 * evaluated_curr_x: -118.231339 | x_aprox: -7.748007 | x_aprox_old: -7.490522
-* 4 * evaluated_curr_x: -116.208634 | x_aprox: -7.657562 | x_aprox_old: -7.404145
-* 5 * evaluated_curr_x: -115.922461 | x_aprox: -7.646278 | x_aprox_old: -7.393471
-* 6 * evaluated_curr_x: -115.921283 | x_aprox: -7.644981 | x_aprox_old: -7.392202
-* 7 * evaluated_curr_x: -114.087568 | x_aprox: -7.629422 | x_aprox_old: -7.379581
-* 8 * evaluated_curr_x: -8003.676375 | x_aprox: -8.285934 | x_aprox_old: -7.917037
-* 9 * evaluated_curr_x: 219537376253699264.000000 | x_aprox: 3925.067300 | x_aprox_old: 70.707060
-* 10 * evaluated_curr_x: -24098329792941024502350130553290752.000000 | x_aprox: -109768688142249888.000000 | x_aprox_old: -4870409721.670749
+ççç -5.2272404998070563
+ççç -2.3189316763963679
+ççç -6.5774593370316943
+Maior = -6.5774593370316943
+ççç -5.2551074858030997
+ççç -2.4820171366274857
+ççç -6.5805081963959182
+Maior = -6.5805081963959182
+ççç -5.2625575696025075
+ççç -2.4822423926901904
+ççç -6.5805124075258083
+Maior = -6.5805124075258083
+Saiu com maior = 0.0000042111298901 > 0.0010000000000000
 #
-x1 = -242.267720
-x2 = -8.889619
-x3 = -7.931408
-x4 = -7.837925
-x5 = -7.826195
-x6 = -7.824885
-x7 = -7.806864
-x8 = -8.741298
-x9 = 14985605.888331
-x10 = -37181542833226489018270487674880.000000
-> -118095.319846
-> 74.411007
-> -124.043214
-> -121.796098
-> -121.489534
-> -121.492395
-> -119.007377
-> -29971382.014263
-> 74363085666452978036540975349760.000000
-> -2764934254918112321588053991224062255998424247092894406809747456.000000
+x1 = -15.457767
+x2 = -8.499784
+x3 = -19.203174
+> -506.258878
+> -115.127877
+> -785.633536
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 972.070878
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.558478
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 34.725631
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 34.351698
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 34.304779
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 34.299542
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 34.227458
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 37.965191
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -59942420.553324
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 148726171332905956073081950699520.000000
-> delta_x1: -121.4886487793186660  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -118095.319846
-> delta_x2: -0.0488075967579354  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: 74.411007
-> delta_x3: -0.1280284693506549  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -124.043214
-> delta_x4: -0.1257973686927463  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -121.796098
-> delta_x5: -0.1254796781670813  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -121.489534
-> delta_x6: -0.1254772290318068  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -121.492395
-> delta_x7: -0.1234926226526261  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -119.007377
-> delta_x8: -8.2509371207595716  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -29971382.014263
-> delta_x9: 222383765332083.8437500000000000  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: 74363085666452978036540975349760.000000
-> delta_x10: -2844375154411001262423411546727465273636687544214837323104256.0000000000000000  --  a: -1.000000 | d: 972.070878 | c: -2.000000 | b: -2764934254918112321588053991224062255998424247092894406809747456.000000
-* 1 * evaluated_curr_x: -118095.319846 | x_aprox: -242.267720 | x_aprox_old: -161.281535
-* 2 * evaluated_curr_x: 74.411007 | x_aprox: -8.889619 | x_aprox_old: -8.760774
-* 3 * evaluated_curr_x: -124.043214 | x_aprox: -7.931408 | x_aprox_old: -7.748007
-* 4 * evaluated_curr_x: -121.796098 | x_aprox: -7.837925 | x_aprox_old: -7.657562
-* 5 * evaluated_curr_x: -121.489534 | x_aprox: -7.826195 | x_aprox_old: -7.646278
-* 6 * evaluated_curr_x: -121.492395 | x_aprox: -7.824885 | x_aprox_old: -7.644981
-* 7 * evaluated_curr_x: -119.007377 | x_aprox: -7.806864 | x_aprox_old: -7.629422
-* 8 * evaluated_curr_x: -29971382.014263 | x_aprox: -8.741298 | x_aprox_old: -8.285934
-* 9 * evaluated_curr_x: 74363085666452978036540975349760.000000 | x_aprox: 14985605.888331 | x_aprox_old: 3925.067300
-* 10 * evaluated_curr_x: -2764934254918112321588053991224062255998424247092894406809747456.000000 | x_aprox: -37181542833226489018270487674880.000000 | x_aprox_old: -109768688142249888.000000
-#
-x1 = -363.756368
-x2 = -8.938427
-x3 = -8.059436
-x4 = -7.963722
-x5 = -7.951674
-x6 = -7.950363
-x7 = -7.930357
-x8 = -16.992235
-x9 = 222383780317689.718750
-x10 = -2844375154411001262423411546727465273636687544214837323104256.000000
-> -265709.783333
-> 194.269002
-> -128.221464
-> -125.770113
-> -125.448825
-> -125.455231
-> -106.637365
-> -444767560635998.937500
-> 5688750308822002524846823093454930547273375088429674646208512.000000
-> -16180940038061214561588816939451759124148224206680482545612151469899454701401030522424439935489563153511819818945837268992.000000
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -15.457767; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -8.499784; jacobi[1][1] = 36.999134; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -19.203174; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 1458.025474
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.753708
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 35.237745
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 34.854888
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 34.806697
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 34.801450
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 34.721428
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 70.968939
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -889535121270755.875000
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 11377500617644005049693646186909861094546750176859349292417024.000000
-> delta_x1: -182.2395326898677865  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -265709.783333
-> delta_x2: 0.0080749017994015  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: 194.269002
-> delta_x3: -0.0881088745604080  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -128.221464
-> delta_x4: -0.0864931263064289  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -125.770113
-> delta_x5: -0.0862716566463210  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -125.448825
-> delta_x6: -0.0862731755265072  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -125.455231
-> delta_x7: -0.0845153355884799  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -106.637365
-> delta_x8: -20556.4524463941925205  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -444767560635998.937500
-> delta_x9: 0.0000000000000000  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: 5688750308822002524846823093454930547273375088429674646208512.000000
-> delta_x10: -11097844538169348020703333114474402087157253548114692312403409290353339921955850667311956093633778491724882482611355648.0000000000000000  --  a: -1.000000 | d: 1458.025474 | c: -2.000000 | b: -16180940038061214561588816939451759124148224206680482545612151469899454701401030522424439935489563153511819818945837268992.000000
-* 1 * evaluated_curr_x: -265709.783333 | x_aprox: -363.756368 | x_aprox_old: -242.267720
-* 2 * evaluated_curr_x: 194.269002 | x_aprox: -8.938427 | x_aprox_old: -8.889619
-* 3 * evaluated_curr_x: -128.221464 | x_aprox: -8.059436 | x_aprox_old: -7.931408
-* 4 * evaluated_curr_x: -125.770113 | x_aprox: -7.963722 | x_aprox_old: -7.837925
-* 5 * evaluated_curr_x: -125.448825 | x_aprox: -7.951674 | x_aprox_old: -7.826195
-* 6 * evaluated_curr_x: -125.455231 | x_aprox: -7.950363 | x_aprox_old: -7.824885
-* 7 * evaluated_curr_x: -106.637365 | x_aprox: -7.930357 | x_aprox_old: -7.806864
-* 8 * evaluated_curr_x: -444767560635998.937500 | x_aprox: -16.992235 | x_aprox_old: -8.741298
-* 9 * evaluated_curr_x: 5688750308822002524846823093454930547273375088429674646208512.000000 | x_aprox: 222383780317689.718750 | x_aprox_old: 14985605.888331
-* 10 * evaluated_curr_x: -16180940038061214561588816939451759124148224206680482545612151469899454701401030522424439935489563153511819818945837268992.000000 | x_aprox: -2844375154411001262423411546727465273636687544214837323104256.000000 | x_aprox_old: -37181542833226489018270487674880.000000
+ççç -7.8854686112798786
+ççç -3.4673487373342140
+ççç -9.8869091904509663
+Maior = -9.8869091904509663
+ççç -7.9158585571301368
+ççç -3.6460770694200075
+ççç -9.8891485375657204
+Maior = -9.8891485375657204
+ççç -7.9213722200595518
+ççç -3.6461981180421352
+ççç -9.8891500542244355
+Maior = -9.8891500542244355
+Saiu com maior = 0.0000015166587151 > 0.0010000000000000
 #
-x1 = -545.995901
-x2 = -8.930352
-x3 = -8.147545
-x4 = -8.050215
-x5 = -8.037946
-x6 = -8.036636
-x7 = -8.014872
-x8 = -20573.444681
-x9 = 222383780317689.718750
-x10 = -11097844538169348020703333114474402087157253548114692312403409290353339921955850667311956093633778491724882482611355648.000000
-> -597842.174981
-> 376.997555
-> -131.176837
-> -128.539131
-> -128.207503
-> -128.217246
-> 41003.405022
-> -444768407230342.875000
-> 22195689076338696041406666228948804174314507096229384624806818580706679843911701334623912187267556983449764965222711296.000000
-> -246324306786750462622589753467368081081660409419886251349892250726766283163928447013298615650510577232974406641838504500831857911222864047693197595626026958542838866251583779784335891090345067216904952019189784475226017016289006498873344.000000
+x1 = -23.379140
+x2 = -12.145982
+x3 = -29.092324
+> -1138.013790
+> -248.923900
+> -1766.857649
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 2186.983604
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.721409
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 35.590181
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 35.200860
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 35.151784
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 35.146543
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 35.059490
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 82296.778725
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -889535121270755.875000
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 44391378152677392082813332457897608348629014192458769249613637161413359687823402669247824374535113966899529930445422592.000000
-> delta_x1: -273.3638046739026208  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -597842.174981
-> delta_x2: 0.0473060392140358  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: 376.997555
-> delta_x3: -0.0600381807752722  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -131.176837
-> delta_x4: -0.0588809685518496  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -128.539131
-> delta_x5: -0.0587288034901475  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -128.207503
-> delta_x6: -0.0587315814155175  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -128.217246
-> delta_x7: -0.0500957582890232  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: 41003.405022
-> delta_x8: -203370709481.0975646972656250  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -444768407230342.875000
-> delta_x9: 0.0000000000000000  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: 22195689076338696041406666228948804174314507096229384624806818580706679843911701334623912187267556983449764965222711296.000000
-> delta_x10: -112631986038785793630689267911921336968498935887137744777453379948290325717305608397709577248942613127405580986946362353298673699853390080602124139565650629320811796510506218402069878977447278253918395633014237030678828784555894243328.0000000000000000  --  a: -1.000000 | d: 2186.983604 | c: -2.000000 | b: -246324306786750462622589753467368081081660409419886251349892250726766283163928447013298615650510577232974406641838504500831857911222864047693197595626026958542838866251583779784335891090345067216904952019189784475226017016289006498873344.000000
-* 1 * evaluated_curr_x: -597842.174981 | x_aprox: -545.995901 | x_aprox_old: -363.756368
-* 2 * evaluated_curr_x: 376.997555 | x_aprox: -8.930352 | x_aprox_old: -8.938427
-* 3 * evaluated_curr_x: -131.176837 | x_aprox: -8.147545 | x_aprox_old: -8.059436
-* 4 * evaluated_curr_x: -128.539131 | x_aprox: -8.050215 | x_aprox_old: -7.963722
-* 5 * evaluated_curr_x: -128.207503 | x_aprox: -8.037946 | x_aprox_old: -7.951674
-* 6 * evaluated_curr_x: -128.217246 | x_aprox: -8.036636 | x_aprox_old: -7.950363
-* 7 * evaluated_curr_x: 41003.405022 | x_aprox: -8.014872 | x_aprox_old: -7.930357
-* 8 * evaluated_curr_x: -444768407230342.875000 | x_aprox: -20573.444681 | x_aprox_old: -16.992235
-* 9 * evaluated_curr_x: 22195689076338696041406666228948804174314507096229384624806818580706679843911701334623912187267556983449764965222711296.000000 | x_aprox: 222383780317689.718750 | x_aprox_old: 222383780317689.718750
-* 10 * evaluated_curr_x: -246324306786750462622589753467368081081660409419886251349892250726766283163928447013298615650510577232974406641838504500831857911222864047693197595626026958542838866251583779784335891090345067216904952019189784475226017016289006498873344.000000 | x_aprox: -11097844538169348020703333114474402087157253548114692312403409290353339921955850667311956093633778491724882482611355648.000000 | x_aprox_old: -2844375154411001262423411546727465273636687544214837323104256.000000
-#
-x1 = -819.359706
-x2 = -8.883046
-x3 = -8.207583
-x4 = -8.109096
-x5 = -8.096675
-x6 = -8.095367
-x7 = -8.064968
-x8 = -203370730054.542236
-x9 = 222383780317689.718750
-x10 = -112631986038785793630689267911921336968498935887137744777453379948290325717305608397709577248942613127405580986946362353298673699853390080602124139565650629320811796510506218402069878977447278253918395633014237030678828784555894243328.000000
-> -1345139.967836
-> 652.308716
-> -133.250360
-> -130.441230
-> -130.102479
-> -130.129437
-> 406741459963.897522
-> -82719308131212644581376.000000
-> 225263972077571587261378535823842673936997871774275489554906759896580651434611216795419154497885226254811161973892724706597347399706780161204248279131301258641623593021012436804139757954894556507836791266028474061357657569111788486656.000000
-> -inf
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -23.379140; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -12.145982; jacobi[1][1] = 51.583927; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -29.092324; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 3280.438823
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.532185
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 35.830333
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 35.436384
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 35.386699
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 35.381469
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: 35.259873
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 813482920221.168945
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -1.000000
->[8][8] jacobi_solution: -889535121270755.875000
->[8][9] jacobi_solution: -2.000000
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -1.000000
->[9][9] jacobi_solution: 450527944155143174522757071647685347873995743548550979109813519793161302869222433590838308995770452509622323947785449413194694799413560322408496558262602517283247186042024873608279515909789113015673582532056948122715315138223576973312.000000
-> delta_x1: -410.0487604871849499  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -1345139.967836
-> delta_x2: 0.0738132587064393  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: 652.308716
-> delta_x3: -0.0406330724659371  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -133.250360
-> delta_x4: -0.0398115398404634  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -130.441230
-> delta_x5: -0.0397080271791569  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -130.102479
-> delta_x6: -0.0397109482133631  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -130.129437
-> delta_x7: 12.4988347202981380  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: 406741459963.897522
-> delta_x8: -25215927683612577792.0000000000000000  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -82719308131212644581376.000000
-> delta_x9: 0.0000000000000000  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: 225263972077571587261378535823842673936997871774275489554906759896580651434611216795419154497885226254811161973892724706597347399706780161204248279131301258641623593021012436804139757954894556507836791266028474061357657569111788486656.000000
-> delta_x10: -inf  --  a: -1.000000 | d: 3280.438823 | c: -2.000000 | b: -inf
-* 1 * evaluated_curr_x: -1345139.967836 | x_aprox: -819.359706 | x_aprox_old: -545.995901
-* 2 * evaluated_curr_x: 652.308716 | x_aprox: -8.883046 | x_aprox_old: -8.930352
-* 3 * evaluated_curr_x: -133.250360 | x_aprox: -8.207583 | x_aprox_old: -8.147545
-* 4 * evaluated_curr_x: -130.441230 | x_aprox: -8.109096 | x_aprox_old: -8.050215
-* 5 * evaluated_curr_x: -130.102479 | x_aprox: -8.096675 | x_aprox_old: -8.037946
-* 6 * evaluated_curr_x: -130.129437 | x_aprox: -8.095367 | x_aprox_old: -8.036636
-* 7 * evaluated_curr_x: 406741459963.897522 | x_aprox: -8.064968 | x_aprox_old: -8.014872
-* 8 * evaluated_curr_x: -82719308131212644581376.000000 | x_aprox: -203370730054.542236 | x_aprox_old: -20573.444681
-* 9 * evaluated_curr_x: 225263972077571587261378535823842673936997871774275489554906759896580651434611216795419154497885226254811161973892724706597347399706780161204248279131301258641623593021012436804139757954894556507836791266028474061357657569111788486656.000000 | x_aprox: 222383780317689.718750 | x_aprox_old: 222383780317689.718750
-* 10 * evaluated_curr_x: -inf | x_aprox: -112631986038785793630689267911921336968498935887137744777453379948290325717305608397709577248942613127405580986946362353298673699853390080602124139565650629320811796510506218402069878977447278253918395633014237030678828784555894243328.000000 | x_aprox_old: -11097844538169348020703333114474402087157253548114692312403409290353339921955850667311956093633778491724882482611355648.000000
+ççç -11.8664217451963445
+ççç -5.2090295699187168
+ççç -14.8452468474933923
+Maior = -14.8452468474933923
+ççç -11.8988064775012106
+ççç -5.4011862009219982
+ççç -14.8468566134546478
+Maior = -14.8468566134546478
+ççç -11.9027883151127920
+ççç -5.4012486143930669
+ççç -14.8468571363149877
+Maior = -14.8468571363149877
+Saiu com maior = 0.0000005228603399 > 0.0010000000000000
 #
-x1 = -1229.408466
-x2 = -8.809233
-x3 = -8.248216
-x4 = -8.148908
-x5 = -8.136383
-x6 = -8.135078
-x7 = 4.433867
-x8 = -25215927886983307264.000000
-x9 = 222383780317689.718750
-x10 = -inf
-> -3026559.960641
-> 1065.272032
-> -134.703749
-> -131.735128
-> -131.391535
-> -156.495584
-> 50431855773966614528.000000
-> -1271686038403084938378015313850112409600.000000
-> inf
-> -inf
+x1 = -35.281928
+x2 = -17.547230
+x3 = -43.939181
+> -2559.380195
+> -544.291984
+> -3974.573632
 Deu boa :)
 
-***Gauss
->[0][0] jacobi_solution: 4920.633865
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 38.236932
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 35.992866
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 35.595630
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 35.545531
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 35.540313
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: -14.735466
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -1.000000
->[7][7] jacobi_solution: 100863711547933229056.000000
->[7][8] jacobi_solution: -2.000000
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -nan
->[8][8] jacobi_solution: -nan
->[8][9] jacobi_solution: -nan
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -nan
->[9][9] jacobi_solution: -nan
-> delta_x1: -615.0751907341042397  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -3026559.960641
-> delta_x2: 0.0914751204382939  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: 1065.272032
-> delta_x3: -0.0273728751606537  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -134.703749
-> delta_x4: -0.0267936856440222  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -131.735128
-> delta_x5: -0.0267237421973525  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -131.391535
-> delta_x6: -0.0267292063622484  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -156.495584
-> delta_x7: 82660378.7454257905483246  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: 50431855773966614528.000000
-> delta_x8: -258439476154167276843076109943701504.0000000000000000  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -1271686038403084938378015313850112409600.000000
-> delta_x9: -nan  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: inf
-> delta_x10: -nan  --  a: -1.000000 | d: 4920.633865 | c: -2.000000 | b: -inf
-* 1 * evaluated_curr_x: -3026559.960641 | x_aprox: -1229.408466 | x_aprox_old: -819.359706
-* 2 * evaluated_curr_x: 1065.272032 | x_aprox: -8.809233 | x_aprox_old: -8.883046
-* 3 * evaluated_curr_x: -134.703749 | x_aprox: -8.248216 | x_aprox_old: -8.207583
-* 4 * evaluated_curr_x: -131.735128 | x_aprox: -8.148908 | x_aprox_old: -8.109096
-* 5 * evaluated_curr_x: -131.391535 | x_aprox: -8.136383 | x_aprox_old: -8.096675
-* 6 * evaluated_curr_x: -156.495584 | x_aprox: -8.135078 | x_aprox_old: -8.095367
-* 7 * evaluated_curr_x: 50431855773966614528.000000 | x_aprox: 4.433867 | x_aprox_old: -8.064968
-* 8 * evaluated_curr_x: -1271686038403084938378015313850112409600.000000 | x_aprox: -25215927886983307264.000000 | x_aprox_old: -203370730054.542236
-* 9 * evaluated_curr_x: inf | x_aprox: 222383780317689.718750 | x_aprox_old: 222383780317689.718750
-* 10 * evaluated_curr_x: -inf | x_aprox: -inf | x_aprox_old: -112631986038785793630689267911921336968498935887137744777453379948290325717305608397709577248942613127405580986946362353298673699853390080602124139565650629320811796510506218402069878977447278253918395633014237030678828784555894243328.000000
-#
-x1 = -1844.483657
-x2 = -8.717758
-x3 = -8.275589
-x4 = -8.175701
-x5 = -8.163107
-x6 = -8.161808
-x7 = 82660383.179292
-x8 = -258439476154167313736564257362804736.000000
-x9 = -nan
-x10 = -nan
-> -6809754.937119
-> 1683.882961
-> -135.728363
-> -132.609482
-> -132.262621
-> -165320914.911105
-> 516878952308334627473128514725609472.000000
-> -nan
-> -nan
-> -nan
-Deu boa :)
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -35.281928; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -17.547230; jacobi[1][1] = 73.188921; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -43.939181; jacobi[1][2] = -2.000000; 
 
 ***Gauss
->[0][0] jacobi_solution: 7380.934628
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 37.871031
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 36.102357
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 35.702805
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 35.652426
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] jacobi_solution: 0.000000
->[5][0] jacobi_solution: 0.000000
->[5][1] jacobi_solution: 0.000000
->[5][2] jacobi_solution: 0.000000
->[5][3] jacobi_solution: 0.000000
->[5][4] jacobi_solution: -1.000000
->[5][5] jacobi_solution: 35.647230
->[5][6] jacobi_solution: -2.000000
->[5][7] jacobi_solution: 0.000000
->[5][8] jacobi_solution: 0.000000
->[5][9] jacobi_solution: 0.000000
->[6][0] jacobi_solution: 0.000000
->[6][1] jacobi_solution: 0.000000
->[6][2] jacobi_solution: 0.000000
->[6][3] jacobi_solution: 0.000000
->[6][4] jacobi_solution: 0.000000
->[6][5] jacobi_solution: -1.000000
->[6][6] jacobi_solution: -330641529.717169
->[6][7] jacobi_solution: -2.000000
->[6][8] jacobi_solution: 0.000000
->[6][9] jacobi_solution: 0.000000
->[7][0] jacobi_solution: 0.000000
->[7][1] jacobi_solution: 0.000000
->[7][2] jacobi_solution: 0.000000
->[7][3] jacobi_solution: 0.000000
->[7][4] jacobi_solution: 0.000000
->[7][5] jacobi_solution: 0.000000
->[7][6] jacobi_solution: -nan
->[7][7] jacobi_solution: -nan
->[7][8] jacobi_solution: -nan
->[7][9] jacobi_solution: 0.000000
->[8][0] jacobi_solution: 0.000000
->[8][1] jacobi_solution: 0.000000
->[8][2] jacobi_solution: 0.000000
->[8][3] jacobi_solution: 0.000000
->[8][4] jacobi_solution: 0.000000
->[8][5] jacobi_solution: 0.000000
->[8][6] jacobi_solution: 0.000000
->[8][7] jacobi_solution: -nan
->[8][8] jacobi_solution: -nan
->[8][9] jacobi_solution: -nan
->[9][0] jacobi_solution: 0.000000
->[9][1] jacobi_solution: 0.000000
->[9][2] jacobi_solution: 0.000000
->[9][3] jacobi_solution: 0.000000
->[9][4] jacobi_solution: 0.000000
->[9][5] jacobi_solution: 0.000000
->[9][6] jacobi_solution: 0.000000
->[9][7] jacobi_solution: 0.000000
->[9][8] jacobi_solution: -nan
->[9][9] jacobi_solution: -nan
-> delta_x1: -922.6141535576921342  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -6809754.937119
-> delta_x2: 0.1031324758156187  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: 1683.882961
-> delta_x3: -0.0183823356778829  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -135.728363
-> delta_x4: -0.0179762209113998  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -132.609482
-> delta_x5: -0.0179291732566210  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -132.262621
-> delta_x6: -0.0213303856965264  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -165320914.911105
-> delta_x7: 9996969220686378.0000000000000000  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: 516878952308334627473128514725609472.000000
-> delta_x8: -nan  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -nan
-> delta_x9: -nan  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -nan
-> delta_x10: -nan  --  a: -1.000000 | d: 7380.934628 | c: -2.000000 | b: -nan
-* 1 * evaluated_curr_x: -6809754.937119 | x_aprox: -1844.483657 | x_aprox_old: -1229.408466
-* 2 * evaluated_curr_x: 1683.882961 | x_aprox: -8.717758 | x_aprox_old: -8.809233
-* 3 * evaluated_curr_x: -135.728363 | x_aprox: -8.275589 | x_aprox_old: -8.248216
-* 4 * evaluated_curr_x: -132.609482 | x_aprox: -8.175701 | x_aprox_old: -8.148908
-* 5 * evaluated_curr_x: -132.262621 | x_aprox: -8.163107 | x_aprox_old: -8.136383
-* 6 * evaluated_curr_x: -165320914.911105 | x_aprox: -8.161808 | x_aprox_old: -8.135078
-* 7 * evaluated_curr_x: 516878952308334627473128514725609472.000000 | x_aprox: 82660383.179292 | x_aprox_old: 4.433867
-* 8 * evaluated_curr_x: -nan | x_aprox: -258439476154167313736564257362804736.000000 | x_aprox_old: -25215927886983307264.000000
-* 9 * evaluated_curr_x: -nan | x_aprox: -nan | x_aprox_old: 222383780317689.718750
-* 10 * evaluated_curr_x: -nan | x_aprox: -nan | x_aprox_old: -inf
+ççç -17.8326753672621550
+ççç -7.8425216285709745
+ççç -22.2784129848220012
+Maior = -22.2784129848220012
+ççç -17.8665518922916711
+ççç -8.0456003383397476
+ççç -22.2795490467477215
+Maior = -22.2795490467477215
+ççç -17.8693699306489080
+ççç -8.0456313829816501
+ççç -22.2795492204175076
+Maior = -22.2795492204175076
+Saiu com maior = 0.0000001736697861 > 0.0010000000000000
 #
-x1 = -2767.097811
-x2 = -8.614625
-x3 = -8.293972
-x4 = -8.193677
-x5 = -8.181036
-x6 = -8.183138
-x7 = 9996969303346762.000000
-x8 = -nan
-x9 = -nan
-x10 = -nan
-> -15321943.650242
-> 2610.418340
-> -136.459865
-> -133.197689
-> -132.841846
-> -19993938606693676.000000
-> -nan
-> -nan
-> -nan
-> -nan
+x1 = -53.151298
+x2 = -25.592862
+x3 = -66.218731
+> -5757.389091
+> -1200.178966
+> -8941.903891
 Deu boa :)
 
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -53.151298; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -25.592862; jacobi[1][1] = 105.371447; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -66.218731; jacobi[1][2] = -2.000000; 
+
 ***Gauss
->[0][0] jacobi_solution: 11071.391242
->[0][1] jacobi_solution: -2.000000
->[0][2] jacobi_solution: 0.000000
->[0][3] jacobi_solution: 0.000000
->[0][4] jacobi_solution: 0.000000
->[0][5] jacobi_solution: 0.000000
->[0][6] jacobi_solution: 0.000000
->[0][7] jacobi_solution: 0.000000
->[0][8] jacobi_solution: 0.000000
->[0][9] jacobi_solution: 0.000000
->[1][0] jacobi_solution: -1.000000
->[1][1] jacobi_solution: 37.458501
->[1][2] jacobi_solution: -2.000000
->[1][3] jacobi_solution: 0.000000
->[1][4] jacobi_solution: 0.000000
->[1][5] jacobi_solution: 0.000000
->[1][6] jacobi_solution: 0.000000
->[1][7] jacobi_solution: 0.000000
->[1][8] jacobi_solution: 0.000000
->[1][9] jacobi_solution: 0.000000
->[2][0] jacobi_solution: 0.000000
->[2][1] jacobi_solution: -1.000000
->[2][2] jacobi_solution: 36.175886
->[2][3] jacobi_solution: -2.000000
->[2][4] jacobi_solution: 0.000000
->[2][5] jacobi_solution: 0.000000
->[2][6] jacobi_solution: 0.000000
->[2][7] jacobi_solution: 0.000000
->[2][8] jacobi_solution: 0.000000
->[2][9] jacobi_solution: 0.000000
->[3][0] jacobi_solution: 0.000000
->[3][1] jacobi_solution: 0.000000
->[3][2] jacobi_solution: -1.000000
->[3][3] jacobi_solution: 35.774710
->[3][4] jacobi_solution: -2.000000
->[3][5] jacobi_solution: 0.000000
->[3][6] jacobi_solution: 0.000000
->[3][7] jacobi_solution: 0.000000
->[3][8] jacobi_solution: 0.000000
->[3][9] jacobi_solution: 0.000000
->[4][0] jacobi_solution: 0.000000
->[4][1] jacobi_solution: 0.000000
->[4][2] jacobi_solution: 0.000000
->[4][3] jacobi_solution: -1.000000
->[4][4] jacobi_solution: 35.724143
->[4][5] jacobi_solution: -2.000000
->[4][6] jacobi_solution: 0.000000
->[4][7] jacobi_solution: 0.000000
->[4][8] jacobi_solution: 0.000000
->[4][9] ja
+ççç -26.7780210612129927
+ççç -11.8128591956114164
+ççç -33.4249905586410705
+Maior = -33.4249905586410705
+ççç -26.8129666744432882
+ççç -12.0244049545149245
+ççç -33.4257802770553525
+Maior = -33.4257802770553525
+Saiu com maior = 0.0007897184142820 > 0.0010000000000000
+#
+x1 = -79.964264
+x2 = -37.617267
+x3 = -99.644511
+> -12952.225453
+> -2662.716014
+> -20118.373357
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -79.964264; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -37.617267; jacobi[1][1] = 153.469067; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -99.644511; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -40.1920104954293720
+ççç -17.7857833842646507
+ççç -50.1425799247177935
+Maior = -50.1425799247177935
+ççç -40.2277004596857495
+ççç -18.0036357504503357
+ççç -50.1431224154483886
+Maior = -50.1431224154483886
+Saiu com maior = 0.0005424907305951 > 0.0010000000000000
+#
+x1 = -120.191965
+x2 = -55.620902
+x3 = -149.787633
+> -29140.550970
+> -5933.465043
+> -45265.412164
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -120.191965; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -55.620902; jacobi[1][1] = 225.483610; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -149.787633; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -60.3110720342090545
+ççç -26.7591569022729168
+ççç -75.2173565084874554
+Maior = -75.2173565084874554
+ççç -60.3472692348869373
+ççç -26.9815609531679144
+ççç -75.2177258580747434
+Maior = -75.2177258580747434
+Saiu com maior = 0.0003693495872881 > 0.0010000000000000
+#
+x1 = -180.539234
+x2 = -82.602463
+x3 = -225.005359
+> -65564.242941
+> -13262.591342
+> -101846.236895
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -180.539234; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -82.602463; jacobi[1][1] = 333.409853; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -225.005359; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -90.4882829299159965
+ççç -40.2298452075100172
+ççç -112.8284031991368010
+Maior = -112.8284031991368010
+ççç -90.5248220115482525
+ççç -40.4554574799475688
+ççç -112.8286530406835340
+Maior = -112.8286530406835340
+Saiu com maior = 0.0002498415467329 > 0.0010000000000000
+#
+x1 = -271.064056
+x2 = -123.057921
+x3 = -337.834012
+> -147517.521457
+> -29707.945442
+> -229153.083685
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -271.064056; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -123.057921; jacobi[1][1] = 495.231683; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -337.834012; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -135.7531270036052433
+ççç -60.4436342729686515
+ççç -169.2442045951294460
+Maior = -169.2442045951294460
+ççç -135.7898951109508516
+ççç -60.6714692578973498
+ççç -169.2443728214608427
+Maior = -169.2443728214608427
+Saiu com maior = 0.0001682263313967 > 0.0010000000000000
+#
+x1 = -406.853951
+x2 = -183.729390
+x3 = -507.078385
+> -331912.378473
+> -66642.155016
+> -515593.482833
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -406.853951; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -183.729390; jacobi[1][1] = 737.917560; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -507.078385; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -203.6497195019240394
+ççç -90.7698195015801446
+ççç -253.8673830986343205
+Maior = -253.8673830986343205
+ççç -203.6866405746303315
+ççç -90.9991757733975817
+ççç -253.8674960089592787
+Maior = -253.8674960089592787
+Saiu com maior = 0.0001129103249582 > 0.0010000000000000
+#
+x1 = -610.540592
+x2 = -274.728566
+x3 = -760.945881
+> -746800.793331
+> -149642.323148
+> -1160084.376726
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -610.540592; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -274.728566; jacobi[1][1] = 1101.914263; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -760.945881; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -305.4941469715062112
+ççç -136.2629227330001243
+ççç -380.8017965489514722
+Maior = -380.8017965489514722
+ççç -305.5311700727613129
+ççç -136.4933114388171873
+ççç -380.8018721659764196
+Maior = -380.8018721659764196
+Saiu com maior = 0.0000756170249474 > 0.0010000000000000
+#
+x1 = -916.071762
+x2 = -411.221877
+x3 = -1141.747753
+> -1680299.717657
+> -336239.963110
+> -2610188.885141
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -916.071762; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -411.221877; jacobi[1][1] = 1647.887509; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -1141.747753; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -458.2604749381447391
+ççç -204.5052013380737321
+ççç -571.2031781001310264
+Maior = -571.2031781001310264
+ççç -458.2975660570083392
+ççç -204.7362866577564944
+ççç -571.2032286659460851
+Maior = -571.2032286659460851
+Saiu com maior = 0.0000505658150587 > 0.0010000000000000
+#
+x1 = -1374.369328
+x2 = -615.958164
+x3 = -1712.950982
+> -3780672.291252
+> -755855.522702
+> -5872924.027159
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -1374.369328; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -615.958164; jacobi[1][1] = 2466.832656; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -1712.950982; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -687.4097554271118042
+ççç -306.8704021593882771
+ççç -856.8050902400150335
+Maior = -856.8050902400150335
+ççç -687.4468918826254367
+ççç -307.1019556544315492
+ççç -856.8051240197551124
+Maior = -856.8051240197551124
+Saiu com maior = 0.0000337797400789 > 0.0010000000000000
+#
+x1 = -2061.816220
+x2 = -923.060120
+x3 = -2569.756106
+> -8506510.577714
+> -1699646.820779
+> -13214078.095412
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -2061.816220; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -923.060120; jacobi[1][1] = 3695.240478; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -2569.756106; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -1031.1335339858605948
+ççç -460.4194073273602044
+ççç -1285.2078511593269923
+Maior = -1285.2078511593269923
+ççç -1031.1707006596366227
+ççç -460.6512746332290362
+ççç -1285.2078737100714534
+Maior = -1285.2078737100714534
+Saiu com maior = 0.0000225507444611 > 0.0010000000000000
+#
+x1 = -3092.986921
+x2 = -1383.711394
+x3 = -3854.963980
+> -19139646.719492
+> -3822661.664454
+> -29731674.748117
+Deu boa :)
+
+## f[1] = (((((3-(2*x2))*x2)-x1)-(2*x3))+1);     ------------------------------
+## f' = (((((0-(0*x2))*x2)+((3-(2*x2))*0))-1)-(0*x3)); x1 = -3092.986921; jacobi[1][0] = -1.000000; 
+## f' = ((((0-((0*x2)+2))*x2)+(3-(2*x2)))-(0*x3)); x2 = -1383.711394; jacobi[1][1] = 5537.845577; 
+## f' = ((((0-(0*x2))*x2)+((3-(2*x2))*0))-((0*x3)+2)); x3 = -3854.963980; jacobi[1][2] = -2.000000; 
+
+***Gauss
+ççç -1546.7191064982537227
+ççç -690.7437246156301853
+ççç -1927.8119207867937348
+Maior = -1927.8119207867937348
+ççç -1546.7562933140516179
+ççç -690.9758018876096912
+ççç -1927.8119358344135890
+Maior = -1927.8119358344135890
+Saiu com maior = 0.0000150476198542 > 0.0010000000000000
