@@ -22,7 +22,6 @@ int inputs(sl_t **sl) {
         exit(1);
     }
 
-
     // Lê n funções de entrada e verifica se foram criadas
     for (int i = 0; i < n; i++) { 
         getline(&sIn, &len, stdin);
@@ -49,16 +48,3 @@ int inputs(sl_t **sl) {
 
     return 1;
 }
-
-
-// Retorna o maior entre 2 valores
-double maior(double x, double y) {
-    double a, b;
-    a = fabs(x);
-    b = fabs(y);
-
-    if (a > b) return a;
-    else if (b > a) return b;
-    else return a;
-}
-

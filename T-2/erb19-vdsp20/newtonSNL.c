@@ -26,8 +26,6 @@ int newton(sl_t *sl) {
 
     double *oldX = calloc(sl->n, sizeof(double));
 
-    //double **sl = criaSL();
-
     if (!oldX) {
         perror("Erro de alocação de memória.");
         exit(1);
@@ -37,9 +35,6 @@ int newton(sl_t *sl) {
 
     iter = 0;
 
-    /* printf("%d\n", sl->n);
-    for (int i = 0; i < sl->n; i++)
-        printf("%s\n", sl->func[i].s_func); */
     
     criterio1 = 1;
     criterio2 = 1;
@@ -61,18 +56,6 @@ int newton(sl_t *sl) {
         
         calcula_jacobi(sl); // Calcula a matriz jacobiana do sistema sl
 
-
-
-        //gauss_seidel(sl);
-        // calcula_gauss(sl->jacobi_solution, sl->evaluated_curr_x, sl->delta_x, sl->n);
-        calcula_gauss(sl);
-
-        /* double new_x_aux = 0;
-        for (int i = 0; i < sl->n; i++) {
-            sl->x_aprox_old[i] = sl->x_aprox[i];            
-            sl->x_aprox[i] = sl->x_aprox_old[i] + sl->delta_x[i];
-            new_x_aux = sl->x_aprox_old[i];
-        } */
 
         // Calcula novo x
         criterio3 = calcula_novo_x(sl);

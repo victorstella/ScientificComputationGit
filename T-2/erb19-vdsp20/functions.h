@@ -13,9 +13,6 @@
     #include "utils.h"
     #include "gauss.h"
 
-//    sl_t *inputs(int * end);
-int inputs(sl_t **sl) ;
-
-    double maior(double x, double y);
+    int inputs(sl_t **sl) ;
 
 #endif

@@ -18,13 +18,19 @@
         double *x_aprox_old;        // Aproximação antiga de x
         double *delta_x;            // Delta entre x_aprox e x_aprox_old
         double *evaluated_curr_x;   // Resultados das função aplicadas nos x atuais
-        void ***m_jacobi;           // Matriz de funcoes jacobi
-        double **jacobi_solution;   // Matriz de resultado das funcoes jacobi
+        double *jacobi_solution_principal;   // Vetor de resultado das funcoes jacobi da diagonal principal
+        double jacobi_solution_inferior;
+        double jacobi_solution_superior;
+        
         float epsilon;
 
-        double * diagonal_central;
+        double *diagonal_central;
         double *diagonal_direita;
         double *diagonal_esquerda;
+
+        void *jacobi_superior;
+        void *jacobi_principal;
+        void *jacobi_inferior;
 
         int MAXIT;
     } sl_t;
